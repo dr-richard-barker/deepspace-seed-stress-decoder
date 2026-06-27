@@ -83,7 +83,7 @@ Key questions it must answer:
 | temperature | ✅ | GSE303133 (27 vs 21 °C) |
 | UV | ✅ | AtGenExpress GSE5626 (UV-B) vs GSE5620 |
 | tropism (gravitropism / phototropism) | ✅ | GSE199142 (gravistim) + GSE3847 (phototropic) |
-| null magnetic field (NMF) | ◐ localization only | Maffei 2021/2022 arrays (genome-wide pending author reply) |
+| null magnetic field (NMF) | ◐ localization (2 panels) | 2022 oxidative panel + 2021 Sci Rep DEG lists (S7) localized; genome-wide arrays **pending Maffei reply** |
 | high static magnetic field | ⚪ comparator (not integrated) | GSE29787 (10–16.5 T), PRJNA529956 (600 mT) |
 
 ### Tropisms — RESOLVED
@@ -195,9 +195,16 @@ per-phase notes below are the working history (kept for continuity).
 
 ### Phase 1 — NMF transcriptional meta-analysis  ◐ REFRAMED (externally blocked)
 Genome-wide NNMF is not publicly deposited (audited GEO/SRA/BioProject/ArrayExpress; both Maffei 2021/2022
-arrays "supp tables + on request"; author request sent). The planned cross-platform meta-DE therefore
-awaits the arrays. **Delivered instead:** NMF wired in via expression-localization (`scripts/08`) →
-NMF-up genes localize to the **radicle apical meristem (z +7.96)**. Upgrades to full GSEA when arrays arrive.
+arrays "supp tables + on request"). **Delivered via expression-localization, TWO panels:**
+- 2022 oxidative panel (`scripts/08`) → NMF-up genes localize to the **radicle apical meristem (z +7.96)**.
+- 2021 Sci Rep S7 DEG lists (`scripts/25`, `results/nmf2021_results.md`) → undirected NNMF DEGs localize to
+  **cotyledon mesophyll + hypocotyl cortex** (radicle-meristem NOT reproduced; r=0.35 vs 2022). → the
+  radicle signal is **oxidative-NNMF-gene-specific**, an honest qualifier.
+
+> **⏳ AWAITING MAFFEI REPLY (emailed 2× ; expected ~Mon).** When he sends the genome-wide 2021+2022 array
+> data link: download → reprocess to AGI DE → add as **full GSEA decoder contrasts** (replacing the
+> localization-tier panels) → re-run decoder/atlas/bridge/manuscript. Author-request draft:
+> `report/maffei_data_request_email.md`. **Update this README + inventory + manuscript when it arrives.**
 
 ### Phase 2 — Seed reference ("decoder target space")  ☑ COMPLETE
 - ☑ Toolchain: Python env (scanpy 1.12.1 / anndata / gseapy / statsmodels) + R 4.6.0 + SeuratObject
@@ -367,6 +374,13 @@ NMF-up genes localize to the **radicle apical meristem (z +7.96)**. Upgrades to 
 ---
 
 ## 7. Changelog
+- **2026-06-27 (dd)** — **2nd NMF localization panel (Maffei 2021 Sci Rep S7).** Pulled public 2021
+  supplementary DEG lists (MOESM2.xlsx, per-timepoint NNMF) → `scripts/25` → undirected 2499-gene panel
+  localized onto germinating-seed cell types. Result: localizes to **cotyledon mesophyll + hypocotyl
+  cortex**, does NOT reproduce the 2022 radicle-apical-meristem signal (r=0.35) → radicle signal is
+  **oxidative-panel-specific** (honest qualifier; added to manuscript §4.4). Caveat: workbook direction
+  unreliable → undirected. Fig `nmf_localization_2021v2022.png`; note `results/nmf2021_results.md`.
+  **README/Phase 1 now flags ⏳ AWAITING MAFFEI REPLY → upgrade to full GSEA arrays when the data link arrives.**
 - **2026-06-27 (cc)** — **Added 5 stressor families → 27 contrasts / 10 families; full re-analysis +
   manuscript update.** desiccation (GSE76015), osmotic (GSE5622), ethylene (GSE193833), temperature
   (GSE303133), UV-B (GSE5626) via `scripts/24` → decoder_nes_matrix_v7. Re-ran heatmap/atlas (cell-type +

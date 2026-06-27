@@ -112,7 +112,11 @@ showed strong **light-dependence** (sign inversions between dark and light in em
 programs), acute radiation induced **embryo provascular/founder** programs, and low-oxygen and gravitropism
 each engaged root-pole identities. Null-magnetic-field-responsive genes localized most sharply to the
 **radicle apical meristem** (localization z = +7.96), far above any marker-panel overlap expected by
-chance.
+chance. As an independent cross-check, the 2021 NNMF DEG lists (Sci Rep s41598-021-88695-6, supplementary
+S7) localized to **cotyledon mesophyll and hypocotyl cortex** but did *not* reproduce the radicle-meristem
+signal (cross-cell-type r = 0.35) — indicating the radicle-meristem localization is specific to the
+oxidative NNMF gene panel, while NMF's broader footprint includes the cotyledon/hypocotyl. (Genome-wide NNMF
+arrays remain pending from the authors; both panels are localization-tier.)
 
 ### The DeepSpace seed-susceptibility atlas (Fig. 5)
 
