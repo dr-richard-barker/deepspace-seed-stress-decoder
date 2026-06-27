@@ -1,0 +1,10 @@
+contrast,OSD_ID,GLDS,agent,dose,time,genotype,stressor_class
+rad_100Gy_co60_90m_a,OSD-498,GLDS-498,Co-60,100Gy,90min,Wild Type,radiation_acute
+rad_100Gy_co60_1440m_a,OSD-498,GLDS-498,Co-60,100Gy,1440min,Wild Type,radiation_acute
+rad_100Gy_co60_180m,OSD-502,GLDS-502,Co-60,100Gy,180min,Wild Type,radiation_acute
+rad_100Gy_co60_90m_b,OSD-508,GLDS-508,Co-60,100Gy,90min,Wild Type,radiation_acute
+rad_100Gy_co60_1440m_b,OSD-508,GLDS-508,Co-60,100Gy,1440min,Wild Type,radiation_acute
+rad_100Gy_co60_90m_c,OSD-510,GLDS-510,Co-60,100Gy,90min,Wild Type,radiation_acute
+rad_100Gy_co60_1440m_c,OSD-510,GLDS-510,Co-60,100Gy,1440min,Wild Type,radiation_acute
+rad_10cGy_cs137_24h,OSD-782,GLDS-679,Cs-137,10cGy,24h,Wild Type,radiation_lowdose
+rad_100cGy_cs137_24h,OSD-782,GLDS-679,Cs-137,100cGy,24h,Wild Type,radiation_lowdose

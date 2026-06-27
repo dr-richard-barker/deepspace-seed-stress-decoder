@@ -1,0 +1,19 @@
+input,nearest_germ_celltype,score,most_suppressed_germ,supp_score,source
+dev: Embryo_3DAP,columella/root cap (+QC) (cl4),0.66,unassigned (cl8),-0.41,late_seed_dev
+dev: Embryo_5DAP,columella/root cap (+QC) (cl4),0.67,unassigned (cl8),-0.29,late_seed_dev
+dev: Embryo_7DAP,cotyledon mesophyll (cl13),0.44,hypocotyl cortex (early) (cl5),-0.35,late_seed_dev
+dev: Endosperm_3DAP,columella/root cap (+QC) (cl4),0.61,unassigned (cl8),-0.45,late_seed_dev
+dev: Endosperm_5DAP,columella/root cap (+QC) (cl4),0.53,epidermis (cl6),-0.43,late_seed_dev
+dev: Endosperm_7DAP,provasculature: protoxylem (cl9),0.37,hypocotyl cortex (early) (cl5),-0.68,late_seed_dev
+dev: Funiculus_3DAP,provasculature: protophloem (cl15),0.68,unassigned (cl8),-0.44,late_seed_dev
+dev: Funiculus_5DAP,radicle epidermis (cl10),0.57,unassigned (cl8),-0.26,late_seed_dev
+dev: Ovule_3DAP,radicle epidermis (cl10),0.45,hypocotyl cortex (early) (cl5),-0.35,late_seed_dev
+dev: Seed coat_3DAP,columella/root cap (+QC) (cl4),0.54,unassigned (cl8),-0.48,late_seed_dev
+dev: Seed coat_5DAP,columella/root cap (+QC) (cl4),0.47,unassigned (cl8),-0.44,late_seed_dev
+dev: Seed coat_7DAP,provasculature: protophloem (cl15),0.39,hypocotyl cortex (early) (cl5),-0.61,late_seed_dev
+stress: ug_root_dark,cortex/endodermis (cl2),1.96,hypocotyl cortex (late) (cl1),-2.23,adult_stress
+stress: ug_root_light,unassigned (cl11),1.38,radicle epidermis (cl10),-2.32,adult_stress
+stress: ug_leaf_dark,hypocotyl cortex (mid) (cl7),2.05,radicle apical meristem (cl14),-1.99,adult_stress
+stress: ug_leaf_light,unassigned (cl11),1.79,hypocotyl cortex (mid) (cl7),-2.67,adult_stress
+stress: gcr_40cGy,epidermis (cl6),2.0,unassigned (cl11),-2.22,adult_stress
+stress: gcr_80cGy,unassigned (cl8),2.0,hypocotyl cortex (early) (cl5),-3.19,adult_stress

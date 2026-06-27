@@ -1,0 +1,11 @@
+{
+  "title": "DeepSpace Plant-Stress to Germinating-Seed Decoder (DSRS + GSAD) and seed-susceptibility atlas",
+  "upload_type": "software",
+  "description": "FAIR tools and atlas for plant space biology: DSRS recognizes space-stressor transcriptional signatures; GSAD decodes bulk transcriptomics onto dry/germinating-seed cell types. Includes the DeepSpace seed-susceptibility atlas (cell-type/tissue/stage x stressor family) supporting an npj Microgravity manuscript.",
+  "license": "MIT",
+  "creators": [
+    {"name": "Barker, Richard", "affiliation": "Purdue University; The Collaborative Science Environment, PBC"}
+  ],
+  "keywords": ["plant space biology", "microgravity", "germination", "Arabidopsis thaliana", "single-cell atlas", "radiation", "magnetic field", "npj Microgravity"],
+  "access_right": "open"
+}

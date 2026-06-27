@@ -1,0 +1,28 @@
+input,class,nearest_germ_celltype,score,most_suppressed_germ,supp_score
+dev: Embryo_3DAP,late_seed_dev,columella/root cap (+QC) (cl4),0.83,unassigned (cl11),-0.56
+dev: Embryo_5DAP,late_seed_dev,columella/root cap (+QC) (cl4),0.84,unassigned (cl11),-0.59
+dev: Embryo_7DAP,late_seed_dev,columella/root cap (+QC) (cl4),0.67,unassigned (cl11),-0.4
+dev: Endosperm_3DAP,late_seed_dev,columella/root cap (+QC) (cl4),0.8,unassigned (cl11),-0.73
+dev: Endosperm_5DAP,late_seed_dev,columella/root cap (+QC) (cl4),0.75,unassigned (cl11),-0.67
+dev: Endosperm_7DAP,late_seed_dev,cotyledon mesophyll (cl13),0.59,unassigned (cl11),-0.44
+dev: Funiculus_3DAP,late_seed_dev,columella/root cap (+QC) (cl4),0.75,unassigned (cl11),-0.58
+dev: Funiculus_5DAP,late_seed_dev,columella/root cap (+QC) (cl4),0.7,unassigned (cl11),-0.44
+dev: Ovule_3DAP,late_seed_dev,columella/root cap (+QC) (cl4),0.68,unassigned (cl11),-0.55
+dev: Seed coat_3DAP,late_seed_dev,columella/root cap (+QC) (cl4),0.75,unassigned (cl11),-0.62
+dev: Seed coat_5DAP,late_seed_dev,columella/root cap (+QC) (cl4),0.71,unassigned (cl11),-0.62
+dev: Seed coat_7DAP,late_seed_dev,columella/root cap (+QC) (cl4),0.6,unassigned (cl11),-0.46
+stress: ug_root_dark,microgravity,radicle apical meristem (cl14),1.81,cotyledon mesophyll (cl3),-1.81
+stress: ug_root_light,microgravity,unassigned (cl8),1.18,provasculature: protophloem (cl15),-1.81
+stress: ug_leaf_dark,microgravity,cotyledon mesophyll (cl13),1.88,unassigned (cl11),-2.17
+stress: ug_leaf_light,microgravity,unassigned (cl8),1.5,hypocotyl cortex (mid) (cl7),-1.58
+stress: gcr_40cGy,radiation_GCR,hypocotyl cortex (late) (cl1),1.82,unassigned (cl11),-2.55
+stress: gcr_80cGy,radiation_GCR,unassigned (cl8),1.72,provasculature: protophloem (cl15),-1.82
+stress: rad_100Gy_co60_90m_a,radiation_acute,unassigned (cl8),1.66,hypocotyl cortex (mid) (cl7),-1.78
+stress: rad_100Gy_co60_1440m_a,radiation_acute,unassigned (cl11),1.16,radicle apical meristem (cl14),-1.75
+stress: rad_100Gy_co60_180m,radiation_acute,unassigned (cl11),0.89,hypocotyl cortex (early) (cl5),-1.9
+stress: rad_100Gy_co60_90m_b,radiation_acute,provasculature (cl12),1.55,hypocotyl cortex (late) (cl1),-2.23
+stress: rad_100Gy_co60_1440m_b,radiation_acute,columella/root cap (+QC) (cl4),2.13,unassigned (cl8),-1.89
+stress: rad_100Gy_co60_90m_c,radiation_acute,hypocotyl cortex (late) (cl1),0.79,epidermis (cl6),-1.87
+stress: rad_100Gy_co60_1440m_c,radiation_acute,provasculature: protophloem (cl15),1.44,radicle apical meristem (cl14),-1.44
+stress: rad_10cGy_cs137_24h,radiation_lowdose,radicle epidermis (cl10),1.33,hypocotyl cortex (early) (cl5),-1.99
+stress: rad_100cGy_cs137_24h,radiation_lowdose,cortex/endodermis (cl2),1.41,hypocotyl cortex (early) (cl5),-2.03

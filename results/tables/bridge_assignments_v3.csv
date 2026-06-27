@@ -1,0 +1,28 @@
+input,class,nearest_germ_celltype,score
+dev: Embryo_3DAP,late_seed_dev,hypocotyl cortex (early) (cl5),1.46
+dev: Embryo_5DAP,late_seed_dev,hypocotyl cortex (mid) (cl7),1.6
+dev: Embryo_7DAP,late_seed_dev,unassigned (cl8),1.91
+dev: Endosperm_3DAP,late_seed_dev,hypocotyl cortex (mid) (cl7),1.64
+dev: Endosperm_5DAP,late_seed_dev,hypocotyl cortex (early) (cl5),0.42
+dev: Endosperm_7DAP,late_seed_dev,unassigned (cl8),1.71
+dev: Funiculus_3DAP,late_seed_dev,provasculature: protophloem (cl15),2.4
+dev: Funiculus_5DAP,late_seed_dev,provasculature: protophloem (cl15),1.34
+dev: Ovule_3DAP,late_seed_dev,provasculature (cl12),0.54
+dev: Seed coat_3DAP,late_seed_dev,cortex/endodermis (cl2),1.14
+dev: Seed coat_5DAP,late_seed_dev,radicle apical meristem (cl14),0.49
+dev: Seed coat_7DAP,late_seed_dev,unassigned (cl8),1.05
+stress: ug_root_dark,microgravity,cortex/endodermis (cl2),1.59
+stress: ug_root_light,microgravity,hypocotyl cortex (mid) (cl7),1.04
+stress: ug_leaf_dark,microgravity,cotyledon mesophyll (cl13),1.99
+stress: ug_leaf_light,microgravity,columella/root cap (+QC) (cl4),1.31
+stress: gcr_40cGy,radiation_GCR,hypocotyl cortex (late) (cl1),1.67
+stress: gcr_80cGy,radiation_GCR,hypocotyl cortex (late) (cl1),1.48
+stress: rad_100Gy_co60_90m_a,radiation_acute,provasculature (cl12),1.15
+stress: rad_100Gy_co60_1440m_a,radiation_acute,provasculature: protophloem (cl15),0.86
+stress: rad_100Gy_co60_180m,radiation_acute,radicle apical meristem (cl14),0.62
+stress: rad_100Gy_co60_90m_b,radiation_acute,provasculature (cl12),1.11
+stress: rad_100Gy_co60_1440m_b,radiation_acute,columella/root cap (+QC) (cl4),2.64
+stress: rad_100Gy_co60_90m_c,radiation_acute,cotyledon mesophyll (cl3),0.88
+stress: rad_100Gy_co60_1440m_c,radiation_acute,provasculature: protophloem (cl15),1.14
+stress: rad_10cGy_cs137_24h,radiation_lowdose,radicle epidermis (cl10),1.18
+stress: rad_100cGy_cs137_24h,radiation_lowdose,cortex/endodermis (cl2),1.36

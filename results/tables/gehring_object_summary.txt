@@ -1,0 +1,595 @@
+=== Gehring GSE295007 object inspection ===
+file: C:/Users/drric/Downloads/nmf_seed_decoder/data/raw/GSE295007_ATLAS_merged_annotated_sigmods.rds 
+loaded in 20.4 s
+class: Seurat 
+
+dim (features x cells): 23374 x 54210 
+assays: RNA, integrated 
+default assay: RNA 
+layers: scale.data, data, counts 
+reductions: pca, umap.rpca.dr 
+
+meta.data columns (72):
+ [1] "orig.ident"                          "bio_rep"                            
+ [3] "timepoint"                           "nCount_RNA"                         
+ [5] "nFeature_RNA"                        "percent.chlor"                      
+ [7] "percent.mito"                        "percent.cc"                         
+ [9] "S.Score"                             "G2M.Score"                          
+[11] "G0.Score"                            "G1.Score"                           
+[13] "G1S.Score"                           "G2.Score"                           
+[15] "Phase"                               "doublet_score"                      
+[17] "doublet_class"                       "outlier_RNA"                        
+[19] "outlier_GENES"                       "level_1_annotation"                 
+[21] "level_1_annotation_timed"            "level_2_annotation"                 
+[23] "level_2_annotation_timed"            "level_2_timed_plotting"             
+[25] "level_2_annotation_timed_final"      "level_3_annotation_full"            
+[27] "level_3_annotation_full_timed"       "level_3_annotation_abbr"            
+[29] "level_3_plotting"                    "Nodule_modscore"                    
+[31] "Cyst_modscore"                       "NodLike_modscore"                   
+[33] "Nucleoside_met_GO0009116_modsc"      "Cyto_resp_GO0009735_modsc"          
+[35] "Cyto_bios_GO0009691_modsc"           "Isopren_GO0019840_modsc"            
+[37] "Lipid_drop_GO0005811_modsc"          "Mono_storage_GO0012511_modsc"       
+[39] "Lipid_storage_GO0019915_modsc"       "Resp_alc_GO0097306_modsc"           
+[41] "Alc_biosyn_GO0046165_modsc"          "Cell_resp_ABA_GO0071215_modsc"      
+[43] "Resp_ABA_GO0009737_modsc"            "ABA_bio_GO0009688_modsc"            
+[45] "Nitrate_TAIR_transp_modsc"           "SWEET_TAIR_modsc"                   
+[47] "UMAMIT_TAIR_modsc"                   "Autophagy_GO0006914_modsc"          
+[49] "Brassino_homeo_GO0010268_modsc"      "Cadmium_resp_GO0046686_modsc"       
+[51] "Cell_death_GO0008219_modsc"          "Metal_ion_GO0010038_modsc"          
+[53] "PCD_GO0012501_modsc"                 "Senescence_G00090693_modsc"         
+[55] "Trans_metal_transp_GO0000041_modsc"  "Zinc_homeo_GO0006882_modsc_modsc"   
+[57] "Brassino_biosyn_GO0016132_modsc"     "Photosynth_GO0015979_modsc"         
+[59] "Hypoxia_GO0001666_modsc"             "Cell_wall_GO0042546_modsc"          
+[61] "Mech_stim_GO0009612_modsc"           "Sec_vesc_GO0099503_modsc"           
+[63] "Chitin_GO0010200_modsc"              "Hydroly_GO0004553_modsc"            
+[65] "Cell_cell_sig_GO0007267_modsc"       "Polysac_binding_GO0030247_modsc"    
+[67] "Xyloglucan_met_GO0010411_modsc"      "Xylogluc_Xyloglucos_GO0016762_modsc"
+[69] "Brassino_resp_GO0009741_modsc"       "Callose_synth_0003843_modsc"        
+[71] "Auxin_biosynth_0009851_modsc"        "Auxin_response_0009851_modsc"       
+
+--- candidate annotation columns (factor/character, <100 levels) ---
+
+## orig.ident ( 7 levels):
+v
+ DAP7_2 DAP3_1a  DAP5_2 DAP3_1b  DAP5_3  DAP3_2  DAP7_3 
+   9165    8845    8461    8024    7578    7155    4982 
+
+## bio_rep ( 6 levels):
+v
+DAP3_1 DAP7_2 DAP5_2 DAP5_3 DAP3_2 DAP7_3 
+ 16869   9165   8461   7578   7155   4982 
+
+## timepoint ( 3 levels):
+v
+ 3DAP  5DAP  7DAP 
+24024 16039 14147 
+
+## Phase ( 3 levels):
+v
+   G1     S   G2M 
+29730 13970 10510 
+
+## doublet_class ( 1 levels):
+singlet 
+  54210 
+
+## level_1_annotation ( 5 levels):
+v
+Seed coat Endosperm    Embryo Funiculus     Ovule 
+    34831     12702      5683       822       172 
+
+## level_1_annotation_timed ( 12 levels):
+v
+3DAP Seed coat 5DAP Seed coat 5DAP Endosperm 7DAP Endosperm    7DAP Embryo 
+         20858          10182           5283           5250           5106 
+7DAP Seed coat 3DAP Endosperm 3DAP Funiculus    5DAP Embryo    3DAP Embryo 
+          3791           2169            647            399            178 
+5DAP Funiculus     3DAP Ovule 
+           175            172 
+
+## level_2_annotation ( 13 levels):
+v
+  oi1   PEN   oi2   EMB   ii1  CZSC   CZE   MCE   ii2  ii1'   FUN   CPT   OVL 
+16281  6882  6526  5683  4177  2947  2941  2879  2566  1554   822   780   172 
+
+## level_2_annotation_timed ( 34 levels):
+v
+ 3DAP oi1  5DAP oi1  7DAP EMB  5DAP PEN  3DAP oi2  3DAP ii1  5DAP oi2  7DAP oi1 
+     8689      5486      5106      4304      3739      3332      2179      2106 
+ 7DAP CZE  7DAP MCE  3DAP ii2 3DAP CZSC  7DAP PEN  3DAP PEN 3DAP ii1' 5DAP CZSC 
+     1987      1929      1831      1689      1334      1244       972       771 
+ 5DAP ii2  3DAP FUN  7DAP oi2  3DAP CPT  5DAP CZE  3DAP MCE  5DAP ii1 7DAP CZSC 
+      735       647       608       606       553       524       524       487 
+ 5DAP MCE  3DAP CZE  5DAP EMB  7DAP ii1 5DAP ii1' 7DAP ii1'  3DAP EMB  5DAP FUN 
+      426       401       399       321       313       269       178       175 
+ 5DAP CPT  3DAP OVL 
+      174       172 
+
+## level_2_timed_plotting ( 34 levels):
+v
+  10   22   26   15   11    7   23   32   29   28    9   12   27    2    8   24 
+8689 5486 5106 4304 3739 3332 2179 2106 1987 1929 1831 1689 1334 1244  972  771 
+  21    5   33   13   17   19    3   34   16    4   14   30   20   31    1   18 
+ 735  647  608  606  553  524  524  487  426  401  399  321  313  269  178  175 
+  25    6 
+ 174  172 
+
+## level_2_annotation_timed_final ( 34 levels):
+v
+ 10. 3DAP oi1  22. 5DAP oi1  26. 7DAP EMB  15. 5DAP PEN  11. 3DAP oi2 
+         8689          5486          5106          4304          3739 
+  7. 3DAP ii1  23. 5DAP oi2  32. 7DAP oi1  29. 7DAP CZE  28. 7DAP MCE 
+         3332          2179          2106          1987          1929 
+  9. 3DAP ii2 12. 3DAP CZSC  27. 7DAP PEN   2. 3DAP PEN  8. 3DAP ii1' 
+         1831          1689          1334          1244           972 
+24. 5DAP CZSC  21. 5DAP ii2   5. 3DAP FUN  33. 7DAP oi2  13. 3DAP CPT 
+          771           735           647           608           606 
+ 17. 5DAP CZE  19. 5DAP ii1   3. 3DAP MCE 34. 7DAP CZSC  16. 5DAP MCE 
+          553           524           524           487           426 
+  4. 3DAP CZE  14. 5DAP EMB  30. 7DAP ii1 20. 5DAP ii1' 31. 7DAP ii1' 
+          401           399           321           313           269 
+  1. 3DAP EMB  18. 5DAP FUN  25. 5DAP CPT   6. 3DAP OVL 
+          178           175           174           172 
+
+## level_3_annotation_full ( 85 levels):
+v
+                                       26. oi1 flavinol synthesizing (MYB11) 
+                                                                        7305 
+                                          25. ii2 general (DELTAVPE and STK) 
+                                                                        2566 
+                                           21. ii1 endothelium (BAN and TT1) 
+                                                                        2409 
+                             10. CZE cyst photosynthetic (GA3OX4 and NPF4.5) 
+                                                                        1894 
+               27. oi1 flavinol synthesizing high PCD (MYB11, SCOOP15, BAP1) 
+                                                                        1879 
+                                              27. oi1 basal (MYB11 and PIN3) 
+                                                                        1872 
+                                                   31. oi2 general (GLABRA2) 
+                                                                        1786 
+                                       23. oi1 flavinol synthesizing (MYB11) 
+                                                                        1697 
+                                               3. EMB inner cotyledon (XYL4) 
+                                                                        1545 
+                                                    12. PEN general I (IMK2) 
+                                                                        1515 
+                                                 29. oi micropylar (SWEET12) 
+                                                                        1404 
+                                            24. ii1' (DELTAVPE and UMAMIT29) 
+                                                                        1285 
+                    22. ii1 basal (contains pigment strand) (BAN and SWEET4) 
+                                                                        1210 
+                                                              15. PEN (ABS6) 
+                                                                        1185 
+                                                     10. PEN general (AGL62) 
+                                                                        1075 
+                                               1. EMB upper protoderm (PDF1) 
+                                                                        1044 
+                                                 31. oi2 LTP-enriched (LTP1) 
+                                                                        1020 
+                                                   32. oi2 general (GLABRA2) 
+                                                                         954 
+             32. oi2 very long chain fatty acid-synthesizing (KCS6 and WRI4) 
+                                                                         923 
+                                           18. CZSC general (ARR22 and AAP6) 
+                                                                         804 
+                    28. oi1 flavinol synthesizing  S-phase (MYB11 and BARD1) 
+                                                                         766 
+                                                    13. PEN G2M-phase (MAD2) 
+                                                                         761 
+                            12. MCE_ESR sheath promoting (ZOU, RGP3 and KRS) 
+                                                                         757 
+                                       13. MCE_ESR high PCD (ZOU and NAC074) 
+                                                                         697 
+20. CZSC placentochalazal phosphate transport (ARR22, SWEET10, and UMAMIT14) 
+                                                                         649 
+                                                   14. PEN general II (PTR3) 
+                                                                         631 
+               28. oi1 flavinol synthesizing high PCD (MYB11, SCOOP15, BAP1) 
+                                                                         628 
+                                   4. EMB vascular primordium (SHR and JUL1) 
+                                                                         617 
+                                        33. oi2 general (GLABRA2 and WRKY40) 
+                                                                         611 
+                                                   25. oi2 general (GLABRA2) 
+                                                                         608 
+                                                15. PEN general III (NAC075) 
+                                                                         585 
+                                                     16. PEN S-phase (HMGB6) 
+                                                                         563 
+                                                              9. MCE (ARF13) 
+                                                                         524 
+19. CZSC placentochalazal phosphate transport (ARR22, SWEET10, and UMAMIT14) 
+                                                                         511 
+                                                   14. MCE_ESR general (ZOU) 
+                                                                         475 
+17. CZSC placentochalazal phosphate transport (ARR22, SWEET10, and UMAMIT14) 
+                                                                         444 
+                                 5. EMB ground tissue initials (JKD and SCR) 
+                                                                         441 
+                                      2. EMB lower protoderm (PDF1 and KAN1) 
+                                                                         427 
+                                                              11. MCE (ALE1) 
+                                                                         426 
+                                         34. oi2 S-phase (GLABRA2 and BARD1) 
+                                                                         419 
+                  24. oi1 polyester monomer biosynthesis (MYB11 and CYP86B1) 
+                                                                         409 
+                                                     9. EMB G2M-phase (MAD2) 
+                                                                         389 
+     20. CZSC placentochalazal callose-synthesizing (ARR22, TET5, and CALS8) 
+                                                                         374 
+                                                       12. FUN hilum (ADPG1) 
+                                                                         371 
+                                          16. CPT persistent nucellus (AGO3) 
+                                                                         356 
+                                              6. EMB cortical initials (JKD) 
+                                                                         303 
+                                                      8. EMB S-phase (HMGB6) 
+                                                                         263 
+                                          17. CPT transient nucellus (PLL24) 
+                                                                         250 
+                                                   17. PEN general IV (TGA9) 
+                                                                         249 
+                                                     21. ii1'/ii2 (DELTAVPE) 
+                                                                         233 
+                                                    13. FUN epidermal (CER3) 
+                                                                         228 
+                                                     6. CZE nodule (CYCD4;2) 
+                                                                         220 
+             33. oi2 very long chain fatty acid-synthesizing (KCS6 and WRI4) 
+                                                                         205 
+                                                  7. CZE apical cyst (MEE56) 
+                                                                         203 
+                                                    9. CZE nodule-like (MEA) 
+                                                                         202 
+                                            30. oi1 S-phase (MYB11 and TSO2) 
+                                                                         200 
+                                           23. ii1 endothelium (BAN and TT1) 
+                                                                         189 
+                                                    18. FUN epidermal (CER3) 
+                                                                         175 
+                                          19. CPT persistent nucellus (AGO3) 
+                                                                         174 
+                    19. ii1 basal (contains pigment strand) (BAN and SWEET4) 
+                                                                         174 
+                                                   15. OVL scenescing (BFN1) 
+                                                                         172 
+                                        11. PEN G2/M-phase (AGL62 and TOPII) 
+                                                                         169 
+                                                     7. EMB hypophysis (SMB) 
+                                                                         155 
+                                                    8. CZE nodule-like (MEA) 
+                                                                         150 
+                                           16. PEN dehydrin enriched (ERD10) 
+                                                                         149 
+                                           20. ii1 endothelium (BAN and TT1) 
+                                                                         147 
+     21. CZSC placentochalazal callose-synthesizing (ARR22, TET5, and CALS8) 
+                                                                         122 
+                   30. oi1 flavinol synthesizing G2M-phase (MYB11 and TOPII) 
+                                                                         121 
+                                      3. EMB lower protoderm (PDF1 and KAN1) 
+                                                                         109 
+                      11. CZE cyst disaccharide metabolic (ARR21 and NPF4.5) 
+                                                                          93 
+                                  1. EMB upper protoderm I (PDF1 and KRATOS) 
+                                                                          85 
+                                                    10. CZE nodule (CYCD4;2) 
+                                                                          74 
+                                                  8. CZE basal cyst (RALFL3) 
+                                                                          74 
+                                    2. EMB upper protoderm II (PDF1 and AS2) 
+                                                                          68 
+                                     4. EMB cortical initials (XYL4 and JKD) 
+                                                                          65 
+                                                    4. EMB unknown I, (PME5) 
+                                                                          55 
+                                                       6. EMB unknown (IMK2) 
+                                                                          52 
+                                              14. FUN companion cells (SUC2) 
+                                                                          48 
+                           23. ii1 endothelium S-phase (BAN, TT1, and BARD1) 
+                                                                          48 
+     18. CZSC placentochalazal callose-synthesizing (ARR22, TET5, and CALS8) 
+                                                                          43 
+                          22. ii1'/ii2 high senescence (DELTAVPE and NAC029) 
+                                                                          36 
+                                                  7. CZE basal cyst (RALFL3) 
+                                                                          31 
+                                                     3. EMB suspensor (PIN7) 
+                                                                          24 
+        5. EMB unknown II, potential pre- or early-globular (AGP18 and PME5) 
+                                                                          21 
+                    5. EMB vascular primordium and hypophysis (SHR and PIN4) 
+                                                                          20 
+
+## level_3_annotation_full_timed ( 92 levels):
+v
+                                       3DAP 26. oi1 flavinol synthesizing (MYB11) 
+                                                                             4770 
+                                       5DAP 26. oi1 flavinol synthesizing (MYB11) 
+                                                                             2535 
+                                           3DAP 21. ii1 endothelium (BAN and TT1) 
+                                                                             2409 
+                             7DAP 10. CZE cyst photosynthetic (GA3OX4 and NPF4.5) 
+                                                                             1894 
+               3DAP 27. oi1 flavinol synthesizing high PCD (MYB11, SCOOP15, BAP1) 
+                                                                             1879 
+                                              5DAP 27. oi1 basal (MYB11 and PIN3) 
+                                                                             1872 
+                                          3DAP 25. ii2 general (DELTAVPE and STK) 
+                                                                             1831 
+                                                   3DAP 31. oi2 general (GLABRA2) 
+                                                                             1786 
+                                       7DAP 23. oi1 flavinol synthesizing (MYB11) 
+                                                                             1697 
+                                               7DAP 3. EMB inner cotyledon (XYL4) 
+                                                                             1545 
+                                                    5DAP 12. PEN general I (IMK2) 
+                                                                             1515 
+                                                              7DAP 15. PEN (ABS6) 
+                                                                             1185 
+                                                 3DAP 29. oi micropylar (SWEET12) 
+                                                                             1153 
+                                                     3DAP 10. PEN general (AGL62) 
+                                                                             1075 
+                                                 5DAP 31. oi2 LTP-enriched (LTP1) 
+                                                                             1020 
+                                               7DAP 1. EMB upper protoderm (PDF1) 
+                                                                             1014 
+                                            3DAP 24. ii1' (DELTAVPE and UMAMIT29) 
+                                                                              972 
+                                                   5DAP 32. oi2 general (GLABRA2) 
+                                                                              954 
+             3DAP 32. oi2 very long chain fatty acid-synthesizing (KCS6 and WRI4) 
+                                                                              923 
+                    3DAP 22. ii1 basal (contains pigment strand) (BAN and SWEET4) 
+                                                                              875 
+                                           3DAP 18. CZSC general (ARR22 and AAP6) 
+                                                                              804 
+                    3DAP 28. oi1 flavinol synthesizing  S-phase (MYB11 and BARD1) 
+                                                                              766 
+                                                    5DAP 13. PEN G2M-phase (MAD2) 
+                                                                              761 
+                            7DAP 12. MCE_ESR sheath promoting (ZOU, RGP3 and KRS) 
+                                                                              757 
+                                          5DAP 25. ii2 general (DELTAVPE and STK) 
+                                                                              735 
+                                       7DAP 13. MCE_ESR high PCD (ZOU and NAC074) 
+                                                                              697 
+5DAP 20. CZSC placentochalazal phosphate transport (ARR22, SWEET10, and UMAMIT14) 
+                                                                              649 
+                                                   5DAP 14. PEN general II (PTR3) 
+                                                                              631 
+               5DAP 28. oi1 flavinol synthesizing high PCD (MYB11, SCOOP15, BAP1) 
+                                                                              628 
+                                   7DAP 4. EMB vascular primordium (SHR and JUL1) 
+                                                                              617 
+                                        3DAP 33. oi2 general (GLABRA2 and WRKY40) 
+                                                                              611 
+                                                   7DAP 25. oi2 general (GLABRA2) 
+                                                                              608 
+                                                5DAP 15. PEN general III (NAC075) 
+                                                                              585 
+                                                     5DAP 16. PEN S-phase (HMGB6) 
+                                                                              563 
+                                                              3DAP 9. MCE (ARF13) 
+                                                                              524 
+3DAP 19. CZSC placentochalazal phosphate transport (ARR22, SWEET10, and UMAMIT14) 
+                                                                              511 
+                                                   7DAP 14. MCE_ESR general (ZOU) 
+                                                                              475 
+7DAP 17. CZSC placentochalazal phosphate transport (ARR22, SWEET10, and UMAMIT14) 
+                                                                              444 
+                                 7DAP 5. EMB ground tissue initials (JKD and SCR) 
+                                                                              441 
+                                                              5DAP 11. MCE (ALE1) 
+                                                                              426 
+                                         3DAP 34. oi2 S-phase (GLABRA2 and BARD1) 
+                                                                              419 
+                  7DAP 24. oi1 polyester monomer biosynthesis (MYB11 and CYP86B1) 
+                                                                              409 
+                                                     7DAP 9. EMB G2M-phase (MAD2) 
+                                                                              389 
+                                      7DAP 2. EMB lower protoderm (PDF1 and KAN1) 
+                                                                              379 
+     3DAP 20. CZSC placentochalazal callose-synthesizing (ARR22, TET5, and CALS8) 
+                                                                              374 
+                                                       3DAP 12. FUN hilum (ADPG1) 
+                                                                              371 
+                                          3DAP 16. CPT persistent nucellus (AGO3) 
+                                                                              356 
+                    5DAP 22. ii1 basal (contains pigment strand) (BAN and SWEET4) 
+                                                                              335 
+                                            5DAP 24. ii1' (DELTAVPE and UMAMIT29) 
+                                                                              313 
+                                              7DAP 6. EMB cortical initials (JKD) 
+                                                                              303 
+                                                      7DAP 8. EMB S-phase (HMGB6) 
+                                                                              263 
+                                                 5DAP 29. oi micropylar (SWEET12) 
+                                                                              251 
+                                          3DAP 17. CPT transient nucellus (PLL24) 
+                                                                              250 
+                                                   5DAP 17. PEN general IV (TGA9) 
+                                                                              249 
+                                                     7DAP 21. ii1'/ii2 (DELTAVPE) 
+                                                                              233 
+                                                    3DAP 13. FUN epidermal (CER3) 
+                                                                              228 
+                                                     3DAP 6. CZE nodule (CYCD4;2) 
+                                                                              220 
+             5DAP 33. oi2 very long chain fatty acid-synthesizing (KCS6 and WRI4) 
+                                                                              205 
+                                                  5DAP 7. CZE apical cyst (MEE56) 
+                                                                              203 
+                                                    5DAP 9. CZE nodule-like (MEA) 
+                                                                              202 
+                                            5DAP 30. oi1 S-phase (MYB11 and TSO2) 
+                                                                              200 
+                                           5DAP 23. ii1 endothelium (BAN and TT1) 
+                                                                              189 
+                                                    5DAP 18. FUN epidermal (CER3) 
+                                                                              175 
+                                          5DAP 19. CPT persistent nucellus (AGO3) 
+                                                                              174 
+                    7DAP 19. ii1 basal (contains pigment strand) (BAN and SWEET4) 
+                                                                              174 
+                                                   3DAP 15. OVL scenescing (BFN1) 
+                                                                              172 
+                                        3DAP 11. PEN G2/M-phase (AGL62 and TOPII) 
+                                                                              169 
+                                                     7DAP 7. EMB hypophysis (SMB) 
+                                                                              155 
+                                                    3DAP 8. CZE nodule-like (MEA) 
+                                                                              150 
+                                           7DAP 16. PEN dehydrin enriched (ERD10) 
+                                                                              149 
+                                           7DAP 20. ii1 endothelium (BAN and TT1) 
+                                                                              147 
+     5DAP 21. CZSC placentochalazal callose-synthesizing (ARR22, TET5, and CALS8) 
+                                                                              122 
+                   3DAP 30. oi1 flavinol synthesizing G2M-phase (MYB11 and TOPII) 
+                                                                              121 
+                                      5DAP 3. EMB lower protoderm (PDF1 and KAN1) 
+                                                                              109 
+                      7DAP 11. CZE cyst disaccharide metabolic (ARR21 and NPF4.5) 
+                                                                               93 
+                                  5DAP 1. EMB upper protoderm I (PDF1 and KRATOS) 
+                                                                               85 
+                                                    5DAP 10. CZE nodule (CYCD4;2) 
+                                                                               74 
+                                                  5DAP 8. CZE basal cyst (RALFL3) 
+                                                                               74 
+                                    5DAP 2. EMB upper protoderm II (PDF1 and AS2) 
+                                                                               68 
+                                     5DAP 4. EMB cortical initials (XYL4 and JKD) 
+                                                                               65 
+                                                    3DAP 4. EMB unknown I, (PME5) 
+                                                                               55 
+                                                       5DAP 6. EMB unknown (IMK2) 
+                                                                               52 
+                                              3DAP 14. FUN companion cells (SUC2) 
+                                                                               48 
+                                      3DAP 2. EMB lower protoderm (PDF1 and KAN1) 
+                                                                               48 
+                           3DAP 23. ii1 endothelium S-phase (BAN, TT1, and BARD1) 
+                                                                               48 
+     7DAP 18. CZSC placentochalazal callose-synthesizing (ARR22, TET5, and CALS8) 
+                                                                               43 
+                          7DAP 22. ii1'/ii2 high senescence (DELTAVPE and NAC029) 
+                                                                               36 
+                                                  3DAP 7. CZE basal cyst (RALFL3) 
+                                                                               31 
+                                               3DAP 1. EMB upper protoderm (PDF1) 
+                                                                               30 
+                                                     3DAP 3. EMB suspensor (PIN7) 
+                                                                               24 
+        3DAP 5. EMB unknown II, potential pre- or early-globular (AGP18 and PME5) 
+                                                                               21 
+                    5DAP 5. EMB vascular primordium and hypophysis (SHR and PIN4) 
+                                                                               20 
+
+## level_3_annotation_abbr ( 86 levels):
+v
+          26. oi1 flav synth                  25. ii2 gen 
+                        7305                         2566 
+            21. ii1 endothel           10. CZE cyst photo 
+                        2409                         1894 
+ 27. oi1 flav synth high PCD                27. oi1 basal 
+                        1879                         1872 
+               31. oi2 gen I           23. oi1 flav synth 
+                        1786                         1697 
+            3. EMB inn cotyl                12. PEN gen I 
+                        1545                         1515 
+                 29. oi micr                     24. ii1' 
+                        1404                         1285 
+       22. ii1 basal cont PS                      15. PEN 
+                        1210                         1185 
+                     10. PEN                  31. oi2 LTP 
+                        1075                         1020 
+            1. EMB upp proto                  32. oi2 gen 
+                        1014                          954 
+         32. oi2 VLCFA synth                 18. CZSC gen 
+                         923                          804 
+  28. oi1 flav synth s-phase           13. PEN g2/m-phase 
+                         766                          761 
+      12. MCE_ESR shea promo         13. MCE_ESR high pcd 
+                         757                          697 
+          20. CZSC plac phos               14. PEN gen II 
+                         649                          631 
+ 28. oi1 flav synth high PCD             4. EMB vasc prim 
+                         628                          617 
+              33. oi2 gen II                  25. oi2 gen 
+                         611                          608 
+             15. PEN gen III              16. PEN s-phase 
+                         585                          563 
+                      9. MCE           19. CZSC plac phos 
+                         524                          511 
+             14. MCE_ESR gen           17. CZSC plac phos 
+                         475                          444 
+        5. EMB gro tiss init             2. EMB low proto 
+                         441                          427 
+                     11. MCE              34. oi2 s-phase 
+                         426                          419 
+24. oi1 flav synth polyester            9. EMB g2/m-phase 
+                         409                          389 
+          20. CZSC plac call                  12. FUN hil 
+                         374                          371 
+            16. CPT pers nuc             6. EMB cort init 
+                         356                          303 
+             8. EMB  s-phase            17. CPT trans nuc 
+                         263                          250 
+              17. PEN gen IV                 21. ii1'/ii2 
+                         249                          233 
+                13. FUN epid                6. CZE nodule 
+                         228                          220 
+         33. oi2 VLCFA synth           7. CZE apical cyst 
+                         205                          203 
+             9. CZE nod-like   30. oi1 flav synth s-phase 
+                         202                          200 
+            23. ii1 endothel                 18. FUN epid 
+                         189                          175 
+            19. CPT pers nuc        19. ii1 basal cont PS 
+                         174                          174 
+               15. OVL senes           11. PEN g2/m-phase 
+                         172                          169 
+               7. EMB hypoph              8. CZE nod-like 
+                         155                          150 
+               16. PEN dehyd             20. ii1 endothel 
+                         149                          147 
+          21. CZSC plac call 30. oi1 flav synth g2m-phase 
+                         122                          121 
+            3. EMB low proto          11. CZE cyst disacc 
+                         109                           93 
+           1. EMB up proto I               10. CZE nodule 
+                          85                           74 
+           8. CZE basal cyst           2. EMB up proto II 
+                          74                           68 
+            4. EMB cort init             4. EMB unknown I 
+                          65                           55 
+              6. EMB unknown                   14. FUN cc 
+                          52                           48 
+    23. ii1 endothel s-phase           18. CZSC plac call 
+                          48                           43 
+     22. ii1'/ii2  high sene            7. CZE basal cyst 
+                          36                           31 
+             1. EMB up proto                   3. EMB sus 
+                          30                           24 
+           5. EMB unknown II           5. EMB vasc hypoph 
+                          21                           20 
+
+## level_3_plotting ( 34 levels):
+v
+  26   27   25   10   31   21   12   15   23   32   24   13    3   29   28   22 
+7305 3751 3174 3043 2806 2764 2643 1942 1934 1877 1694 1686 1678 1404 1394 1246 
+  20   14    1    9   16   18   17   19   33    4   11    6    2    8    5   34 
+1170 1154 1129 1115 1068 1022  943  859  816  737  688  575  495  487  482  419 
+   7   30 
+ 389  321 
+
+--- Idents levels ---
+ [1] "0"  "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10" "11" "12" "13" "14"
+[16] "15" "16" "17" "18" "19" "20" "21" "22" "23" "24" "25" "26" "27" "28" "29"
+[31] "30" "31" "32" "33" "34" "35" "36"

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deepspace-seed-decoder"
+version = "0.1.0"
+description = "DSRS + GSAD: FAIR tools for plant space-biology stress recognition and germinating-seed effect decoding"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "R. Barker et al."}]
+dependencies = [
+  "pandas", "numpy", "scipy", "scikit-learn", "gseapy", "openpyxl", "matplotlib",
+]
+
+[project.scripts]
+deepspace = "deepspace.cli:main"
+
+[tool.setuptools]
+packages = ["deepspace"]

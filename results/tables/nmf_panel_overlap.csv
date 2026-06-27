@@ -1,0 +1,123 @@
+panel_source,panel,panel_size,nmf_overlap,hyper_p
+gehring_L2_celltype,ii1,32,7,3.5223413821478245e-09
+gehring_L3_state,21. ii1 endothel,33,6,1.595410705557658e-07
+gehring_L3_state,17. CPT trans nuc,32,6,1.313413956798205e-07
+gehring_L3_state,22. ii1 basal cont PS,35,6,2.3094331343457322e-07
+gehring_L3_state,23. ii1 endothel,35,5,6.343485849938897e-06
+gehring_L3_state,23. ii1 endothel s-phase,35,5,6.343485849938897e-06
+gehring_L3_state,7. CZE basal cyst,32,5,4.007070180415601e-06
+gehring_L2_celltype,CPT,30,4,7.516569219085275e-05
+gehring_L3_state,26. oi1 flav synth,37,3,0.002775485143067035
+gehring_L2_celltype,CZE,41,2,0.03897556862910585
+gehring_L3_state,19. CPT pers nuc,25,2,0.01542508831983516
+germ_cluster,cortex/endodermis (cl2),50,2,0.05572683695113235
+gehring_L3_state,27. oi1 flav synth high PCD,29,2,0.020467721133920144
+gehring_L3_state,10. CZE cyst photo,41,2,0.03897556862910585
+gehring_L3_state,19. ii1 basal cont PS,32,2,0.024638623078706668
+gehring_L3_state,16. CPT pers nuc,26,2,0.016628271383225025
+gehring_L2_celltype,oi1,35,2,0.029124243393929133
+germ_cluster,unassigned (cl8),50,2,0.05572683695113235
+gehring_L3_state,31. oi2 LTP,40,2,0.03725602067190066
+gehring_L1_tissue,Seed coat,37,2,0.03228149829550526
+gehring_L3_state,12. FUN hil,36,1,0.24123160627432474
+gehring_L3_state,18. FUN epid,39,1,0.25851253219778747
+gehring_L3_state,21. CZSC plac call,40,1,0.2641857760830666
+gehring_L3_state,20. CZSC plac call,39,1,0.25851253219778747
+gehring_L3_state,18. CZSC plac call,37,1,0.24703577594040307
+gehring_L3_state,15. PEN,37,1,0.24703577594040307
+gehring_L3_state,23. oi1 flav synth,25,1,0.17438680363593162
+gehring_L3_state,24. oi1 flav synth polyester,23,1,0.16162137565935497
+gehring_L3_state,28. oi1 flav synth high PCD,35,1,0.2353831332851946
+gehring_L3_state,28. oi1 flav synth s-phase,39,1,0.25851253219778747
+gehring_L3_state,25. ii2 gen,39,1,0.25851253219778747
+gehring_L3_state,25. oi2 gen,33,1,0.2235519355222478
+gehring_L3_state,27. oi1 basal,36,1,0.24123160627432474
+gehring_L3_state,17. CZSC plac phos,34,1,0.22949002214544412
+gehring_L3_state,21. ii1'/ii2,38,1,0.2527959746241625
+gehring_L3_state,30. oi1 flav synth g2m-phase,32,1,0.21756853355896708
+gehring_L3_state,30. oi1 flav synth s-phase,40,1,0.2641857760830666
+gehring_L3_state,7. EMB hypoph,44,1,0.28645207841822334
+germ_state_time,12hsl,50,1,0.31860627852644274
+germ_cluster,radicle apical meristem (cl14),50,1,0.31860627852644274
+germ_cluster,radicle epidermis (cl10),50,1,0.31860627852644274
+gehring_L3_state,4. EMB vasc prim,48,1,0.3080509305217962
+gehring_L2_celltype,ii2,39,1,0.25851253219778747
+gehring_L1_tissue,Funiculus,43,1,0.2809488634483305
+gehring_L2_celltype,FUN,43,1,0.2809488634483305
+gehring_L3_state,2. EMB low proto,46,1,0.29733368332389576
+gehring_L3_state,1. EMB upp proto,48,1,0.3080509305217962
+gehring_L3_state,1. EMB up proto I,31,0,1.0
+gehring_L2_celltype,ii1',31,0,1.0
+gehring_L2_celltype,oi2,40,0,1.0
+gehring_L3_state,11. MCE,34,0,1.0
+gehring_L3_state,11. CZE cyst disacc,35,0,1.0
+gehring_L3_state,10. PEN,25,0,1.0
+gehring_L3_state,10. CZE nodule,20,0,1.0
+gehring_L3_state,1. EMB up proto,25,0,1.0
+gehring_L2_celltype,EMB,45,0,1.0
+gehring_L1_tissue,Ovule,33,0,1.0
+gehring_L2_celltype,CZSC,34,0,1.0
+gehring_L3_state,20. CZSC plac phos,32,0,1.0
+gehring_L3_state,20. ii1 endothel,33,0,1.0
+gehring_L3_state,2. EMB up proto II,33,0,1.0
+gehring_L3_state,19. CZSC plac phos,31,0,1.0
+gehring_L3_state,18. CZSC gen,36,0,1.0
+gehring_L3_state,17. PEN gen IV,31,0,1.0
+gehring_L3_state,12. MCE_ESR shea promo,34,0,1.0
+gehring_L3_state,12. PEN gen I,33,0,1.0
+gehring_L3_state,14. FUN cc,40,0,1.0
+gehring_L3_state,13. PEN g2/m-phase,38,0,1.0
+gehring_L3_state,14. PEN gen II,32,0,1.0
+gehring_L3_state,14. MCE_ESR gen,32,0,1.0
+gehring_L3_state,15. OVL senes,33,0,1.0
+gehring_L3_state,15. PEN gen III,33,0,1.0
+gehring_L3_state,16. PEN dehyd,36,0,1.0
+gehring_L3_state,16. PEN s-phase,40,0,1.0
+gehring_L3_state,11. PEN g2/m-phase,31,0,1.0
+gehring_L3_state,13. FUN epid,42,0,1.0
+gehring_L3_state,13. MCE_ESR high pcd,32,0,1.0
+gehring_L1_tissue,Endosperm,33,0,1.0
+gehring_L1_tissue,Embryo,45,0,1.0
+gehring_L2_celltype,OVL,33,0,1.0
+gehring_L2_celltype,PEN,33,0,1.0
+gehring_L2_celltype,MCE,34,0,1.0
+gehring_L3_state,32. oi2 VLCFA synth,38,0,1.0
+gehring_L3_state,29. oi micr,37,0,1.0
+gehring_L3_state,22. ii1'/ii2  high sene,30,0,1.0
+gehring_L3_state,24. ii1',31,0,1.0
+gehring_L3_state,3. EMB sus,33,0,1.0
+gehring_L3_state,3. EMB low proto,37,0,1.0
+gehring_L3_state,31. oi2 gen I,40,0,1.0
+gehring_L3_state,3. EMB inn cotyl,44,0,1.0
+gehring_L3_state,5. EMB gro tiss init,42,0,1.0
+gehring_L3_state,4. EMB unknown I,29,0,1.0
+gehring_L3_state,4. EMB cort init,35,0,1.0
+gehring_L3_state,34. oi2 s-phase,40,0,1.0
+gehring_L3_state,33. oi2 VLCFA synth,37,0,1.0
+gehring_L3_state,33. oi2 gen II,39,0,1.0
+gehring_L3_state,32. oi2 gen,36,0,1.0
+gehring_L3_state,5. EMB unknown II,36,0,1.0
+gehring_L3_state,6. EMB unknown,28,0,1.0
+gehring_L3_state,8. CZE basal cyst,15,0,1.0
+gehring_L3_state,8. EMB  s-phase,47,0,1.0
+gehring_L3_state,8. CZE nod-like,16,0,1.0
+gehring_L3_state,6. EMB cort init,42,0,1.0
+gehring_L3_state,6. CZE nodule,18,0,1.0
+gehring_L3_state,7. CZE apical cyst,18,0,1.0
+gehring_L3_state,5. EMB vasc hypoph,40,0,1.0
+germ_cluster,columella/root cap (+QC) (cl4),50,0,1.0
+gehring_L3_state,9. MCE,9,0,1.0
+gehring_L3_state,9. EMB g2/m-phase,45,0,1.0
+gehring_L3_state,9. CZE nod-like,31,0,1.0
+germ_cluster,cotyledon mesophyll (cl13),50,0,1.0
+germ_cluster,cotyledon mesophyll (cl3),50,0,1.0
+germ_cluster,epidermis (cl6),50,0,1.0
+germ_cluster,hypocotyl cortex (early) (cl5),50,0,1.0
+germ_cluster,provasculature: protophloem (cl15),50,0,1.0
+germ_cluster,provasculature (cl12),50,0,1.0
+germ_cluster,hypocotyl cortex (mid) (cl7),50,0,1.0
+germ_cluster,hypocotyl cortex (late) (cl1),50,0,1.0
+germ_cluster,unassigned (cl11),50,0,1.0
+germ_cluster,provasculature: protoxylem (cl9),50,0,1.0
+germ_state_time,24hsl,50,0,1.0
+germ_state_time,48hsl,50,0,1.0

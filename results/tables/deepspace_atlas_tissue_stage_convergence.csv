@@ -1,0 +1,9 @@
+node,level,n_families,families_hit
+12hsl,stage,4,"gravity, tropism, radiation, magnetic_NMF"
+24hsl,stage,3,"gravity, low_oxygen, radiation"
+48hsl,stage,3,"low_oxygen, radiation, magnetic_NMF"
+Ovule,tissue,4,"gravity, tropism, low_oxygen, radiation"
+Seed coat,tissue,3,"gravity, tropism, radiation"
+Embryo,tissue,2,"radiation, magnetic_NMF"
+Endosperm,tissue,2,"gravity, radiation"
+Funiculus,tissue,1,low_oxygen

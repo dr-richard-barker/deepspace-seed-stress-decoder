@@ -1,0 +1,16 @@
+cluster,cell_type,organ,peak_time,validation,source
+1,hypocotyl cortex (late),hypocotyl,48h,in-text trajectory (1/5/7),Liew_Lewsey_2024_s41477-024-01771-3
+2,cortex/endodermis,hypocotyl,mixed,literature markers,Liew_Lewsey_2024_s41477-024-01771-3
+3,cotyledon mesophyll,cotyledon,mixed,RBCS/photosynthesis confirmed,Liew_Lewsey_2024_s41477-024-01771-3
+4,columella/root cap (+QC),radicle,mixed,literature markers,Liew_Lewsey_2024_s41477-024-01771-3
+5,hypocotyl cortex (early),hypocotyl,12h,in-text trajectory (1/5/7),Liew_Lewsey_2024_s41477-024-01771-3
+6,epidermis,hypocotyl,mixed,ATML1 confirmed,Liew_Lewsey_2024_s41477-024-01771-3
+7,hypocotyl cortex (mid),hypocotyl,24h,in-text trajectory (1/5/7),Liew_Lewsey_2024_s41477-024-01771-3
+8,unassigned,unassigned,mixed,no clear marker enrichment,Liew_Lewsey_2024_s41477-024-01771-3
+9,provasculature: protoxylem,provasculature,48h,RNA in-situ validated,Liew_Lewsey_2024_s41477-024-01771-3
+10,radicle epidermis,radicle,mixed,literature markers,Liew_Lewsey_2024_s41477-024-01771-3
+11,unassigned,unassigned,mixed,no clear marker enrichment,Liew_Lewsey_2024_s41477-024-01771-3
+12,provasculature,provasculature,48h,literature markers,Liew_Lewsey_2024_s41477-024-01771-3
+13,cotyledon mesophyll,cotyledon,mixed,RBCS/photosynthesis confirmed,Liew_Lewsey_2024_s41477-024-01771-3
+14,radicle apical meristem,radicle,48h,RNA in-situ validated,Liew_Lewsey_2024_s41477-024-01771-3
+15,provasculature: protophloem,provasculature,mixed,APL/phloem confirmed,Liew_Lewsey_2024_s41477-024-01771-3

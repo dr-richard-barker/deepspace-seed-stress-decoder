@@ -1,0 +1,16 @@
+,gravity,tropism,low_oxygen,radiation,magnetic_NMF
+hypocotyl cortex (late) (cl1),1,0,0,1,1
+radicle epidermis (cl10),1,1,0,1,0
+unassigned (cl11),1,1,1,1,1
+provasculature (cl12),0,0,1,1,0
+cotyledon mesophyll (cl13),1,0,0,1,1
+radicle apical meristem (cl14),1,1,0,1,1
+provasculature: protophloem (cl15),1,0,0,1,1
+cortex/endodermis (cl2),0,1,1,1,0
+cotyledon mesophyll (cl3),1,0,1,1,1
+columella/root cap (+QC) (cl4),1,1,1,1,0
+hypocotyl cortex (early) (cl5),0,0,1,1,1
+epidermis (cl6),0,1,0,1,1
+hypocotyl cortex (mid) (cl7),1,0,1,1,0
+unassigned (cl8),1,0,1,1,1
+provasculature: protoxylem (cl9),0,1,0,1,0

@@ -1,0 +1,14 @@
+# Python env for the NMF seed decoder (Python 3.13 present locally)
+scanpy
+anndata
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+seaborn
+gseapy            # ssGSEA / enrichment for the projection backbone
+statsmodels       # meta-analysis stats (Stouffer, heterogeneity)
+adjustText
+# Note: opening the Gehring GSE295007 Seurat .rds requires R + Seurat (separate install),
+# OR convert .rds -> h5ad once and proceed in Python.
