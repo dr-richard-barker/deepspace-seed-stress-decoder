@@ -4,14 +4,14 @@ across seed tissue & germination-state programs, columns grouped by stressor cla
 import os, numpy as np, pandas as pd
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"; T=os.path.join(ROOT,"results","tables"); F=os.path.join(ROOT,"results","figures")
-nes=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v5.csv"),index_col=0)
-fdr=pd.read_csv(os.path.join(T,"decoder_fdr_matrix_v5.csv"),index_col=0)
+nes=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v6.csv"),index_col=0)
+fdr=pd.read_csv(os.path.join(T,"decoder_fdr_matrix_v6.csv"),index_col=0)
 cls=pd.read_csv(os.path.join(T,"contrast_classes.csv"),index_col=0)["stressor_class"]
-order={"microgravity":0,"partial_gravity":1,"tropism_gravi":2,"tropism_photo":3,"low_oxygen":4,"radiation_GCR":5,"radiation_lowdose":6,"radiation_acute":7,"magnetic":8}
+order={"microgravity":0,"partial_gravity":1,"hypergravity":2,"tropism_gravi":3,"tropism_photo":4,"low_oxygen":5,"radiation_GCR":6,"radiation_lowdose":7,"radiation_acute":8,"magnetic":9}
 cols=sorted([c for c in nes.columns if c in cls.index], key=lambda c:(order.get(cls[c],9),c))
 rows=[i for i in nes.index if i.startswith("gehring_L1_tissue::")]+[i for i in nes.index if i.startswith("germ_state_time::")]
 sub=nes.loc[rows,cols]; fsub=fdr.loc[rows,cols]
-ccolors={"microgravity":"#4575b4","partial_gravity":"#74add1","tropism_gravi":"#08519c","tropism_photo":"#3690c0","low_oxygen":"#5e3c99","radiation_GCR":"#fdae61","radiation_lowdose":"#f46d43","radiation_acute":"#a50026","magnetic":"#5aae61"}
+ccolors={"microgravity":"#4575b4","partial_gravity":"#74add1","hypergravity":"#08306b","tropism_gravi":"#08519c","tropism_photo":"#3690c0","low_oxygen":"#5e3c99","radiation_GCR":"#fdae61","radiation_lowdose":"#f46d43","radiation_acute":"#a50026","magnetic":"#5aae61"}
 N=len(cols)
 # 2x2 grid: class strip (top-left) + heatmap (bottom-left) SHARE one column => aligned x-axis;
 # NES colorbar gets its OWN column so it never squeezes the heatmap.
@@ -44,7 +44,7 @@ for i in range(sub.shape[0]):
         if pd.notna(v): ax.text(j,i,f"{v:+.1f}{'*' if pd.notna(q) and q<0.25 else ''}",ha="center",va="center",
                                 fontsize=5.5,color="white" if abs(v)>0.6*vmax else "black")
 cb=fig.colorbar(im,cax=cbar_ax); cb.set_label("NES (induced + / suppressed -)",fontsize=8); cbar_ax.tick_params(labelsize=7)
-fig.suptitle("DeepSpace perturbation decoder: micro-gravity + low-oxygen + tropism + radiation (21 contrasts) → seed programs",
+fig.suptitle(f"DeepSpace perturbation decoder: micro-gravity + low-oxygen + tropism + radiation + hypergravity ({N} contrasts) → seed programs",
              fontsize=11,y=1.06)
 fig.savefig(os.path.join(F,"decoder_combined_perturbation_heatmap.png"),dpi=200,bbox_inches="tight")
 fig.savefig(os.path.join(F,"decoder_combined_perturbation_heatmap.svg"),bbox_inches="tight")

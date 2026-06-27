@@ -29,8 +29,8 @@ ss=gp.ssgsea(data=dev,gene_sets=germ_sets,outdir=None,sample_norm_method="rank",
 r=ss.res2d.copy(); r["NES"]=pd.to_numeric(r["NES"],errors="coerce")
 dev_scores=r.pivot(index="Name",columns="Term",values="NES"); dev_scores.index=["dev: "+i for i in dev_scores.index]
 
-# stress scores (v2 NES, all 15 contrasts)
-nes=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v2.csv"),index_col=0)
+# stress scores (v6 NES, all 22 contrasts incl hypergravity)
+nes=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v6.csv"),index_col=0)
 ann=pd.read_csv(os.path.join(PAN,"germination_cluster_annotations.csv")); ann["cluster"]=ann.cluster.astype(str)
 cl2lab={c:f"{n} (cl{c})" for c,n in zip(ann.cluster,ann.cell_type)}
 gr=nes.loc[[i for i in nes.index if i.startswith("germ_cluster::")]].copy()
@@ -48,18 +48,19 @@ src=[cls_of(i) for i in Z3.index]
 asg=pd.DataFrame({"input":Z3.index,"class":src,"nearest_germ_celltype":Z3.idxmax(1),"score":Z3.max(1).round(2)})
 asg.to_csv(os.path.join(T,"bridge_assignments_v3.csv"),index=False)
 
-# ---- diagnostic: PC1 vs source (dev=0 / stress=1), v2 vs v3 ----
-def pc1_source_corr(latent_csv):
-    Z=pd.read_csv(latent_csv,index_col=0)
+# ---- diagnostic: PC1 vs source for JOINT vs WITHIN-SOURCE scaling (same v6 data) ----
+comb=pd.concat([dev_scores[axes],stress_scores[axes]],axis=0)
+Zjoint=(comb-comb.mean(0))/comb.std(0).replace(0,1)
+def pc1_src(Z):
     s=np.array([0 if i.startswith("dev: ") else 1 for i in Z.index],float)
     pc1=PCA(2).fit_transform(Z.values)[:,0]
     return abs(np.corrcoef(pc1,s)[0,1])
-c_v2=pc1_source_corr(os.path.join(T,"bridge_latent_v2.csv"))
-c_v3=pc1_source_corr(os.path.join(T,"bridge_latent_v3.csv"))
-print(f"PC1<->source |corr|:  v2(joint)={c_v2:.2f}   v3(within-source)={c_v3:.2f}   (lower=artifact removed)")
+c_joint=pc1_src(Zjoint); c_v3=pc1_src(Z3)
+print(f"PC1<->source |corr|:  joint={c_joint:.2f}   within-source={c_v3:.2f}   (lower=artifact removed)")
 
 # ---- figures ----
-corder={"late_seed_dev":0,"microgravity":1,"radiation_GCR":2,"radiation_lowdose":3,"radiation_acute":4}
+corder={"late_seed_dev":0,"microgravity":1,"partial_gravity":2,"hypergravity":3,"tropism_gravi":4,
+        "tropism_photo":5,"low_oxygen":6,"radiation_GCR":7,"radiation_lowdose":8,"radiation_acute":9}
 ordr=sorted(range(len(Z3.index)),key=lambda i:(corder.get(src[i],9),Z3.index[i])); Zs=Z3.iloc[ordr]
 fig,ax=plt.subplots(figsize=(9,0.4*len(Zs)+1.8)); vmax=np.nanmax(np.abs(Zs.values))
 im=ax.imshow(Zs.values,cmap="PuOr_r",vmin=-vmax,vmax=vmax,aspect="auto")
@@ -69,7 +70,9 @@ ax.set_title("Bridge v3 (within-source scaling): inputs in germinating-seed scor
 fig.colorbar(im,ax=ax,fraction=0.03,pad=0.02); fig.tight_layout()
 fig.savefig(os.path.join(F,"bridge_heatmap_v3.png"),dpi=200,bbox_inches="tight"); fig.savefig(os.path.join(F,"bridge_heatmap_v3.svg"),bbox_inches="tight")
 
-col={"late_seed_dev":"#d8b365","microgravity":"#4575b4","radiation_GCR":"#fdae61","radiation_lowdose":"#f46d43","radiation_acute":"#a50026"}
+col={"late_seed_dev":"#d8b365","microgravity":"#4575b4","partial_gravity":"#74add1","hypergravity":"#08306b",
+     "tropism_gravi":"#08519c","tropism_photo":"#3690c0","low_oxygen":"#5e3c99",
+     "radiation_GCR":"#fdae61","radiation_lowdose":"#f46d43","radiation_acute":"#a50026"}
 p=PCA(2).fit_transform(Z3.values)
 fig,ax=plt.subplots(figsize=(8,6.5))
 for i,name in enumerate(Z3.index):

@@ -203,8 +203,8 @@ The radicle is the first organ to resume growth at germination → a coherent, t
 ### 4.9 DeepSpace seed-susceptibility atlas (headline) [D×A×L]
 *(Figure: `results/figures/deepspace_seed_atlas.png`.)*
 
-The full perturbation model (21 contrasts spanning **gravity, tropism, low-oxygen, radiation, and
-magnetic/NMF** families) projected onto germinating-seed cell types, scored as **how many of 5 stressor
+The full perturbation model (22 contrasts spanning **gravity [incl. 2 g hypergravity], tropism,
+low-oxygen, radiation, and magnetic/NMF** families) projected onto germinating-seed cell types, scored as **how many of 5 stressor
 families significantly target each cell type** (family-level convergence, so radiation's many contrasts
 get one vote).
 

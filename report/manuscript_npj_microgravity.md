@@ -23,7 +23,7 @@ and the **Germinating-Seed AutoDecoder (GSAD)** projects bulk transcriptomes ont
 single-cell seed reference (developmental and germination atlases) to predict cell-type-level effects.
 Validating the framework, the decoder independently recovers textbook embryo→seedling lineages
 (protoderm→epidermis; hypophysis→radicle apical meristem; vascular primordium→provasculature). Applying
-it to a 21-contrast model spanning five stressor families, we build a **DeepSpace seed-susceptibility
+it to a 22-contrast model spanning five stressor families, we build a **DeepSpace seed-susceptibility
 atlas**. Its central result: the **radicle/root apical tip is the convergence hotspot**, significantly
 targeted by four of five independent stressor families, with null-magnetic-field-responsive genes most
 sharply localized there. Early germination (12 h) is the most vulnerable developmental window. We frame
@@ -91,8 +91,9 @@ developmental origin of the radicle apical meristem — a point we return to bel
 
 ### Recognizing deep-space stress signatures (Fig. 2)
 
-We assembled a 21-contrast stress reference library spanning five families: **gravity** (spaceflight
-microgravity, root and leaf), **radiation** (galactic-cosmic-radiation-relevant low-dose and acute γ),
+We assembled a 22-contrast stress reference library spanning five families: **gravity** (spaceflight
+microgravity root and leaf, plus 2 g hypergravity — completing the µg↔1 g↔hypergravity axis),
+**radiation** (galactic-cosmic-radiation-relevant low-dose and acute γ),
 **low-oxygen** (hypoxia, anoxia, submergence), **tropism** (gravitropism, phototropism), and
 **magnetic/null-magnetic-field** (Fig. 2). Genome-wide signatures were projected onto the seed panels;
 the null-magnetic-field (NMF) response, available only as a small curated gene panel, was handled by
@@ -161,8 +162,8 @@ literature / hypothesis) and a falsification test. The framework's recovery of t
 Key limitations define the next experiments. Genome-wide null-magnetic-field transcriptomes are not yet
 publicly deposited, so the NMF arm relies on a curated panel via localization; the dry/0 h seed pole is
 under-sampled at single-cell resolution; tropism transcriptomes are sparse (gravitropism RNA-seq;
-phototropism microarray) and sustained hypergravity lacks a clean public dataset; and several contrasts
-are microarray- or translatome-tier. None of these undermines the central, multiply-supported result, and
+phototropism microarray) and sustained hypergravity is represented only by a microarray-tier callus
+dataset (2 g, GSE29787); and several contrasts are microarray- or translatome-tier. None of these undermines the central, multiply-supported result, and
 each is addressable as data accrue. The tools are organism-agnostic in design and can incorporate new
 stressors (e.g., desiccation, ethylene/CO₂, partial gravity) as reference panels.
 
@@ -177,9 +178,9 @@ publication and confirmed against canonical markers.
 
 **Stressor signatures.** Genome-wide differential expression was obtained from NASA OSDR (microgravity:
 OSD-120, OSD-678; radiation: OSD-658, OSD-498, OSD-502, OSD-508, OSD-510, OSD-782) and GEO (low-oxygen:
-GSE315308, GSE182724; gravitropism: GSE199142; phototropism: GSE3847). Wild-type, treatment-vs-control
-contrasts were used. Gene identifiers were harmonized to AGI/TAIR (Entrez and Affymetrix ATH1/GPL198 maps
-provided). The null-magnetic-field panel derives from Maffei-group time-course microarrays (curated
+GSE315308, GSE182724; gravitropism: GSE199142; phototropism: GSE3847; hypergravity: GSE29787, 2 g vs 1 g
+callus, two-color Agilent GPL9020). Wild-type, treatment-vs-control contrasts were used. Gene identifiers
+were harmonized to AGI/TAIR (Entrez, Affymetrix ATH1/GPL198, and Agilent GPL9020 maps provided). The null-magnetic-field panel derives from Maffei-group time-course microarrays (curated
 oxidative/polyphenol gene set).
 
 **Projection (DSRS/GSAD).** Each signature was ranked by log2FC and projected onto the panels by
@@ -202,7 +203,8 @@ numbered scripts (see Code availability).
 All inputs are public (provenance and accessions in the repository `data/data_inventory.csv`):
 developmental seed atlas **GSE295007**; germination atlas **GSE182331** (mirror of ArrayExpress
 **E-MTAB-12532**); microgravity/radiation **OSD-120/678/658/498/502/508/510/782** (NASA OSDR); low-oxygen
-**GSE315308**, **GSE182724**; gravitropism **GSE199142**; phototropism **GSE3847** (GPL198). Genome-wide
+**GSE315308**, **GSE182724**; gravitropism **GSE199142**; phototropism **GSE3847** (GPL198); hypergravity
+**GSE29787** (2 g, GPL9020). Genome-wide
 null-magnetic-field arrays (Parmagnani/Maffei 2022; Agliassa/Maffei 2021) are not publicly deposited and
 were requested from the authors; the curated panel is included.
 

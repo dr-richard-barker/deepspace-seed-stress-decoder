@@ -12,10 +12,10 @@ from scipy.io import mmread  # noqa
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"; T=os.path.join(ROOT,"results","tables"); F=os.path.join(ROOT,"results","figures"); RAW=os.path.join(ROOT,"data","raw")
 rng=np.random.default_rng(42)
-NES=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v5.csv"),index_col=0)
-FDR=pd.read_csv(os.path.join(T,"decoder_fdr_matrix_v5.csv"),index_col=0)
+NES=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v6.csv"),index_col=0)
+FDR=pd.read_csv(os.path.join(T,"decoder_fdr_matrix_v6.csv"),index_col=0)
 cls=pd.read_csv(os.path.join(T,"contrast_classes.csv"),index_col=0)["stressor_class"].to_dict()
-fam={c:("gravity" if cls.get(c) in("microgravity","partial_gravity") else
+fam={c:("gravity" if cls.get(c) in("microgravity","partial_gravity","hypergravity") else
         "tropism" if cls.get(c) in("tropism_gravi","tropism_photo") else
         "low_oxygen" if cls.get(c)=="low_oxygen" else
         "radiation" if str(cls.get(c)).startswith("radiation") else cls.get(c,"other")) for c in NES.columns}

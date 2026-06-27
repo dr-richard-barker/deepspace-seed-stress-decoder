@@ -76,7 +76,7 @@ Key questions it must answer:
 | null magnetic field (NMF) | ◐ localization only | Maffei 2021/2022 arrays (author request pending) |
 | **hypoxia** | ☐ TO ADD | GEO: 19 RNA-seq series; e.g. GSE261364 (O2-sensing); + Mustroph hypoxia core |
 | **anoxia / submergence** | ☐ TO ADD | GEO: 21 anoxia + 9 submergence RNA-seq series |
-| **hypergravity** | ☐ TO ADD | OSDR centrifuge / partial-g; classic 300 g & Martzivanou-Hampp microarray (0 GEO RNA-seq) |
+| **hypergravity** | ✅ ADDED | GSE29787 LDC 2 g vs 1 g (callus, two-color Agilent GPL9020) — microarray-tier, completes µg↔1g↔hypergravity gravity axis |
 | high static magnetic field | ⚪ comparator | GSE29787 (10–16.5 T), PRJNA529956 (600 mT) |
 
 ### Tropisms (directional growth — µg removes the gravitropic set-point) — feasibility-flagged
@@ -266,7 +266,11 @@ Legend: ☐ todo · ◐ in progress · ☑ done
 - ☑ **Phototropism** — GSE3847 (Esmon ATH1, shaded vs lit) via GPL198 probe→AGI → contrast
   (`scripts/17`). **Model v5 = 21 contrasts** (class tropism_photo). Hypergravity HELD (two-color);
   hydrotropism DROPPED (unreliable, per user).
-- ☐ (optional) desiccation/rehydration; hypergravity (GSE29787 2g) if wanted later
+- ☑ **Hypergravity** — GSE29787 LDC 2 g vs 1 g (`scripts/23`, GPL9020 probe→AGI) → **decoder_nes_matrix_v6
+  = 22 contrasts** (class hypergravity, atlas family gravity). Lands on provascular/cotyledon programs.
+- ☑ **Bridge re-run on full model** — `scripts/13` now on v6 (22 contrasts); within-source scaling still
+  nulls the source artifact (joint 0.48 → within-source 0.00). All downstream (heatmap/atlas/F-set) on v6.
+- ☐ (optional) desiccation/rehydration; plant fractional-gravity (EMCS); ethylene/CO₂; temperature; UV
 
 **5.4 DeepSpace seed-susceptibility atlas — ☑ v1 BUILT** (`scripts/18_deepspace_atlas.py`)
 - Germ cell type × 5 stressor families + convergence count → `deepspace_seed_atlas.png`,
@@ -343,7 +347,33 @@ Legend: ☐ todo · ◐ in progress · ☑ done
 
 ---
 
+## 8. Completion audit (2026-06-27)
+- **Phase 0** data inventory + accessions — ✅ COMPLETE.
+- **Phase 1** NMF meta-analysis — ◑ REFRAMED: genome-wide NMF not publicly deposited (audited GEO/SRA/
+  BioProject/ArrayExpress; author request sent). Delivered NMF localization (→ radicle apical meristem,
+  z +7.96). Upgrades to full GSEA when arrays arrive. *(externally blocked, not a loose end)*
+- **Phase 2** seed reference — ✅ COMPLETE (122 panels, named germination clusters, marker-validated).
+- **Phase 3** decoder + bridge + NMF + embryo-lineage — ✅ COMPLETE; bridge on full 22-contrast model;
+  falsification H1–H6 + D/A/L/H tiers in report.
+- **Phase 4** synthesis report — ✅ COMPLETE (12 pp). Reproducible notebooks superseded by numbered
+  scripts 01–23 + `REPRODUCE.md`.
+- **Phase 5** consolidation — ✅ tools (DSRS/GSAD, installable, validated), FAIR scaffold, atlas
+  (cell-type/tissue/stage), F1–F6, manuscript (.md/.pdf/.docx), **pushed to GitHub**. Stressors complete:
+  µg, GCR, acute+low-dose radiation, hypoxia/anoxia/submergence, gravitropism, phototropism, hypergravity
+  (hydrotropism dropped — unreliable).
+- **Parked (external / user-side):** genome-wide NMF arrays (author reply); **Zenodo DOI** (user mints from
+  a GitHub release → paste into `.zenodo.json`/`CITATION.cff`/manuscript); flip repo public at submission.
+- **Optional / future:** desiccation, ethylene/CO₂, temperature, UV, plant fractional-gravity; dry/0 h seed
+  pole (data limit); npj cover letter; sog1/myb3r mechanistic radiation arm.
+
+---
+
 ## 7. Changelog
+- **2026-06-27 (bb)** — **Hypergravity added (gravity axis complete) + full-model re-run + loose-ends audit.**
+  GSE29787 LDC 2 g → `scripts/23` → decoder_nes_matrix_v6 (22 contrasts). Re-ran heatmap/atlas/tissue-stage/
+  bridge/F-set + report + manuscript (.md/.pdf/.docx, validated) on v6; propagated "22 contrasts" + hypergravity
+  into all text/captions. Bridge re-run on full model (within-source artifact 0.48→0.00). Atlas headline
+  unchanged (radicle apical meristem 4/5 families). Added §8 completion audit. Local commits ready to push.
 - **2026-06-27 (aa)** — Fixed combined-heatmap (Fig 0, `scripts/11`): class strip now aligns exactly with
   the heatmap x-axis (NES colorbar moved to its own gridspec column so it no longer squeezes the heatmap);
   class names rotated 45° and lifted above the strip; legend removed (redundant). Report re-rendered.

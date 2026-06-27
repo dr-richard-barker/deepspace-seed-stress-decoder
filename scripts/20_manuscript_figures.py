@@ -70,10 +70,10 @@ def heat(MAT,FDR,rows,cols,title,fname,classbar=None,h_per=0.42,cbar_label="NES"
                    fontsize=7,frameon=False,bbox_to_anchor=(0.5,-0.04))
     fig.savefig(os.path.join(OUT,fname+".png"),bbox_inches="tight"); fig.savefig(os.path.join(OUT,fname+".svg"),bbox_inches="tight"); plt.close(fig)
 
-nes=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v5.csv"),index_col=0)
-fdr=pd.read_csv(os.path.join(T,"decoder_fdr_matrix_v5.csv"),index_col=0)
+nes=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v6.csv"),index_col=0)
+fdr=pd.read_csv(os.path.join(T,"decoder_fdr_matrix_v6.csv"),index_col=0)
 cls=pd.read_csv(os.path.join(T,"contrast_classes.csv"),index_col=0)["stressor_class"].to_dict()
-fam={c:("gravity" if cls.get(c) in("microgravity","partial_gravity") else
+fam={c:("gravity" if cls.get(c) in("microgravity","partial_gravity","hypergravity") else
         "tropism" if cls.get(c) in("tropism_gravi","tropism_photo") else
         "low_oxygen" if cls.get(c)=="low_oxygen" else
         "radiation" if str(cls.get(c)).startswith("radiation") else cls.get(c,"?")) for c in nes.columns}
@@ -83,7 +83,7 @@ cols=sorted(nes.columns,key=order)
 # F2: DSRS stress library (key seed programs x all stressors)
 prog=[i for i in nes.index if i.startswith("gehring_L1_tissue::")]+[i for i in nes.index if i.startswith("germ_state_time::")]
 M=nes.loc[prog,cols].values; Fd=fdr.loc[prog,cols].values
-heat(M,Fd,[r.split("::")[-1] for r in prog],cols,"F2 — DSRS stress reference library (21 contrasts → seed programs)",
+heat(M,Fd,[r.split("::")[-1] for r in prog],cols,f"F2 — DSRS stress reference library ({len(cols)} contrasts → seed programs)",
      "F2_stress_library",classbar=fam,cbar_label="NES (induced + / suppressed -)")
 
 # F4: GSAD germ cell-type susceptibility (germ cell types x stressors)

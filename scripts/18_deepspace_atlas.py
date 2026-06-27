@@ -11,8 +11,8 @@ Outputs: results/tables/deepspace_atlas_{nes,family,convergence}.csv ; figures/d
 import os, numpy as np, pandas as pd
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"; T=os.path.join(ROOT,"results","tables"); F=os.path.join(ROOT,"results","figures"); PAN=os.path.join(ROOT,"panels")
-NES=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v5.csv"),index_col=0)
-FDR=pd.read_csv(os.path.join(T,"decoder_fdr_matrix_v5.csv"),index_col=0)
+NES=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v6.csv"),index_col=0)
+FDR=pd.read_csv(os.path.join(T,"decoder_fdr_matrix_v6.csv"),index_col=0)
 cls=pd.read_csv(os.path.join(T,"contrast_classes.csv"),index_col=0)["stressor_class"].to_dict()
 ann=pd.read_csv(os.path.join(PAN,"germination_cluster_annotations.csv")); ann["cluster"]=ann.cluster.astype(str)
 cl2lab={c:f"{n} (cl{c})" for c,n in zip(ann.cluster,ann.cell_type)}; organ=dict(zip([cl2lab[c] for c in ann.cluster],ann.organ))
@@ -30,7 +30,7 @@ nmf=pd.read_csv(os.path.join(T,"nmf_localization.csv"),index_col=0)["NMF_up_loca
 fam={}
 for c in A.columns:
     k=cls.get(c,"other")
-    fam[c]=("gravity" if k in("microgravity","partial_gravity") else
+    fam[c]=("gravity" if k in("microgravity","partial_gravity","hypergravity") else
             "tropism" if k in("tropism_gravi","tropism_photo") else
             "low_oxygen" if k=="low_oxygen" else
             "radiation" if k.startswith("radiation") else k)

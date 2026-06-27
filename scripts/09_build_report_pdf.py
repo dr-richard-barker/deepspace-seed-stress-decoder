@@ -13,7 +13,7 @@ body=markdown.markdown(open(MD,encoding="utf-8").read(),
 
 plates=[("deepspace_seed_atlas.png","Fig 5 (HEADLINE). DeepSpace seed-susceptibility atlas: germinating-seed cell type x stressor family + multi-stressor convergence (radicle tip = top hotspot)."),
         ("deepspace_atlas_tissue_stage.png","Fig 5b. DeepSpace atlas at tissue + germination-stage level (12h = most multi-stressor stage)."),
-        ("decoder_combined_perturbation_heatmap.png","Fig 0. Combined DeepSpace perturbation model: micro-gravity + low-oxygen + tropism + radiation (21 contrasts) -> seed programs."),
+        ("decoder_combined_perturbation_heatmap.png","Fig 0. Combined DeepSpace perturbation model: micro-gravity + low-oxygen + tropism + radiation + hypergravity (22 contrasts) -> seed programs."),
         ("decoder_L1_state_heatmap.png","Fig 1. Decoder: stressor -> seed tissue & germination-state programs (NES)."),
         ("decoder_germination_named_heatmap.png","Fig 2. Decoder: stressor -> named germinating-seed cell types."),
         ("bridge_heatmap_v3.png","Fig 3. Shared latent v3 (within-source scaled): late-seed-dev + micro-gravity + radiation in germinating-seed score space."),
