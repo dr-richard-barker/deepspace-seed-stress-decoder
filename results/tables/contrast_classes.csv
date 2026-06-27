@@ -21,3 +21,8 @@ gravitropism_12h,tropism_gravi
 gravitropism_24h,tropism_gravi
 phototropism,tropism_photo
 hypergravity_2g,hypergravity
+desiccation_seed,desiccation
+ethylene_ACC,ethylene
+temperature_warm,temperature
+osmotic,osmotic
+uv_B,uv

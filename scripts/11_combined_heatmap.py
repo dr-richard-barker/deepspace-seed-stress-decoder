@@ -4,14 +4,14 @@ across seed tissue & germination-state programs, columns grouped by stressor cla
 import os, numpy as np, pandas as pd
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"; T=os.path.join(ROOT,"results","tables"); F=os.path.join(ROOT,"results","figures")
-nes=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v6.csv"),index_col=0)
-fdr=pd.read_csv(os.path.join(T,"decoder_fdr_matrix_v6.csv"),index_col=0)
+nes=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v7.csv"),index_col=0)
+fdr=pd.read_csv(os.path.join(T,"decoder_fdr_matrix_v7.csv"),index_col=0)
 cls=pd.read_csv(os.path.join(T,"contrast_classes.csv"),index_col=0)["stressor_class"]
-order={"microgravity":0,"partial_gravity":1,"hypergravity":2,"tropism_gravi":3,"tropism_photo":4,"low_oxygen":5,"radiation_GCR":6,"radiation_lowdose":7,"radiation_acute":8,"magnetic":9}
+order={"microgravity":0,"partial_gravity":1,"hypergravity":2,"tropism_gravi":3,"tropism_photo":4,"low_oxygen":5,"desiccation":6,"osmotic":7,"ethylene":8,"temperature":9,"uv":10,"radiation_GCR":11,"radiation_lowdose":12,"radiation_acute":13,"magnetic":14}
 cols=sorted([c for c in nes.columns if c in cls.index], key=lambda c:(order.get(cls[c],9),c))
 rows=[i for i in nes.index if i.startswith("gehring_L1_tissue::")]+[i for i in nes.index if i.startswith("germ_state_time::")]
 sub=nes.loc[rows,cols]; fsub=fdr.loc[rows,cols]
-ccolors={"microgravity":"#4575b4","partial_gravity":"#74add1","hypergravity":"#08306b","tropism_gravi":"#08519c","tropism_photo":"#3690c0","low_oxygen":"#5e3c99","radiation_GCR":"#fdae61","radiation_lowdose":"#f46d43","radiation_acute":"#a50026","magnetic":"#5aae61"}
+ccolors={"microgravity":"#4575b4","partial_gravity":"#74add1","hypergravity":"#08306b","tropism_gravi":"#08519c","tropism_photo":"#3690c0","low_oxygen":"#5e3c99","desiccation":"#8c510a","osmotic":"#dfc27d","ethylene":"#1b7837","temperature":"#fdb863","uv":"#c2a5cf","radiation_GCR":"#fdae61","radiation_lowdose":"#f46d43","radiation_acute":"#a50026","magnetic":"#5aae61"}
 N=len(cols)
 # 2x2 grid: class strip (top-left) + heatmap (bottom-left) SHARE one column => aligned x-axis;
 # NES colorbar gets its OWN column so it never squeezes the heatmap.

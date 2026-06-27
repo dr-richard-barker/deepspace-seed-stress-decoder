@@ -11,8 +11,8 @@ Outputs: results/tables/deepspace_atlas_{nes,family,convergence}.csv ; figures/d
 import os, numpy as np, pandas as pd
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"; T=os.path.join(ROOT,"results","tables"); F=os.path.join(ROOT,"results","figures"); PAN=os.path.join(ROOT,"panels")
-NES=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v6.csv"),index_col=0)
-FDR=pd.read_csv(os.path.join(T,"decoder_fdr_matrix_v6.csv"),index_col=0)
+NES=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v7.csv"),index_col=0)
+FDR=pd.read_csv(os.path.join(T,"decoder_fdr_matrix_v7.csv"),index_col=0)
 cls=pd.read_csv(os.path.join(T,"contrast_classes.csv"),index_col=0)["stressor_class"].to_dict()
 ann=pd.read_csv(os.path.join(PAN,"germination_cluster_annotations.csv")); ann["cluster"]=ann.cluster.astype(str)
 cl2lab={c:f"{n} (cl{c})" for c,n in zip(ann.cluster,ann.cell_type)}; organ=dict(zip([cl2lab[c] for c in ann.cluster],ann.organ))
@@ -34,7 +34,7 @@ for c in A.columns:
             "tropism" if k in("tropism_gravi","tropism_photo") else
             "low_oxygen" if k=="low_oxygen" else
             "radiation" if k.startswith("radiation") else k)
-families=["gravity","tropism","low_oxygen","radiation","magnetic_NMF"]
+families=["gravity","tropism","low_oxygen","desiccation","osmotic","ethylene","temperature","uv","radiation","magnetic_NMF"]
 SIG_NES=1.5; SIG_FDR=0.25; SIG_NMFZ=2.0
 
 # family susceptibility (binary) + signed strength
@@ -64,8 +64,8 @@ order_org={"cotyledon":0,"hypocotyl":1,"radicle":2,"provasculature":3,"unassigne
 rows=sorted(famval.index,key=lambda c:(-conv[c], order_org.get(organ.get(c,"z"),9)))
 V=famval.loc[rows,families]; vmax=np.nanmax(np.abs(V.values)) or 1
 # 3-column layout: heatmap | dedicated colorbar | convergence bars (no overlap)
-fig=plt.figure(figsize=(9.4,0.5*len(rows)+1.9))
-gs=fig.add_gridspec(1,3,width_ratios=[5,0.22,1.5],wspace=0.5)
+fig=plt.figure(figsize=(11.5,0.5*len(rows)+1.9))
+gs=fig.add_gridspec(1,3,width_ratios=[len(families),0.4,2.0],wspace=0.45)
 ax=fig.add_subplot(gs[0]); cax=fig.add_subplot(gs[1]); axb=fig.add_subplot(gs[2])
 im=ax.imshow(V.values,cmap="RdBu_r",vmin=-vmax,vmax=vmax,aspect="auto")
 ax.set_xticks(range(len(families))); ax.set_xticklabels(families,rotation=40,ha="right",fontsize=8)
@@ -76,9 +76,9 @@ for i,ct in enumerate(rows):
 ax.set_title("DeepSpace seed-susceptibility atlas  (* = significant; color = signed strength)",fontsize=10)
 cb=fig.colorbar(im,cax=cax); cb.set_label("signed strength (NES / NMF z)",fontsize=7); cax.tick_params(labelsize=7)
 axb.barh(range(len(rows)),conv[rows].values,color="#555"); axb.invert_yaxis()
-axb.set_ylim(len(rows)-0.5,-0.5); axb.set_yticks([]); axb.set_xlim(0,5.3)
-axb.set_xlabel("n families",fontsize=8); axb.set_title("convergence",fontsize=9)
-for i,ct in enumerate(rows): axb.text(conv[ct]+0.1,i,str(int(conv[ct])),va="center",fontsize=7)
+axb.set_ylim(len(rows)-0.5,-0.5); axb.set_yticks([]); axb.set_xlim(0,len(families)+0.5)
+axb.set_xlabel(f"n families (/{len(families)})",fontsize=8); axb.set_title("convergence",fontsize=9)
+for i,ct in enumerate(rows): axb.text(conv[ct]+0.15,i,str(int(conv[ct])),va="center",fontsize=7)
 fig.savefig(os.path.join(F,"deepspace_seed_atlas.png"),dpi=200,bbox_inches="tight")
 fig.savefig(os.path.join(F,"deepspace_seed_atlas.svg"),bbox_inches="tight")
 

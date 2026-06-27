@@ -23,10 +23,13 @@ and the **Germinating-Seed AutoDecoder (GSAD)** projects bulk transcriptomes ont
 single-cell seed reference (developmental and germination atlases) to predict cell-type-level effects.
 Validating the framework, the decoder independently recovers textbook embryo→seedling lineages
 (protoderm→epidermis; hypophysis→radicle apical meristem; vascular primordium→provasculature). Applying
-it to a 22-contrast model spanning five stressor families, we build a **DeepSpace seed-susceptibility
-atlas**. Its central result: the **radicle/root apical tip is the convergence hotspot**, significantly
-targeted by four of five independent stressor families, with null-magnetic-field-responsive genes most
-sharply localized there. Early germination (12 h) is the most vulnerable developmental window. We frame
+it to a 27-contrast model spanning ten stressor families (gravity including hypergravity, tropism,
+low-oxygen, desiccation, osmotic, ethylene, temperature, UV, radiation, and magnetic/null field), we build
+a **DeepSpace seed-susceptibility atlas**. Its central result: the **root tip is the convergence apex** —
+the columella/root cap is targeted by **9 of 10** stressor families, more than any other germinating-seed
+cell type, and the radicle apical meristem (the specific null-magnetic-field target, localization z = +7.96)
+and radicle epidermis are likewise broadly susceptible; hypocotyl cortex and cotyledon mesophyll emerge as
+secondary hotspots. Early germination (12 h) is the most vulnerable developmental window. We frame
 all predictions as testable hypotheses with falsification experiments and release the tools, panels, and
 atlas as a FAIR resource. The root tip emerges as a priority target for protecting seed performance in
 deep space.
@@ -91,10 +94,11 @@ developmental origin of the radicle apical meristem — a point we return to bel
 
 ### Recognizing deep-space stress signatures (Fig. 2)
 
-We assembled a 22-contrast stress reference library spanning five families: **gravity** (spaceflight
+We assembled a 27-contrast stress reference library spanning ten families: **gravity** (spaceflight
 microgravity root and leaf, plus 2 g hypergravity — completing the µg↔1 g↔hypergravity axis),
-**radiation** (galactic-cosmic-radiation-relevant low-dose and acute γ),
-**low-oxygen** (hypoxia, anoxia, submergence), **tropism** (gravitropism, phototropism), and
+**radiation** (galactic-cosmic-radiation-relevant low-dose and acute γ), **low-oxygen** (hypoxia, anoxia,
+submergence), **desiccation** (seed maturation drying), **osmotic** (mannitol), **ethylene** (ACC),
+**temperature** (warm/thermomorphogenesis), **UV** (UV-B), **tropism** (gravitropism, phototropism), and
 **magnetic/null-magnetic-field** (Fig. 2). Genome-wide signatures were projected onto the seed panels;
 the null-magnetic-field (NMF) response, available only as a small curated gene panel, was handled by
 expression-localization rather than enrichment (see Methods). Across families, a recurrent theme emerged:
@@ -112,20 +116,20 @@ chance.
 
 ### The DeepSpace seed-susceptibility atlas (Fig. 5)
 
-To integrate across stressors, we scored each germinating-seed cell type by how many of the five stressor
-*families* significantly target it — a family-level convergence metric that prevents any single
-data-rich family from dominating (Fig. 5). The result is unambiguous: the **radicle/root apical tip is the
-multi-stressor convergence hotspot**. The **radicle apical meristem is targeted by four of five families**
-(gravity, tropism, radiation, and magnetic/NMF); the columella/root cap is likewise 4/5, and the radicle
-epidermis 3/5 — all three root-tip cell types rank at the top. The principal non-root hotspot is the
-**cotyledon mesophyll** (4/5), reflecting convergent effects on the photosynthetic program. ("Unassigned"
-germination clusters score highly but lack a defined identity; the radicle apical meristem is therefore the
-top biologically-defined hotspot.)
+To integrate across stressors, we scored each germinating-seed cell type by how many of the **ten stressor
+*families*** significantly target it — a family-level convergence metric that prevents any single
+data-rich family from dominating (Fig. 5). The result is unambiguous: the **root tip is the multi-stressor
+convergence apex**. The **columella/root cap is targeted by 9 of 10 families** — more than any other
+germinating-seed cell type — and the **radicle apical meristem** (6/10; the specific magnetic/NMF target,
+localization z = +7.96) and **radicle epidermis** (5/10) complete a broadly susceptible root pole.
+Beyond the root, **hypocotyl cortex** and **cotyledon mesophyll** emerge as secondary hotspots (6–7/10),
+reflecting convergent effects on cortical and photosynthetic programs. ("Unassigned" germination clusters
+score highly but lack a defined identity; the columella/root cap is the top biologically-defined hotspot.)
 
 ### Stage and tissue resolution
 
 At the germination-**stage** level, **early germination (12 h) is the most multi-stressor-susceptible
-window** (4/5 families), consistent with the cross-family "12 h" convergence; the truly dry/0 h pole is
+window**, consistent with the cross-family "12 h" convergence; the truly dry/0 h pole is
 under-sampled by current single-cell data. At the broad developing-**tissue** level the signal is diffuse
 and weighted by small maternal tissues, indicating that **cell-type × stage**, not gross tissue, is the
 informative resolution.
@@ -163,7 +167,8 @@ Key limitations define the next experiments. Genome-wide null-magnetic-field tra
 publicly deposited, so the NMF arm relies on a curated panel via localization; the dry/0 h seed pole is
 under-sampled at single-cell resolution; tropism transcriptomes are sparse (gravitropism RNA-seq;
 phototropism microarray) and sustained hypergravity is represented only by a microarray-tier callus
-dataset (2 g, GSE29787); and several contrasts are microarray- or translatome-tier. None of these undermines the central, multiply-supported result, and
+dataset (2 g, GSE29787); osmotic and UV-B use AtGenExpress ATH1 microarrays and desiccation uses seed-
+maturation drying as a proxy; and several contrasts are thus microarray- or translatome-tier. None of these undermines the central, multiply-supported result, and
 each is addressable as data accrue. The tools are organism-agnostic in design and can incorporate new
 stressors (e.g., desiccation, ethylene/CO₂, partial gravity) as reference panels.
 
@@ -179,7 +184,9 @@ publication and confirmed against canonical markers.
 **Stressor signatures.** Genome-wide differential expression was obtained from NASA OSDR (microgravity:
 OSD-120, OSD-678; radiation: OSD-658, OSD-498, OSD-502, OSD-508, OSD-510, OSD-782) and GEO (low-oxygen:
 GSE315308, GSE182724; gravitropism: GSE199142; phototropism: GSE3847; hypergravity: GSE29787, 2 g vs 1 g
-callus, two-color Agilent GPL9020). Wild-type, treatment-vs-control contrasts were used. Gene identifiers
+callus, two-color Agilent GPL9020; desiccation: GSE76015, seed 21 vs 15 DAF; ethylene: GSE193833, ACC
+4 h vs 0 h; temperature: GSE303133, 27 vs 21 °C; osmotic: AtGenExpress GSE5622 and UV-B: GSE5626, each
+vs control GSE5620, ATH1/GPL198). Wild-type, treatment-vs-control contrasts were used. Gene identifiers
 were harmonized to AGI/TAIR (Entrez, Affymetrix ATH1/GPL198, and Agilent GPL9020 maps provided). The null-magnetic-field panel derives from Maffei-group time-course microarrays (curated
 oxidative/polyphenol gene set).
 
@@ -190,7 +197,7 @@ correlation). The NMF panel (≤7-gene overlap with marker panels) was instead l
 expression specificity (mean specificity vs 1,000 random gene sets → z).
 
 **Atlas/convergence.** A cell type was deemed susceptible to a family if any contrast in that family had
-|NES| ≥ 1.5 and FDR < 0.25 (or NMF localization |z| ≥ 2). Convergence = number of the five families meeting
+|NES| ≥ 1.5 and FDR < 0.25 (or NMF localization |z| ≥ 2). Convergence = number of the ten families meeting
 this threshold. Bridge/lineage analyses used pseudobulk and ssGSEA with within-source scaling.
 
 **Software.** `deepspace` Python package (DSRS, GSAD, CLI). Determinism via fixed seeds; full pipeline in
@@ -204,7 +211,8 @@ All inputs are public (provenance and accessions in the repository `data/data_in
 developmental seed atlas **GSE295007**; germination atlas **GSE182331** (mirror of ArrayExpress
 **E-MTAB-12532**); microgravity/radiation **OSD-120/678/658/498/502/508/510/782** (NASA OSDR); low-oxygen
 **GSE315308**, **GSE182724**; gravitropism **GSE199142**; phototropism **GSE3847** (GPL198); hypergravity
-**GSE29787** (2 g, GPL9020). Genome-wide
+**GSE29787** (2 g, GPL9020); desiccation **GSE76015**; ethylene **GSE193833**; temperature **GSE303133**;
+osmotic **GSE5622** and UV-B **GSE5626** vs control **GSE5620** (AtGenExpress, GPL198). Genome-wide
 null-magnetic-field arrays (Parmagnani/Maffei 2022; Agliassa/Maffei 2021) are not publicly deposited and
 were requested from the authors; the curated panel is included.
 

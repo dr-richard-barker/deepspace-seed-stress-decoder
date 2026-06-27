@@ -11,25 +11,30 @@ dev: Ovule_3DAP,late_seed_dev,provasculature (cl12),0.54
 dev: Seed coat_3DAP,late_seed_dev,cortex/endodermis (cl2),1.14
 dev: Seed coat_5DAP,late_seed_dev,radicle apical meristem (cl14),0.49
 dev: Seed coat_7DAP,late_seed_dev,unassigned (cl8),1.05
-stress: ug_root_dark,microgravity,radicle apical meristem (cl14),1.52
-stress: ug_root_light,microgravity,hypocotyl cortex (mid) (cl7),1.24
-stress: ug_leaf_dark,microgravity,cotyledon mesophyll (cl13),1.94
-stress: ug_leaf_light,microgravity,radicle apical meristem (cl14),1.19
-stress: gcr_40cGy,radiation_GCR,hypocotyl cortex (late) (cl1),1.8
-stress: gcr_80cGy,radiation_GCR,hypocotyl cortex (late) (cl1),1.6
-stress: rad_100Gy_co60_90m_a,radiation_acute,unassigned (cl8),1.25
-stress: rad_100Gy_co60_1440m_a,radiation_acute,hypocotyl cortex (mid) (cl7),1.02
-stress: rad_100Gy_co60_180m,radiation_acute,radicle apical meristem (cl14),0.56
-stress: rad_100Gy_co60_90m_b,radiation_acute,unassigned (cl8),1.08
-stress: rad_100Gy_co60_1440m_b,radiation_acute,columella/root cap (+QC) (cl4),2.3
-stress: rad_100Gy_co60_90m_c,radiation_acute,hypocotyl cortex (late) (cl1),0.94
-stress: rad_100Gy_co60_1440m_c,radiation_acute,provasculature: protophloem (cl15),1.12
-stress: rad_10cGy_cs137_24h,radiation_lowdose,radicle epidermis (cl10),1.15
-stress: rad_100cGy_cs137_24h,radiation_lowdose,cortex/endodermis (cl2),1.22
-stress: hypoxia_1pct,low_oxygen,radicle epidermis (cl10),0.98
-stress: anoxia_0pct,low_oxygen,epidermis (cl6),0.84
-stress: submergence,low_oxygen,cortex/endodermis (cl2),1.64
-stress: gravitropism_12h,tropism_gravi,cortex/endodermis (cl2),1.59
-stress: gravitropism_24h,tropism_gravi,columella/root cap (+QC) (cl4),1.57
-stress: phototropism,tropism_photo,columella/root cap (+QC) (cl4),1.31
-stress: hypergravity_2g,hypergravity,cotyledon mesophyll (cl3),1.33
+stress: ug_root_dark,microgravity,cortex/endodermis (cl2),1.63
+stress: ug_root_light,microgravity,hypocotyl cortex (mid) (cl7),1.16
+stress: ug_leaf_dark,microgravity,cotyledon mesophyll (cl13),1.84
+stress: ug_leaf_light,microgravity,radicle apical meristem (cl14),1.28
+stress: gcr_40cGy,radiation_GCR,hypocotyl cortex (late) (cl1),1.58
+stress: gcr_80cGy,radiation_GCR,hypocotyl cortex (late) (cl1),1.4
+stress: rad_100Gy_co60_90m_a,radiation_acute,unassigned (cl8),1.18
+stress: rad_100Gy_co60_1440m_a,radiation_acute,hypocotyl cortex (mid) (cl7),0.96
+stress: rad_100Gy_co60_180m,radiation_acute,radicle apical meristem (cl14),0.68
+stress: rad_100Gy_co60_90m_b,radiation_acute,unassigned (cl8),1.02
+stress: rad_100Gy_co60_1440m_b,radiation_acute,columella/root cap (+QC) (cl4),1.99
+stress: rad_100Gy_co60_90m_c,radiation_acute,hypocotyl cortex (late) (cl1),0.82
+stress: rad_100Gy_co60_1440m_c,radiation_acute,provasculature: protophloem (cl15),1.18
+stress: rad_10cGy_cs137_24h,radiation_lowdose,radicle epidermis (cl10),1.06
+stress: rad_100cGy_cs137_24h,radiation_lowdose,cortex/endodermis (cl2),1.42
+stress: hypoxia_1pct,low_oxygen,radicle epidermis (cl10),0.89
+stress: anoxia_0pct,low_oxygen,epidermis (cl6),0.87
+stress: submergence,low_oxygen,cortex/endodermis (cl2),1.84
+stress: gravitropism_12h,tropism_gravi,cortex/endodermis (cl2),1.79
+stress: gravitropism_24h,tropism_gravi,radicle epidermis (cl10),1.39
+stress: phototropism,tropism_photo,cotyledon mesophyll (cl13),1.22
+stress: hypergravity_2g,hypergravity,cotyledon mesophyll (cl13),1.23
+stress: desiccation_seed,desiccation,hypocotyl cortex (late) (cl1),1.51
+stress: ethylene_ACC,ethylene,cotyledon mesophyll (cl13),2.22
+stress: temperature_warm,temperature,epidermis (cl6),1.1
+stress: osmotic,osmotic,provasculature (cl12),1.43
+stress: uv_B,uv,columella/root cap (+QC) (cl4),1.99

@@ -16,7 +16,7 @@ ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"
 T=os.path.join(ROOT,"results","tables"); FIG=os.path.join(ROOT,"results","figures")
 OUT=os.path.join(ROOT,"report","figures_npj"); os.makedirs(OUT,exist_ok=True)
 plt.rcParams.update({"font.size":9,"font.family":"DejaVu Sans","savefig.dpi":300,"svg.fonttype":"none"})
-FAMCOL={"gravity":"#4575b4","tropism":"#3690c0","low_oxygen":"#5e3c99","radiation":"#d73027","magnetic_NMF":"#1a9850"}
+FAMCOL={"gravity":"#4575b4","tropism":"#3690c0","low_oxygen":"#5e3c99","desiccation":"#8c510a","osmotic":"#dfc27d","ethylene":"#1b7837","temperature":"#fdb863","uv":"#c2a5cf","radiation":"#d73027","magnetic_NMF":"#1a9850"}
 
 def box(ax,x,y,w,h,text,fc,ec="#333",fs=8.5,tc="black"):
     ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle="round,pad=0.02,rounding_size=0.08",
@@ -70,8 +70,8 @@ def heat(MAT,FDR,rows,cols,title,fname,classbar=None,h_per=0.42,cbar_label="NES"
                    fontsize=7,frameon=False,bbox_to_anchor=(0.5,-0.04))
     fig.savefig(os.path.join(OUT,fname+".png"),bbox_inches="tight"); fig.savefig(os.path.join(OUT,fname+".svg"),bbox_inches="tight"); plt.close(fig)
 
-nes=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v6.csv"),index_col=0)
-fdr=pd.read_csv(os.path.join(T,"decoder_fdr_matrix_v6.csv"),index_col=0)
+nes=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v7.csv"),index_col=0)
+fdr=pd.read_csv(os.path.join(T,"decoder_fdr_matrix_v7.csv"),index_col=0)
 cls=pd.read_csv(os.path.join(T,"contrast_classes.csv"),index_col=0)["stressor_class"].to_dict()
 fam={c:("gravity" if cls.get(c) in("microgravity","partial_gravity","hypergravity") else
         "tropism" if cls.get(c) in("tropism_gravi","tropism_photo") else

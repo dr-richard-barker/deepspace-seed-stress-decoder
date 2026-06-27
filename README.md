@@ -268,9 +268,13 @@ Legend: ☐ todo · ◐ in progress · ☑ done
   hydrotropism DROPPED (unreliable, per user).
 - ☑ **Hypergravity** — GSE29787 LDC 2 g vs 1 g (`scripts/23`, GPL9020 probe→AGI) → **decoder_nes_matrix_v6
   = 22 contrasts** (class hypergravity, atlas family gravity). Lands on provascular/cotyledon programs.
-- ☑ **Bridge re-run on full model** — `scripts/13` now on v6 (22 contrasts); within-source scaling still
-  nulls the source artifact (joint 0.48 → within-source 0.00). All downstream (heatmap/atlas/F-set) on v6.
-- ☐ (optional) desiccation/rehydration; plant fractional-gravity (EMCS); ethylene/CO₂; temperature; UV
+- ☑ **5 more stressor families** (`scripts/24`) → **decoder_nes_matrix_v7 = 27 contrasts, 10 families**:
+  desiccation (GSE76015 seed 21v15 DAF), osmotic (AtGenExpress GSE5622), ethylene (GSE193833 ACC),
+  temperature (GSE303133 27v21°C), UV-B (GSE5626) — AGI-mapped (ATH1/GPL198 for AtGenExpress).
+- ☑ **Bridge + atlas + F-set re-run on full v7** (`scripts/11/13/18/19/20`); within-source artifact
+  joint 0.38 → 0.00. Atlas now 10 families → **columella/root cap 9/10 (top); radicle apical meristem 6/10;
+  hypocotyl cortex + cotyledon mesophyll 6–7/10 (secondary)** — root tip remains the apex.
+- ☐ (optional) plant fractional-gravity (EMCS); rehydration; cold; combined-stress
 
 **5.4 DeepSpace seed-susceptibility atlas — ☑ v1 BUILT** (`scripts/18_deepspace_atlas.py`)
 - Germ cell type × 5 stressor families + convergence count → `deepspace_seed_atlas.png`,
@@ -358,9 +362,10 @@ Legend: ☐ todo · ◐ in progress · ☑ done
 - **Phase 4** synthesis report — ✅ COMPLETE (12 pp). Reproducible notebooks superseded by numbered
   scripts 01–23 + `REPRODUCE.md`.
 - **Phase 5** consolidation — ✅ tools (DSRS/GSAD, installable, validated), FAIR scaffold, atlas
-  (cell-type/tissue/stage), F1–F6, manuscript (.md/.pdf/.docx), **pushed to GitHub**. Stressors complete:
-  µg, GCR, acute+low-dose radiation, hypoxia/anoxia/submergence, gravitropism, phototropism, hypergravity
-  (hydrotropism dropped — unreliable).
+  (cell-type/tissue/stage), F1–F6, manuscript (.md/.pdf/.docx), **pushed to GitHub**. **Stressor panel:
+  27 contrasts / 10 families** — gravity (µg/partial/hypergravity), tropism (gravi/photo), low-oxygen
+  (hypoxia/anoxia/submergence), desiccation, osmotic, ethylene, temperature, UV, radiation (GCR/low/acute),
+  magnetic/NMF. (hydrotropism dropped — unreliable.)
 - **Parked (external / user-side):** genome-wide NMF arrays (author reply); **Zenodo DOI** (user mints from
   a GitHub release → paste into `.zenodo.json`/`CITATION.cff`/manuscript); flip repo public at submission.
 - **Optional / future:** desiccation, ethylene/CO₂, temperature, UV, plant fractional-gravity; dry/0 h seed
@@ -369,6 +374,13 @@ Legend: ☐ todo · ◐ in progress · ☑ done
 ---
 
 ## 7. Changelog
+- **2026-06-27 (cc)** — **Added 5 stressor families → 27 contrasts / 10 families; full re-analysis +
+  manuscript update.** desiccation (GSE76015), osmotic (GSE5622), ethylene (GSE193833), temperature
+  (GSE303133), UV-B (GSE5626) via `scripts/24` → decoder_nes_matrix_v7. Re-ran heatmap/atlas (cell-type +
+  tissue/stage)/bridge/F-set on v7 (10-family atlas). **Headline updated:** columella/root cap = 9/10
+  families (top); radicle apical meristem 6/10; hypocotyl cortex + cotyledon mesophyll 6–7/10 secondary —
+  root tip remains the convergence apex. Manuscript (.md/.pdf/.docx, validated) + phase4 report + captions
+  updated to 27/10. osmotic/UV = AtGenExpress ATH1 (GPL198) microarray-tier; desiccation = seed-maturation proxy.
 - **2026-06-27 (bb)** — **Hypergravity added (gravity axis complete) + full-model re-run + loose-ends audit.**
   GSE29787 LDC 2 g → `scripts/23` → decoder_nes_matrix_v6 (22 contrasts). Re-ran heatmap/atlas/tissue-stage/
   bridge/F-set + report + manuscript (.md/.pdf/.docx, validated) on v6; propagated "22 contrasts" + hypergravity

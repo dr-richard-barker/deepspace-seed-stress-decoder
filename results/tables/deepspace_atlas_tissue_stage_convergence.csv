@@ -1,9 +1,9 @@
 node,level,n_families,families_hit
-12hsl,stage,4,"gravity, tropism, radiation, magnetic_NMF"
-24hsl,stage,3,"gravity, low_oxygen, radiation"
-48hsl,stage,3,"low_oxygen, radiation, magnetic_NMF"
-Ovule,tissue,4,"gravity, tropism, low_oxygen, radiation"
-Seed coat,tissue,3,"gravity, tropism, radiation"
-Embryo,tissue,2,"radiation, magnetic_NMF"
-Endosperm,tissue,2,"gravity, radiation"
-Funiculus,tissue,1,low_oxygen
+48hsl,stage,7,"low_oxygen, desiccation, osmotic, temperature, uv, radiation, magnetic_NMF"
+12hsl,stage,6,"gravity, tropism, desiccation, ethylene, radiation, magnetic_NMF"
+24hsl,stage,5,"gravity, low_oxygen, desiccation, uv, radiation"
+Ovule,tissue,8,"gravity, tropism, low_oxygen, desiccation, osmotic, ethylene, temperature, radiation"
+Embryo,tissue,5,"desiccation, ethylene, uv, radiation, magnetic_NMF"
+Endosperm,tissue,5,"gravity, desiccation, temperature, uv, radiation"
+Seed coat,tissue,4,"gravity, tropism, desiccation, radiation"
+Funiculus,tissue,2,"low_oxygen, desiccation"

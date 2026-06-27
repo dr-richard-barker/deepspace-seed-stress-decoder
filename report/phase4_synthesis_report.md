@@ -203,18 +203,18 @@ The radicle is the first organ to resume growth at germination → a coherent, t
 ### 4.9 DeepSpace seed-susceptibility atlas (headline) [D×A×L]
 *(Figure: `results/figures/deepspace_seed_atlas.png`.)*
 
-The full perturbation model (22 contrasts spanning **gravity [incl. 2 g hypergravity], tropism,
-low-oxygen, radiation, and magnetic/NMF** families) projected onto germinating-seed cell types, scored as **how many of 5 stressor
-families significantly target each cell type** (family-level convergence, so radiation's many contrasts
-get one vote).
+The full perturbation model (27 contrasts spanning **10 families**: gravity [incl. 2 g hypergravity],
+tropism, low-oxygen, desiccation, osmotic, ethylene, temperature, UV, radiation, magnetic/NMF) projected
+onto germinating-seed cell types, scored as **how many of the 10 families significantly target each cell
+type** (family-level convergence, so a data-rich family gets one vote).
 
-**Result — the radicle/root tip is the multi-stressor convergence hotspot:**
-- **Radicle apical meristem — 4 / 5 families** (gravity, tropism, radiation, magnetic/NMF; strongest NMF
-  localization z +7.96).
-- Columella/root-cap (+QC) — 4/5; radicle epidermis — 3/5. All three root-tip cell types rank at the top.
-- Cotyledon mesophyll — 4/5 (the main non-root hotspot: photosynthetic programs).
-- (Unassigned clusters cl8/cl11 score high but lack identity → the radicle apical meristem is the top
-  *biologically-defined* hotspot.)
+**Result — the root tip is the multi-stressor convergence apex (10-family model):**
+- **Columella/root cap — 9 / 10 families** — more than any other germinating-seed cell type (top
+  biologically-defined hotspot).
+- **Radicle apical meristem — 6/10** (the specific magnetic/NMF target, localization z +7.96);
+  **radicle epidermis — 5/10** → a broadly susceptible root pole.
+- Secondary hotspots: **hypocotyl cortex** and **cotyledon mesophyll** (6–7/10).
+- (Unassigned clusters cl8/cl11 score high but lack identity.)
 
 This is the paper's central atlas: it answers *which seed cell types are susceptible to deep-space
 stressors* — the **root tip is hit by the most independent stressor families**, converging with the NMF
@@ -222,7 +222,7 @@ localization, light-gated µg, gravitropism, and the hypophysis→radicle-merist
 (`results/deepspace_atlas_results.md`)
 
 **Tissue & stage resolution** (`results/figures/deepspace_atlas_tissue_stage.png`): at the germination-
-**stage** level, **12 hsl (early germination) is the most multi-stressor-susceptible window** (4/5 families)
+**stage** level, **12 hsl (early germination) is the most multi-stressor-susceptible window**
 — the dry/0 h pole is under-sampled. At the broad developing-**tissue** level the signal is diffuse and
 maternal-tissue-weighted (Ovule top but only 172 cells), confirming that **cell-type × stage is the
 informative resolution**. Combined: *radicle/root-tip cell types at early germination* are the hotspot.

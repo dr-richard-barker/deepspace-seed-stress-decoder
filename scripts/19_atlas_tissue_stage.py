@@ -12,14 +12,14 @@ from scipy.io import mmread  # noqa
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"; T=os.path.join(ROOT,"results","tables"); F=os.path.join(ROOT,"results","figures"); RAW=os.path.join(ROOT,"data","raw")
 rng=np.random.default_rng(42)
-NES=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v6.csv"),index_col=0)
-FDR=pd.read_csv(os.path.join(T,"decoder_fdr_matrix_v6.csv"),index_col=0)
+NES=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v7.csv"),index_col=0)
+FDR=pd.read_csv(os.path.join(T,"decoder_fdr_matrix_v7.csv"),index_col=0)
 cls=pd.read_csv(os.path.join(T,"contrast_classes.csv"),index_col=0)["stressor_class"].to_dict()
 fam={c:("gravity" if cls.get(c) in("microgravity","partial_gravity","hypergravity") else
         "tropism" if cls.get(c) in("tropism_gravi","tropism_photo") else
         "low_oxygen" if cls.get(c)=="low_oxygen" else
         "radiation" if str(cls.get(c)).startswith("radiation") else cls.get(c,"other")) for c in NES.columns}
-families=["gravity","tropism","low_oxygen","radiation","magnetic_NMF"]
+families=["gravity","tropism","low_oxygen","desiccation","osmotic","ethylene","temperature","uv","radiation","magnetic_NMF"]
 SIG_NES=1.5; SIG_FDR=0.25; SIG_NMFZ=2.0
 nmf_dir=pd.read_csv(os.path.join(T,"nmf_gene_directions.csv"),index_col=0).iloc[:,0]
 nmf_up=set(nmf_dir[nmf_dir>0.1].index)
@@ -72,13 +72,13 @@ summary.to_csv(os.path.join(T,"deepspace_atlas_tissue_stage_convergence.csv"),in
 
 # ---- figure: heatmap | dedicated colorbar | convergence bars (no overlap) ----
 rows=list(tissue_rows)+["(stage)"]+list(stage_rows)
-M=np.array([[np.nan]*5 if r=="(stage)" else allval.loc[r,families].values.astype(float) for r in rows],float)
+M=np.array([[np.nan]*len(families) if r=="(stage)" else allval.loc[r,families].values.astype(float) for r in rows],float)
 vmax=np.nanmax(np.abs(M)) or 1
-fig=plt.figure(figsize=(9.4,0.55*len(rows)+2.0))
+fig=plt.figure(figsize=(11,0.55*len(rows)+2.2))
 gs=fig.add_gridspec(1,3,width_ratios=[5,0.22,1.5],wspace=0.5)
 ax=fig.add_subplot(gs[0]); cax=fig.add_subplot(gs[1]); axb=fig.add_subplot(gs[2])
 im=ax.imshow(M,cmap="RdBu_r",vmin=-vmax,vmax=vmax,aspect="auto")
-ax.set_xticks(range(5)); ax.set_xticklabels(families,rotation=40,ha="right",fontsize=8)
+ax.set_xticks(range(len(families))); ax.set_xticklabels(families,rotation=40,ha="right",fontsize=8)
 ax.set_yticks(range(len(rows))); ax.set_yticklabels(rows,fontsize=8)
 for i,r in enumerate(rows):
     if r=="(stage)": continue
@@ -88,7 +88,7 @@ ax.set_title("DeepSpace atlas — tissue & germination-stage level  (* significa
 cb=fig.colorbar(im,cax=cax); cb.set_label("signed strength (NES / NMF z)",fontsize=7); cax.tick_params(labelsize=7)
 vals=[0 if r=="(stage)" else conv[r] for r in rows]
 axb.barh(range(len(rows)),vals,color="#555"); axb.invert_yaxis()
-axb.set_ylim(len(rows)-0.5,-0.5); axb.set_yticks([]); axb.set_xlim(0,5.3)
+axb.set_ylim(len(rows)-0.5,-0.5); axb.set_yticks([]); axb.set_xlim(0,len(families)+0.3)
 axb.set_xlabel("n families",fontsize=8); axb.set_title("convergence",fontsize=9)
 for i,r in enumerate(rows):
     if r!="(stage)": axb.text(vals[i]+0.1,i,str(int(conv[r])),va="center",fontsize=7)

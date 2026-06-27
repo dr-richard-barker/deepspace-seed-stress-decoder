@@ -29,8 +29,8 @@ ss=gp.ssgsea(data=dev,gene_sets=germ_sets,outdir=None,sample_norm_method="rank",
 r=ss.res2d.copy(); r["NES"]=pd.to_numeric(r["NES"],errors="coerce")
 dev_scores=r.pivot(index="Name",columns="Term",values="NES"); dev_scores.index=["dev: "+i for i in dev_scores.index]
 
-# stress scores (v6 NES, all 22 contrasts incl hypergravity)
-nes=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v6.csv"),index_col=0)
+# stress scores (v7 NES, all 27 contrasts incl hypergravity + desiccation/osmotic/ethylene/temp/UV)
+nes=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v7.csv"),index_col=0)
 ann=pd.read_csv(os.path.join(PAN,"germination_cluster_annotations.csv")); ann["cluster"]=ann.cluster.astype(str)
 cl2lab={c:f"{n} (cl{c})" for c,n in zip(ann.cluster,ann.cell_type)}
 gr=nes.loc[[i for i in nes.index if i.startswith("germ_cluster::")]].copy()
@@ -60,7 +60,8 @@ print(f"PC1<->source |corr|:  joint={c_joint:.2f}   within-source={c_v3:.2f}   (
 
 # ---- figures ----
 corder={"late_seed_dev":0,"microgravity":1,"partial_gravity":2,"hypergravity":3,"tropism_gravi":4,
-        "tropism_photo":5,"low_oxygen":6,"radiation_GCR":7,"radiation_lowdose":8,"radiation_acute":9}
+        "tropism_photo":5,"low_oxygen":6,"desiccation":7,"osmotic":8,"ethylene":9,"temperature":10,"uv":11,
+        "radiation_GCR":12,"radiation_lowdose":13,"radiation_acute":14}
 ordr=sorted(range(len(Z3.index)),key=lambda i:(corder.get(src[i],9),Z3.index[i])); Zs=Z3.iloc[ordr]
 fig,ax=plt.subplots(figsize=(9,0.4*len(Zs)+1.8)); vmax=np.nanmax(np.abs(Zs.values))
 im=ax.imshow(Zs.values,cmap="PuOr_r",vmin=-vmax,vmax=vmax,aspect="auto")
@@ -71,7 +72,8 @@ fig.colorbar(im,ax=ax,fraction=0.03,pad=0.02); fig.tight_layout()
 fig.savefig(os.path.join(F,"bridge_heatmap_v3.png"),dpi=200,bbox_inches="tight"); fig.savefig(os.path.join(F,"bridge_heatmap_v3.svg"),bbox_inches="tight")
 
 col={"late_seed_dev":"#d8b365","microgravity":"#4575b4","partial_gravity":"#74add1","hypergravity":"#08306b",
-     "tropism_gravi":"#08519c","tropism_photo":"#3690c0","low_oxygen":"#5e3c99",
+     "tropism_gravi":"#08519c","tropism_photo":"#3690c0","low_oxygen":"#5e3c99","desiccation":"#8c510a",
+     "osmotic":"#dfc27d","ethylene":"#1b7837","temperature":"#fdb863","uv":"#c2a5cf",
      "radiation_GCR":"#fdae61","radiation_lowdose":"#f46d43","radiation_acute":"#a50026"}
 p=PCA(2).fit_transform(Z3.values)
 fig,ax=plt.subplots(figsize=(8,6.5))
