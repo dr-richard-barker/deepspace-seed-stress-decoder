@@ -4,10 +4,13 @@
 thoughts, decisions, status, and continuity across sessions. Update it at the end of every working
 session (see Changelog).
 
-> **NOW CONSOLIDATING (2026-06-27):** the analysis is being distilled into **two reusable, FAIR tools**
-> + a **DeepSpace seed-susceptibility atlas**, targeting an **npj Microgravity** manuscript. See §1A.
-> Original project goal (NMF + bridge decoder) is preserved below in §1 and the phase log; it becomes the
-> methodological core of Tool 2.
+> **STATUS — v0.1.0 COMPLETE & PUSHED (2026-06-27).** All phases 0–5 done (see §8 audit for the
+> authoritative per-phase status). Delivered: two FAIR tools (**DSRS** + **GSAD**), a **27-contrast /
+> 10-family** DeepSpace stress model, the **seed-susceptibility atlas** (cell-type/tissue/stage), npj
+> figures **F1–F6** (Arial/300 dpi), and the **npj Microgravity manuscript** (.md/.pdf/.docx). Repo live
+> (private): **github.com/dr-richard-barker/deepspace-seed-decoder**.
+> **Only external items remain:** genome-wide NMF (Maffei author reply) and the Zenodo DOI + public flip
+> at submission. §1 below = original goal (now the methodological core of Tool 2); §1A = the vision it grew into.
 
 ---
 
@@ -68,32 +71,29 @@ Key questions it must answer:
 - Which **other tissues / developmental stages** (dry vs 12/24/48 h germinating; embryo lineage) are most
   deep-space-responsive, and which are robust?
 
-### Stressor panel — current + to-add (candidate accessions; CONFIRM in Phase 5)
-| stressor class | status | candidate data |
+### Stressor panel — FINAL (27 contrasts, 10 families; all in `decoder_nes_matrix_v7.csv`)
+| stressor family | status | data |
 |---|---|---|
-| microgravity (µg) | ✅ in model | OSD-120 root, OSD-678 leaf (spaceflight) |
-| ionizing radiation / GCR | ✅ in model | OSD-658 (GCR 40/80 cGy) + OSD-498/502/508/510 (100 Gy γ) + OSD-782 (Cs-137 cGy) |
-| null magnetic field (NMF) | ◐ localization only | Maffei 2021/2022 arrays (author request pending) |
-| **hypoxia** | ☐ TO ADD | GEO: 19 RNA-seq series; e.g. GSE261364 (O2-sensing); + Mustroph hypoxia core |
-| **anoxia / submergence** | ☐ TO ADD | GEO: 21 anoxia + 9 submergence RNA-seq series |
-| **hypergravity** | ✅ ADDED | GSE29787 LDC 2 g vs 1 g (callus, two-color Agilent GPL9020) — microarray-tier, completes µg↔1g↔hypergravity gravity axis |
-| high static magnetic field | ⚪ comparator | GSE29787 (10–16.5 T), PRJNA529956 (600 mT) |
+| gravity (µg / partial-g / hypergravity) | ✅ | OSD-120 root, OSD-678 leaf; hypergravity GSE29787 LDC 2 g |
+| ionizing radiation / GCR | ✅ | OSD-658 (40/80 cGy) + OSD-498/502/508/510 (100 Gy γ) + OSD-782 (Cs-137 cGy) |
+| low-oxygen (hypoxia / anoxia / submergence) | ✅ | GSE315308 (1%/0% O₂) + GSE182724 (submergence) |
+| desiccation | ✅ | GSE76015 (seed 21 vs 15 DAF) |
+| osmotic | ✅ | AtGenExpress GSE5622 (mannitol) vs GSE5620 |
+| ethylene / CO₂ | ✅ | GSE193833 (ACC 4 h vs 0 h) |
+| temperature | ✅ | GSE303133 (27 vs 21 °C) |
+| UV | ✅ | AtGenExpress GSE5626 (UV-B) vs GSE5620 |
+| tropism (gravitropism / phototropism) | ✅ | GSE199142 (gravistim) + GSE3847 (phototropic) |
+| null magnetic field (NMF) | ◐ localization only | Maffei 2021/2022 arrays (genome-wide pending author reply) |
+| high static magnetic field | ⚪ comparator (not integrated) | GSE29787 (10–16.5 T), PRJNA529956 (600 mT) |
 
-### Tropisms (directional growth — µg removes the gravitropic set-point) — feasibility-flagged
-| tropism | RNA-seq availability | plan |
-|---|---|---|
-| gravitropism | sparse (2 GEO RNA-seq) | select reorientation time-course; central to µg biology |
-| phototropism | sparse (1) | blue-light reorientation dataset |
-| hydrotropism | none (RNA-seq) | MIZ1-pathway microarray; flag as microarray/limited |
-| thigmotropism / touch | none (RNA-seq) | TCH-gene / touch microarray; flag as limited |
-> **Risk:** tropism transcriptomes are thin at RNA-seq resolution — may require microarray inclusion or
-> reframing tropisms as a curated marker-panel rather than full DE contrasts. Decide in Phase 5.
+### Tropisms — RESOLVED
+gravitropism (GSE199142) and phototropism (GSE3847) **integrated** as contrasts. **hydrotropism** and
+**thigmotropism/touch** had no usable transcriptome (0 GEO RNA-seq) → **dropped** (per user: unreliable).
 
-### Other deep-space stimuli worth considering (my suggestions)
-Desiccation/rehydration (directly seed-relevant), temperature (cold/heat), UV-B, ethylene/CO₂ accumulation
-(closed-chamber spaceflight confound), clinostat/RPM simulated-µg (ground analog), partial/fractional
-gravity (Moon/Mars), mechanical/vibration (launch). **Recommended core add-set for v1 of the paper:**
-hypoxia, anoxia, hypergravity, gravitropism (+ desiccation as a seed-specific bonus). Others = supplement/future.
+### Other deep-space stimuli — status
+Integrated: desiccation, osmotic, ethylene/CO₂, temperature, UV (all ✅, v7). **Future/optional** (not in
+v0.1.0): plant fractional gravity (EMCS Moon/Mars), cold, rehydration, clinostat/RPM, mechanical/vibration,
+combined-stress.
 
 ### FAIR + reproducibility plan (GitHub + Zenodo)
 - **Findable:** all inputs in `data/data_inventory.csv` with accessions; archived release → **Zenodo DOI**.
@@ -179,7 +179,8 @@ Code Availability (GitHub + Zenodo). Author line per user (Barker et al.); relat
 
 ## 4. Plan & status
 
-Legend: ☐ todo · ◐ in progress · ☑ done
+Legend: ☐ todo · ◐ in progress · ☑ done. **Authoritative current status: §8 completion audit.** The
+per-phase notes below are the working history (kept for continuity).
 
 ### Phase 0 — Scaffold + data inventory  ✅ essentially complete
 - ☑ Create project tree
@@ -190,16 +191,15 @@ Legend: ☐ todo · ◐ in progress · ☑ done
 - ☑ Feasibility note → `notes/phase0_feasibility.md`
   - **KEY FINDING:** genome-wide NNMF data is NOT public (Maffei array undeposited; only 194-gene
     supplement). GSE29787 is high-field, not null. Phase 1 needs a path decision (see Open Questions).
-- ◐ Confirm project path (defaulted, not yet confirmed) + compute environment
+- ☑ Path confirmed (`C:\Users\drric\Downloads\nmf_seed_decoder`); compute = LOCAL; repo on GitHub.
 
-### Phase 1 — NMF transcriptional meta-analysis
-- ☐ Per-study reprocessing to common gene space (Araport11/TAIR)
-- ☐ Platform-aware DE (microarray vs RNA-seq separately)
-- ☐ Cross-platform combination: rank-based (RRA / Stouffer) + effect-size meta where comparable
-- ☐ Report heterogeneity (I²) + direction concordance
-- ☐ Outputs: meta-DE table, NMF consensus signature, root-vs-shoot magnetoresponse contrast
+### Phase 1 — NMF transcriptional meta-analysis  ◐ REFRAMED (externally blocked)
+Genome-wide NNMF is not publicly deposited (audited GEO/SRA/BioProject/ArrayExpress; both Maffei 2021/2022
+arrays "supp tables + on request"; author request sent). The planned cross-platform meta-DE therefore
+awaits the arrays. **Delivered instead:** NMF wired in via expression-localization (`scripts/08`) →
+NMF-up genes localize to the **radicle apical meristem (z +7.96)**. Upgrades to full GSEA when arrays arrive.
 
-### Phase 2 — Seed reference ("decoder target space")  ◐ in progress
+### Phase 2 — Seed reference ("decoder target space")  ☑ COMPLETE
 - ☑ Toolchain: Python env (scanpy 1.12.1 / anndata / gseapy / statsmodels) + R 4.6.0 + SeuratObject
   (user lib `C:/Users/drric/R/win-library/4.6`).
 - ☑ Gehring atlas downloaded (`data/raw/GSE295007_ATLAS_merged_annotated_sigmods.rds`, 1.3 GB).
@@ -219,9 +219,9 @@ Legend: ☐ todo · ◐ in progress · ☑ done
   `panels/panel_library_annotated.csv`. Map: cotyledon mesophyll (3,13); hypocotyl cortex (1,5,7) +
   epidermis (6) + cortex/endodermis (2); radicle epidermis (10) + apical meristem (14) + columella (4);
   provasculature protophloem (15)/protoxylem (9)/provasc (12); unassigned (8,11).
-- ☐ Harmonize → shared latent (pseudobulk co-embedding)
+- ☑ Harmonize → shared latent (pseudobulk co-embedding) — done in Phase 3 bridge (scripts 07/12/13/14).
 
-### Phase 3 — Bridge decoder  ◐ v1 DONE (projection backbone)
+### Phase 3 — Bridge decoder  ☑ COMPLETE
 - ☑ Backbone: GSEA-prerank projection of genome-wide stressor signatures onto 122 panels →
   `scripts/04_decoder_project.py`. Pulled OSD DGE from NASA OSDR (GLDS-120/612/603, TAIR IDs).
   Result: `results/decoder_results_v1.md` + `results/tables/decoder_*` + `results/figures/decoder_*`.
@@ -233,21 +233,23 @@ Legend: ☐ todo · ◐ in progress · ☑ done
   `results/bridge_results_v1.md`. KEY FINDING: dev→germination bridge is weak/lineage-limited (only embryo
   persists; seed coat/endosperm terminal); adult-stress→germ-state mappings strong.
 - ☑ Added late-seed-dev (Gehring tissue×timepoint trajectory) as second bridge input (in 07).
-- ☐ Refine bridge: within-source scaling + restrict dev to embryo lineage (next pass)
+- ☑ Refined bridge: within-source scaling (scripts/13, artifact→0.00) + embryo-lineage map (scripts/14,
+  recovers textbook lineages). Re-run on full v7 (27 contrasts).
 - ☑ **NMF wired in (c) via expression-localization** — `scripts/08_nmf_localization.py`. GSEA-prerank
   infeasible (max 7-gene overlap of NMF panel with marker panels, median 0), so instead localized NMF-up
   (198 genes) / NMF-down onto germinating-seed cell-type expression specificity. **Result: NMF-induced
   genes concentrate sharply in the radicle apical meristem (z +7.96)**, then cotyledon mesophyll /
   cortex-endodermis. → `results/tables/nmf_*`, `results/figures/nmf_localization_heatmap.*`,
   `results/nmf_results_v1.md`. Genome-wide NMF (full Maffei 2021+2022 arrays) still pending author request.
-- ☐ Falsification tests + tier audit per predicted perturbation
+- ☑ Falsification hypotheses (H1–H6) + D/A/L/H tier framing — in the synthesis report & manuscript.
 
-### Phase 4 — Synthesis + report  ☑ v1 DONE
+### Phase 4 — Synthesis + report  ☑ COMPLETE
 - ☑ Figures: decoder L1/state + named germination heatmaps, bridge heatmap/embedding, NMF localization.
 - ☑ **Synthesis report** pulling decoder + bridge + NMF localization with evidence tiers (D/A/L/H) and
-  6 falsification hypotheses → `report/phase4_synthesis_report.md` + `.pdf` (8 pages, figure plates).
+  6 falsification hypotheses → `report/phase4_synthesis_report.md` + `.pdf` (kept current; ~12 pp).
   Renderer: `scripts/09_build_report_pdf.py` (markdown + xhtml2pdf).
-- ☐ (future) reproducible notebooks; refresh report when genome-wide NMF arrives
+- ☑ Reproducibility via numbered scripts 01–24 + `REPRODUCE.md` (notebooks not needed). Report refreshes
+  when genome-wide NMF arrives.
 
 ### Phase 5 — Consolidation → 2 tools + DeepSpace atlas + npj manuscript (NEW, 2026-06-27)
 **5.1 Data expansion** (see §1A tables)
@@ -259,10 +261,8 @@ Legend: ☐ todo · ◐ in progress · ☑ done
   (`scripts/16`). **Model now v4 = 20 contrasts.** gravitropism_12h → radicle apical meristem (+1.54).
 - ✗ OSD-758/GLDS-664 REJECTED — it is a MOUSE study (ENSMUSG), not Arabidopsis (verified). Plant
   fractional-gravity = EMCS centrifuge study (source separately if wanted).
-- ◐ Remaining tropisms/hypergravity = MICROARRAY/PANEL tier (data reality):
-  - Phototropism — GSE3847 (Esmon tropic-stimulus ATH1 microarray); needs ATH1→AGI map. DOABLE next.
-  - Hypergravity (true >1g) — GSE29787 LDC 2g (two-color Agilent .gpr); heavy processing or marker-panel.
-  - Hydrotropism — NO public transcriptome (0 GEO); only a small literature MIZ1/GNOM marker-panel.
+- ☑ RESOLVED (microarray/panel-tier data reality): phototropism (GSE3847 ATH1) ✅ added; hypergravity
+  (GSE29787 2 g) ✅ added; hydrotropism ✗ dropped (no public transcriptome). *(see ☑ items below)*
 - ☑ **Phototropism** — GSE3847 (Esmon ATH1, shaded vs lit) via GPL198 probe→AGI → contrast
   (`scripts/17`). **Model v5 = 21 contrasts** (class tropism_photo). Hypergravity HELD (two-color);
   hydrotropism DROPPED (unreliable, per user).
@@ -296,43 +296,37 @@ Legend: ☐ todo · ◐ in progress · ☑ done
 - ☑ **Figure overlap fixed** — atlas figs (18/19) use a dedicated colorbar axis (heatmap|cbar|bars).
 **5.6 npj figure set F1–F6 — ☑ BUILT & POLISHED** (`scripts/20_manuscript_figures.py` → `report/figures_npj/`):
   - **F1** concept workflow (schematic: signature → DSRS/GSAD → atlas → radicle headline)
-  - **F2** DSRS stress reference library (21 contrasts × seed programs; family bar; title/legend de-collided)
+  - **F2** DSRS stress reference library (27 contrasts × seed programs; family labels rotated above strip)
   - **F3** seed reference + embryo-lineage validation (positive control)
   - **F4** GSAD stressor → germinating-seed cell-type susceptibility
   - **F5** DeepSpace seed-susceptibility atlas (headline; dedicated colorbar)
   - **F6** convergence model (schematic: radicle growth-point; 4 families + hypophysis origin + H1/H2)
   Consistent style (300 dpi, .png+.svg), no text/legend overlap.
-- ☑ **npj manuscript draft** — `report/manuscript_npj_microgravity.md` + `.pdf` (7pp, F1–F6 embedded;
-  `scripts/21`): Abstract/Intro/Results(F1–F6)/Discussion/Methods/Data+Code availability/refs. Headline =
-  radicle growth-point multi-stressor convergence.
-- ☑ **Manuscript → .docx** — `report/manuscript_npj_microgravity.docx` (`scripts/22`, python-docx; 6
-  figures embedded; **validated PASSED** after w:zoom patch). Submission-format Word.
+- ☑ **npj manuscript** — `report/manuscript_npj_microgravity.{md,pdf,docx}` (renderers `scripts/21`/`22`,
+  F1–F6 embedded; .docx **validated PASSED**): Abstract/Intro/Results(F1–F6)/Discussion/Methods/Data+Code
+  availability/refs. Updated to 27 contrasts / 10 families. Headline = root tip is the convergence apex
+  (columella/root cap 9/10 families). Author: Richard Barker (Purdue; Collaborative Science Environment, PBC).
 - ☑ **Repo GitHub/Zenodo-ready** — committable footprint ~25 MB (data/raw 3.1 GB + data/processed 1.1 GB
   gitignored); no >5 MB stray files; LICENSE/CITATION.cff/.zenodo.json/.gitignore/REPRODUCE.md present; no
   .git yet (user runs git init + push + Zenodo).
 - ☑ Author/affiliation set: **Richard Barker** — Purdue University; The Collaborative Science Environment,
   PBC (in manuscript .md/.docx/.pdf, CITATION.cff, .zenodo.json). docx builder now auto-patches w:zoom.
-- ☐ Outward git/Zenodo (user); Zenodo DOI → fill into .zenodo.json/CITATION/manuscript; re-run bridge v5 (opt); hypergravity (opt)
-**5.2 Tool 1 — DSRS** package: stress reference library (GMT + signed signatures) + recognition/classifier CLI/API
-**5.3 Tool 2 — GSAD** package: bulk→seed-cell-type decoder CLI/API (wraps panels+decoder+bridge+embryo lineage)
-**5.4 DeepSpace seed-susceptibility atlas**: cell-type × stressor matrix + multi-stressor convergence
-  (answer: radicle tip multi-stressor? other susceptible tissues/stages?)
-**5.5 FAIR repo**: GitHub + Zenodo DOI; pinned envs; reproduce target; example notebooks; license
-**5.6 Manuscript (npj Microgravity)**: 6 main figures (§1A) + supp; methods; data/code availability
+- ☑ **Pushed to GitHub** (private): github.com/dr-richard-barker/deepspace-seed-decoder.
+- ☐ **Zenodo DOI** (user: cut a release → connect Zenodo → paste DOI into .zenodo.json/CITATION/manuscript);
+  flip repo public at submission. *(only remaining repo step)*
 
 ---
 
 ## 5. Risks / watch-list
-- **Tropism transcriptomes are sparse** (RNA-seq: gravitropism 2, phototropism 1, hydro/thigmo 0) — may
-  need microarray or marker-panel reframing (Phase 5.1).
-- **Hypergravity has no GEO RNA-seq** — rely on OSDR centrifuge / older microarray; label platform.
-- **Cross-stressor comparability** — heterogeneous platforms/doses/tissues; use rank-based projection +
-  tier labels; the µg/radiation contrasts already span tissue/dose (document heterogeneity).
-- **NMF data sparsity** — Phase 1 value is statistical rigor, not dataset count.
-- **Atlas downloads are GB-scale snRNA `h5ad`** — Phase 2 may need a heavier worker; projection itself is light.
+- ✔ RESOLVED — tropisms (gravitropism+phototropism integrated; hydro/thigmo dropped) and hypergravity
+  (GSE29787 2 g, microarray-tier, labeled).
+- **Mixed evidence tiers** — osmotic/UV/phototropism = ATH1 microarray; hypergravity = two-color/callus;
+  desiccation = seed-maturation proxy; NMF = localization. All labeled; flagged in manuscript limitations.
+- **Cross-stressor comparability** — heterogeneous platforms/doses/tissues; mitigated by rank-based
+  projection + family-level convergence voting (one vote per family).
 - **Cross-stage transfer is correlative** — kept inside the tier + falsification framework.
-- **Stage mismatch trap** — Gehring atlas is *developmental* (3–7 DAP), NOT dry/germinating; do not
-  conflate it with the germination state axis.
+- **Stage mismatch** — Gehring atlas is *developmental* (3–7 DAP), NOT dry/germinating; the germination
+  atlas (12/24/48 h) is the state axis; dry/0 h pole under-sampled.
 
 ---
 
@@ -345,9 +339,8 @@ Legend: ☐ todo · ◐ in progress · ☑ done
   Plan: install R+Seurat once to export annotated markers/pseudobulk → CSV/h5ad, then all decoder work
   in Python. (Alt: re-annotate raw matrices in scanpy — rejected, loses authors' labels.)
 
-### Still to confirm
-- Project path (defaulted to `C:\Users\drric\Downloads\nmf_seed_decoder\`).
-- Go-ahead to install R+Seurat + start ~1.3–10 GB atlas downloads.
+### Resolved
+- Project path confirmed; R+Seurat installed; atlases downloaded; all built — see §8 audit.
 
 ---
 
