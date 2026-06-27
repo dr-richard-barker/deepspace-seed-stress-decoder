@@ -344,6 +344,12 @@ Legend: ☐ todo · ◐ in progress · ☑ done
 ---
 
 ## 7. Changelog
+- **2026-06-27 (aa)** — Fixed combined-heatmap (Fig 0, `scripts/11`): class strip now aligns exactly with
+  the heatmap x-axis (NES colorbar moved to its own gridspec column so it no longer squeezes the heatmap);
+  class names rotated 45° and lifted above the strip; legend removed (redundant). Report re-rendered.
+  **Local git commit done** (`git init` + commit; 137 files, ~25 MB, data/raw+processed excluded, no >5 MB
+  files). **Push blocked: `gh` CLI not installed + no remote/credentials → user must create remote + push**
+  (commands below). Zenodo metadata verified valid.
 - **2026-06-27 (z)** — **Manuscript .docx (submission format) + repo readiness check.**
   `report/manuscript_npj_microgravity.docx` via `scripts/22` (python-docx, 6 figs embedded), validated
   PASSED (patched python-docx w:zoom quirk). Repo audited GitHub/Zenodo-ready: ~25 MB committable
