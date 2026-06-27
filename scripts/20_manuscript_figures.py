@@ -15,7 +15,8 @@ import matplotlib.colors as mcolors
 ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"
 T=os.path.join(ROOT,"results","tables"); FIG=os.path.join(ROOT,"results","figures")
 OUT=os.path.join(ROOT,"report","figures_npj"); os.makedirs(OUT,exist_ok=True)
-plt.rcParams.update({"font.size":9,"font.family":"DejaVu Sans","savefig.dpi":300,"svg.fonttype":"none"})
+plt.rcParams.update({"font.size":9,"font.family":"sans-serif","font.sans-serif":["Arial","Helvetica","DejaVu Sans"],
+                     "savefig.dpi":300,"svg.fonttype":"none","pdf.fonttype":42,"axes.linewidth":0.6})
 FAMCOL={"gravity":"#4575b4","tropism":"#3690c0","low_oxygen":"#5e3c99","desiccation":"#8c510a","osmotic":"#dfc27d","ethylene":"#1b7837","temperature":"#fdb863","uv":"#c2a5cf","radiation":"#d73027","magnetic_NMF":"#1a9850"}
 
 def box(ax,x,y,w,h,text,fc,ec="#333",fs=8.5,tc="black"):
@@ -45,29 +46,35 @@ def heat(MAT,FDR,rows,cols,title,fname,classbar=None,h_per=0.42,cbar_label="NES"
     gs=fig.add_gridspec(2,2,width_ratios=[len(cols),0.5],height_ratios=[0.3,len(rows)],
                         wspace=0.06,hspace=0.04)
     axc=fig.add_subplot(gs[0,0]); ax=fig.add_subplot(gs[1,0]); cax=fig.add_subplot(gs[1,1])
-    legend_handles=None
+    N=len(cols)
     if classbar is not None:
         fams=sorted({classbar[c] for c in cols},key=lambda k:list(FAMCOL).index(k) if k in FAMCOL else 9)
         cidx={k:i for i,k in enumerate(fams)}
-        axc.imshow([[cidx[classbar[c]] for c in cols]],aspect="auto",
+        axc.imshow([[cidx[classbar[c]] for c in cols]],aspect="auto",extent=[-0.5,N-0.5,0,1],
                    cmap=mcolors.ListedColormap([FAMCOL.get(k,"#999") for k in fams]))
-        axc.set_xticks([]); axc.set_yticks([]); axc.set_ylabel("family",fontsize=7,rotation=0,ha="right",va="center")
-        axc.set_title(title,fontsize=10,pad=6)                       # title ABOVE the family bar
-        legend_handles=[plt.matplotlib.patches.Patch(color=FAMCOL.get(k,"#999"),label=k) for k in fams]
+        axc.set_xlim(-0.5,N-0.5); axc.set_ylim(0,1); axc.set_xticks([]); axc.set_yticks([])
+        axc.set_ylabel("family",fontsize=7,rotation=0,ha="right",va="center")
+        # family-group labels rotated above the strip (replaces bottom legend -> no x-axis collision)
+        start=0
+        for i in range(1,N+1):
+            if i==N or classbar[cols[i]]!=classbar[cols[start]]:
+                k=classbar[cols[start]]; ctr=(start+i-1)/2
+                axc.text(ctr,1.4,k,rotation=45,ha="left",va="bottom",fontsize=7,fontweight="bold",
+                         color=FAMCOL.get(k,"#333"),clip_on=False)
+                start=i
+        fig.suptitle(title,fontsize=11,y=1.05)
     else:
         axc.axis("off"); axc.set_title(title,fontsize=10,pad=6)
     vmax=np.nanmax(np.abs(MAT)) or 1
-    im=ax.imshow(MAT,cmap="RdBu_r",vmin=-vmax,vmax=vmax,aspect="auto")
-    ax.set_xticks(range(len(cols))); ax.set_xticklabels(cols,rotation=55,ha="right",fontsize=7)
+    im=ax.imshow(MAT,cmap="RdBu_r",vmin=-vmax,vmax=vmax,aspect="auto",extent=[-0.5,N-0.5,len(rows)-0.5,-0.5])
+    ax.set_xlim(-0.5,N-0.5)
+    ax.set_xticks(range(N)); ax.set_xticklabels(cols,rotation=55,ha="right",fontsize=7)
     ax.set_yticks(range(len(rows))); ax.set_yticklabels(rows,fontsize=8)
     if FDR is not None:
         for i in range(len(rows)):
-            for j in range(len(cols)):
+            for j in range(N):
                 if pd.notna(FDR[i,j]) and FDR[i,j]<0.25: ax.text(j,i,"*",ha="center",va="center",fontsize=8)
     cb=fig.colorbar(im,cax=cax); cb.set_label(cbar_label,fontsize=8); cax.tick_params(labelsize=7)
-    if legend_handles:   # family legend at the BOTTOM (below x labels) — no title collision
-        fig.legend(handles=legend_handles,loc="lower center",ncol=len(legend_handles),
-                   fontsize=7,frameon=False,bbox_to_anchor=(0.5,-0.04))
     fig.savefig(os.path.join(OUT,fname+".png"),bbox_inches="tight"); fig.savefig(os.path.join(OUT,fname+".svg"),bbox_inches="tight"); plt.close(fig)
 
 nes=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v7.csv"),index_col=0)

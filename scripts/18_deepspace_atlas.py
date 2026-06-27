@@ -10,6 +10,7 @@ Outputs: results/tables/deepspace_atlas_{nes,family,convergence}.csv ; figures/d
 """
 import os, numpy as np, pandas as pd
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
+plt.rcParams.update({"font.family":"sans-serif","font.sans-serif":["Arial","Helvetica","DejaVu Sans"],"savefig.dpi":300,"svg.fonttype":"none","pdf.fonttype":42,"axes.linewidth":0.6})
 ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"; T=os.path.join(ROOT,"results","tables"); F=os.path.join(ROOT,"results","figures"); PAN=os.path.join(ROOT,"panels")
 NES=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v7.csv"),index_col=0)
 FDR=pd.read_csv(os.path.join(T,"decoder_fdr_matrix_v7.csv"),index_col=0)

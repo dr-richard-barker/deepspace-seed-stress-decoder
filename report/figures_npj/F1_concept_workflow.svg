@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-06-27T16:00:46.779024</dc:date>
+    <dc:date>2026-06-27T17:08:47.775893</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -40,7 +40,7 @@ Q 21.2616 127.704384 21.2616 130.010688
 L 21.2616 166.911552 
 Q 21.2616 169.217856 25.2792 169.217856 
 z
-" clip-path="url(#p1f1f1566b8)" style="fill: #f0f0f0; stroke: #333333; stroke-width: 1.2; stroke-linejoin: miter"/>
+" clip-path="url(#pba391c8195)" style="fill: #f0f0f0; stroke: #333333; stroke-width: 1.2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 170.9172 111.560256 
@@ -53,7 +53,7 @@ Q 166.8996 58.515264 166.8996 60.821568
 L 166.8996 109.253952 
 Q 166.8996 111.560256 170.9172 111.560256 
 z
-" clip-path="url(#p1f1f1566b8)" style="fill: #dbe7f3; stroke: #333333; stroke-width: 1.2; stroke-linejoin: miter"/>
+" clip-path="url(#pba391c8195)" style="fill: #dbe7f3; stroke: #333333; stroke-width: 1.2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 170.9172 244.172736 
@@ -66,7 +66,7 @@ Q 166.8996 191.127744 166.8996 193.434048
 L 166.8996 241.866432 
 Q 166.8996 244.172736 170.9172 244.172736 
 z
-" clip-path="url(#p1f1f1566b8)" style="fill: #ddf2e4; stroke: #333333; stroke-width: 1.2; stroke-linejoin: miter"/>
+" clip-path="url(#pba391c8195)" style="fill: #ddf2e4; stroke: #333333; stroke-width: 1.2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 366.7752 174.983616 
@@ -79,47 +79,47 @@ Q 362.7576 121.938624 362.7576 124.244928
 L 362.7576 172.677312 
 Q 362.7576 174.983616 366.7752 174.983616 
 z
-" clip-path="url(#p1f1f1566b8)" style="fill: #fde8d0; stroke: #333333; stroke-width: 1.2; stroke-linejoin: miter"/>
+" clip-path="url(#pba391c8195)" style="fill: #fde8d0; stroke: #333333; stroke-width: 1.2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_6">
     <path d="M 129.039899 138.306288 
 Q 147.816071 116.749359 165.270465 96.709963 
-" clip-path="url(#p1f1f1566b8)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
+" clip-path="url(#pba391c8195)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
     <path d="M 158.653951 99.43425 
 L 165.270465 96.709963 
 L 163.479986 103.637747 
 z
-" clip-path="url(#p1f1f1566b8)" style="fill: #333333; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
+" clip-path="url(#pba391c8195)" style="fill: #333333; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
    </g>
    <g id="patch_7">
     <path d="M 128.912388 158.724518 
 Q 147.816799 184.498209 165.530962 208.649153 
-" clip-path="url(#p1f1f1566b8)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
+" clip-path="url(#pba391c8195)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
     <path d="M 164.326071 201.59591 
 L 165.530962 208.649153 
 L 159.165433 205.38112 
 z
-" clip-path="url(#p1f1f1566b8)" style="fill: #333333; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
+" clip-path="url(#pba391c8195)" style="fill: #333333; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
    </g>
    <g id="patch_8">
     <path d="M 335.093933 95.052003 
 Q 353.718681 112.425755 370.87184 128.426763 
-" clip-path="url(#p1f1f1566b8)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
+" clip-path="url(#pba391c8195)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
     <path d="M 368.374706 121.721219 
 L 370.87184 128.426763 
 L 364.009124 126.401144 
 z
-" clip-path="url(#p1f1f1566b8)" style="fill: #333333; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
+" clip-path="url(#pba391c8195)" style="fill: #333333; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
    </g>
    <g id="patch_9">
     <path d="M 334.941899 210.378288 
 Q 353.718071 188.821359 371.172465 168.781963 
-" clip-path="url(#p1f1f1566b8)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
+" clip-path="url(#pba391c8195)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
     <path d="M 364.555951 171.50625 
 L 371.172465 168.781963 
 L 369.381986 175.709747 
 z
-" clip-path="url(#p1f1f1566b8)" style="fill: #333333; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
+" clip-path="url(#pba391c8195)" style="fill: #333333; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
    </g>
    <g id="patch_10">
     <path d="M 346.6872 267.235776 
@@ -132,59 +132,59 @@ Q 342.6696 234.370944 342.6696 236.677248
 L 342.6696 264.929472 
 Q 342.6696 267.235776 346.6872 267.235776 
 z
-" clip-path="url(#p1f1f1566b8)" style="fill: #fff3bf; stroke: #333333; stroke-width: 1.2; stroke-linejoin: miter"/>
+" clip-path="url(#pba391c8195)" style="fill: #fff3bf; stroke: #333333; stroke-width: 1.2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_11">
     <path d="M 428.721251 176.376527 
 Q 424.026023 204.677141 419.660171 230.992432 
-" clip-path="url(#p1f1f1566b8)" style="fill: none; stroke: #a06000; stroke-width: 1.8; stroke-linecap: round"/>
+" clip-path="url(#pba391c8195)" style="fill: none; stroke: #a06000; stroke-width: 1.8; stroke-linecap: round"/>
     <path d="M 423.864498 225.202472 
 L 419.660171 230.992432 
 L 417.550799 224.154994 
 z
-" clip-path="url(#p1f1f1566b8)" style="fill: #a06000; stroke: #a06000; stroke-width: 1.8; stroke-linecap: round"/>
+" clip-path="url(#pba391c8195)" style="fill: #a06000; stroke: #a06000; stroke-width: 1.8; stroke-linecap: round"/>
    </g>
    <g id="text_1">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle" x="258.3" y="18.73152" transform="rotate(-0 258.3 18.73152)">DeepSpace plant-stress → germinating-seed decoding</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle" x="258.3" y="18.73152" transform="rotate(-0 258.3 18.73152)">DeepSpace plant-stress → germinating-seed decoding</text>
    </g>
    <g id="text_2">
-    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(62.08032 135.365641)">Query</text>
-    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(44.185164 145.567966)">transcriptomic</text>
-    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(54.978172 155.77029)">signature</text>
-    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(47.004109 165.972614)">(log2FC, AGI)</text>
+    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(63.424383 136.786154)">Query</text>
+    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(48.548055 146.037541)">transcriptomic</text>
+    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(57.514891 155.288762)">signature</text>
+    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(49.018875 164.540148)">(log2FC, AGI)</text>
    </g>
    <g id="text_3">
-    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(219.883445 71.942614)">Tool 1 — DSRS</text>
-    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(211.145047 82.144938)">Stress-Recognition</text>
-    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(209.36868 92.347262)">vs reference library</text>
-    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(208.509383 102.549586)">(5 stressor families)</text>
+    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(221.007039 73.360387)">Tool 1 — DSRS</text>
+    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(214.863797 82.611608)">Stress-Recognition</text>
+    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(214.632039 91.862994)">vs reference library</text>
+    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(213.693719 101.114381)">(5 stressor families)</text>
    </g>
    <g id="text_4">
-    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(219.255242 204.555094)">Tool 2 — GSAD</text>
-    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(183.066492 214.757418)">Germinating-Seed AutoDecoder</text>
-    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(209.725281 224.959742)">vs 122 seed panels</text>
-    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(189.342547 235.162066)">(Gehring dev + germination)</text>
+    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(220.770633 205.97295)">Tool 2 — GSAD</text>
+    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(190.527898 215.224171)">Germinating-Seed AutoDecoder</text>
+    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(214.146609 224.475557)">vs 122 seed panels</text>
+    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(197.736961 233.726778)">(Gehring dev + germination)</text>
    </g>
    <g id="text_5">
-    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(391.868469 135.366306)">DeepSpace seed-</text>
-    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(386.413195 145.56863)">susceptibility ATLAS</text>
-    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(387.519523 155.770954)">cell-type × stressor</text>
-    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'" transform="translate(396.743352 165.972614)">+ convergence</text>
+    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(395.027414 136.783747)">DeepSpace seed-</text>
+    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(390.861086 146.034968)">susceptibility ATLAS</text>
+    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(393.266984 155.286354)">cell-type × stressor</text>
+    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(401.051125 164.537741)">+ convergence</text>
    </g>
    <g id="text_6">
-    <text style="font-style: italic; font-size: 7.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1c4a72" x="250.767" y="116.74944" transform="rotate(-0 250.767 116.74944)">“which space stressor?”</text>
+    <text style="font-style: italic; font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1c4a72" x="250.767" y="116.74944" transform="rotate(-0 250.767 116.74944)">“which space stressor?”</text>
    </g>
    <g id="text_7">
-    <text style="font-style: italic; font-size: 7.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1a7a3a" x="250.767" y="249.36192" transform="rotate(-0 250.767 249.36192)">“effect on the seed?”</text>
+    <text style="font-style: italic; font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a7a3a" x="250.767" y="249.36192" transform="rotate(-0 250.767 249.36192)">“effect on the seed?”</text>
    </g>
    <g id="text_8">
-    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(364.708375 248.080704)">Headline: radicle/root tip =</text>
-    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(374.949625 257.682891)">multi-stressor hotspot</text>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(372.424625 248.520157)">Headline: radicle/root tip =</text>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(380.772125 257.227188)">multi-stressor hotspot</text>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p1f1f1566b8">
+  <clipPath id="pba391c8195">
    <rect x="7.2" y="7.2" width="502.2" height="288.288"/>
   </clipPath>
  </defs>
