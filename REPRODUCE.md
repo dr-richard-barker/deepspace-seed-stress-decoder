@@ -21,17 +21,20 @@ End-to-end reproduction. All inputs are public; accessions + provenance are in
 ## 3. Pipeline (numbered scripts, run in order from repo root)
 ```
 01_inspect_gehring.R / 02_export_gehring.R   # open atlas, export counts
-03_build_panels.py                           # 122-panel seed reference library
-06_annotate_and_replot.py                    # name germination clusters
-04_decoder_project.py                        # OSD microgravity/GCR -> seed panels
-10_radiation_decoder.py 15_oxygen_stressors.py 16_gravity_stressors.py 17_phototropism.py
-                                             # add radiation / low-O2 / gravity / phototropism -> v5 (21 contrasts)
-08_nmf_localization.py                       # NMF localization (radicle apical meristem)
+03_build_panels.py  06_annotate_and_replot.py  26_dry_seed_panel.py
+                                             # 123-panel seed reference (+ named germ clusters + dry_seed)
+04_decoder_project.py                        # OSD microgravity/GCR -> seed panels (v1)
+10_radiation_decoder.py 15_oxygen_stressors.py 16_gravity_stressors.py 17_phototropism.py 23_hypergravity.py 24_more_stressors.py
+                                             # radiation/low-O2/gravity/photo/hypergravity/desiccation+osmotic+ethylene+temp+UV -> v7 (27 contrasts, 10 families)
+08_nmf_localization.py  25_nmf2021_localization.py   # NMF localization (2022 oxidative + 2021 Sci Rep panels)
 07/12/13/14_bridge*.py                       # shared-latent bridge + embryo-lineage validation
-18_deepspace_atlas.py 19_atlas_tissue_stage.py   # the susceptibility atlas (cell-type / tissue / stage)
-11_combined_heatmap.py 09_build_report_pdf.py    # combined figure + synthesis report
+18_deepspace_atlas.py 19_atlas_tissue_stage.py   # susceptibility atlas (cell-type / tissue / stage)
+11_combined_heatmap.py 20_manuscript_figures.py  # combined figure + npj F1-F6
+09_build_report_pdf.py 21_build_manuscript_pdf.py 22_build_docx.py 27_build_supplementary.py  # report + manuscript + supplementary
 ```
 Outputs: `panels/`, `results/tables/`, `results/figures/`, `report/`.
+*(Reproducibility smoke-test 2026-06-27: all Python scripts compile; `deepspace` tools run end-to-end from
+committed panels/tables; figure scripts regenerate from committed `results/tables/`.)*
 
 ## 4. Use the tools
 ```bash

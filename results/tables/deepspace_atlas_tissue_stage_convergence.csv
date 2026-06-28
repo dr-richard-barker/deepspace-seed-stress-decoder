@@ -1,4 +1,5 @@
 node,level,n_families,families_hit
+dry_seed,stage,7,"gravity, low_oxygen, desiccation, osmotic, temperature, uv, radiation"
 48hsl,stage,7,"low_oxygen, desiccation, osmotic, temperature, uv, radiation, magnetic_NMF"
 12hsl,stage,6,"gravity, tropism, desiccation, ethylene, radiation, magnetic_NMF"
 24hsl,stage,5,"gravity, low_oxygen, desiccation, uv, radiation"

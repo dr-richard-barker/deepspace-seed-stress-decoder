@@ -133,10 +133,12 @@ score highly but lack a defined identity; the columella/root cap is the top biol
 ### Stage and tissue resolution
 
 At the germination-**stage** level, **early germination (12 h) is the most multi-stressor-susceptible
-window**, consistent with the cross-family "12 h" convergence; the truly dry/0 h pole is
-under-sampled by current single-cell data. At the broad developing-**tissue** level the signal is diffuse
-and weighted by small maternal tissues, indicating that **cell-type × stage**, not gross tissue, is the
-informative resolution.
+window**, consistent with the cross-family "12 h" convergence. We anchored the **dry/0 h pole** with a
+bulk-derived dry-seed (mature, 21 DAP) marker panel, extending the state axis dry→12→24→48 h: the
+**dry/dormant-seed program is induced by desiccation (strongest), low-oxygen and acute radiation, and
+suppressed by ethylene** — the expected dormancy logic (ethylene promotes germination), an internal
+validation. At the broad developing-**tissue** level the signal is diffuse and weighted by small maternal
+tissues, indicating that **cell-type × stage**, not gross tissue, is the informative resolution.
 
 ### A convergent model centred on the radicle growth-point (Fig. 6)
 
@@ -168,8 +170,9 @@ literature / hypothesis) and a falsification test. The framework's recovery of t
 (Fig. 3) provides confidence that the projections reflect real cell-type biology rather than artefact.
 
 Key limitations define the next experiments. Genome-wide null-magnetic-field transcriptomes are not yet
-publicly deposited, so the NMF arm relies on a curated panel via localization; the dry/0 h seed pole is
-under-sampled at single-cell resolution; tropism transcriptomes are sparse (gravitropism RNA-seq;
+publicly deposited, so the NMF arm relies on a curated panel via localization; the dry/0 h seed pole lacks
+single-cell data and is anchored only by a bulk-tier dry-seed maturation panel; tropism transcriptomes are
+sparse (gravitropism RNA-seq;
 phototropism microarray) and sustained hypergravity is represented only by a microarray-tier callus
 dataset (2 g, GSE29787); osmotic and UV-B use AtGenExpress ATH1 microarrays and desiccation uses seed-
 maturation drying as a proxy; and several contrasts are thus microarray- or translatome-tier. None of these undermines the central, multiply-supported result, and

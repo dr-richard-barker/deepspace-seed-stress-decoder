@@ -46,7 +46,7 @@ meta=meta.set_index("cellid").reindex(mat.columns).dropna(subset=["time"])
 mat=mat[meta.index]
 pbt=mat.groupby(meta["time"],axis=1).sum(); pbt=np.log1p(pbt/pbt.sum()*1e6)
 nmf_stage=localize(pbt)
-stage_rows={s:f"germ_state_time::{s}" for s in ["12hsl","24hsl","48hsl"]}
+stage_rows={s:f"germ_state_time::{s}" for s in ["dry_seed","12hsl","24hsl","48hsl"]}  # dry_seed anchors the 0h pole
 
 # ---- assemble convergence for a set of (label,row,nmf_z) ----
 def build(rowmap,nmfz):
