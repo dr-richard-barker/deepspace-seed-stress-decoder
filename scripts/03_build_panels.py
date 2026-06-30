@@ -9,7 +9,7 @@ import numpy as np, pandas as pd, scanpy as sc
 from scipy.io import mmread
 from scipy.sparse import csr_matrix
 
-ROOT = r"C:\Users\drric\Downloads\nmf_seed_decoder"
+ROOT = os.environ.get("DEEPSPACE_ROOT") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROC = os.path.join(ROOT, "data", "processed")
 RAW  = os.path.join(ROOT, "data", "raw")
 PAN  = os.path.join(ROOT, "panels")

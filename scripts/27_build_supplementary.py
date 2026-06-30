@@ -2,7 +2,7 @@
 """Render the Supplementary Materials markdown to PDF with Supplementary Figures S1-S5 embedded."""
 import os, markdown
 from xhtml2pdf import pisa
-ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"
+ROOT=os.environ.get("DEEPSPACE_ROOT") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MD=os.path.join(ROOT,"report","supplementary_materials.md")
 OUT=os.path.join(ROOT,"report","supplementary_materials.pdf")
 FIG=os.path.join(ROOT,"results","figures")

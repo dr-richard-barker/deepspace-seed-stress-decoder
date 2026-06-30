@@ -5,7 +5,7 @@ from docx import Document
 from docx.shared import Pt, Inches, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
-ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"
+ROOT=os.environ.get("DEEPSPACE_ROOT") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MD=os.path.join(ROOT,"report","manuscript_npj_microgravity.md")
 NPJ=os.path.join(ROOT,"report","figures_npj")
 OUT=os.path.join(ROOT,"report","manuscript_npj_microgravity.docx")

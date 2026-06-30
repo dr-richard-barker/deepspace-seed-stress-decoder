@@ -15,7 +15,7 @@ from sklearn.decomposition import PCA
 import gseapy as gp
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 
-ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"
+ROOT=os.environ.get("DEEPSPACE_ROOT") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROC=os.path.join(ROOT,"data","processed","gehring"); PAN=os.path.join(ROOT,"panels")
 T=os.path.join(ROOT,"results","tables"); F=os.path.join(ROOT,"results","figures")
 

@@ -8,6 +8,6 @@ PANEL_LIBRARY = ROOT / "panels" / "panel_library.csv"
 PANEL_GMT     = ROOT / "panels" / "panel_library.gmt"
 GERM_ANNOT    = ROOT / "panels" / "germination_cluster_annotations.csv"
 # stress reference library (panels x stressor contrasts) + classes
-REF_NES       = ROOT / "results" / "tables" / "decoder_nes_matrix_v5.csv"
-REF_FDR       = ROOT / "results" / "tables" / "decoder_fdr_matrix_v5.csv"
+REF_NES       = ROOT / "results" / "tables" / "decoder_nes_matrix_v7.csv"
+REF_FDR       = ROOT / "results" / "tables" / "decoder_fdr_matrix_v7.csv"
 CONTRAST_CLASS= ROOT / "results" / "tables" / "contrast_classes.csv"

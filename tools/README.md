@@ -4,11 +4,12 @@ Distilled, reusable software behind the DeepSpace seed-susceptibility atlas.
 
 | Tool | Module | What it does |
 |---|---|---|
-| **DSRS** — DeepSpace Stress-Recognition System | `deepspace.dsrs` | Given a transcriptomic perturbation signature, **recognize which space stressor it resembles** (microgravity, radiation, low-oxygen, tropism, magnetic/NMF…) by matching its seed-program fingerprint to a reference stressor library. |
+| **DSRS** — DeepSpace Stress-Recognition System | `deepspace.dsrs` | Given a transcriptomic perturbation signature, **recognize which space stressor it resembles** (gravity, radiation, low-oxygen, tropism, desiccation, osmotic, ethylene, temperature, UV) by matching its seed-program fingerprint to a reference stressor library. *(Null-magnetic-field is handled by expression-localization, not in this GSEA reference.)* |
 | **GSAD** — Germinating-Seed AutoDecoder | `deepspace.gsad` | Given **bulk transcriptomics**, model its **predicted effect on the dry/germinating seed** — a per cell-type / tissue / stage susceptibility profile. |
 
-Both share one projection engine: rank the query by log2FC and GSEA-project it onto the **122 seed
-cell-type/state panels** (Gehring developmental + germination atlases).
+Both share one projection engine: rank the query by log2FC and GSEA-project it onto the **123 seed
+cell-type/state panels** (122 single-cell panels from the Gehring developmental + germination atlases,
+plus a bulk dry-seed anchor).
 
 ## Install
 ```bash

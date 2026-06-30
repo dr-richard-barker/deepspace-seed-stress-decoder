@@ -10,7 +10,7 @@ import numpy as np, pandas as pd
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-ROOT = r"C:\Users\drric\Downloads\nmf_seed_decoder"
+ROOT = os.environ.get("DEEPSPACE_ROOT") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAN  = os.path.join(ROOT, "panels"); T = os.path.join(ROOT,"results","tables"); F = os.path.join(ROOT,"results","figures")
 
 ann = pd.read_csv(os.path.join(PAN, "germination_cluster_annotations.csv"))

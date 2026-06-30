@@ -8,7 +8,7 @@ Project each onto the 122 seed panels (GSEA-prerank); merge into decoder_nes_mat
 import os, re, warnings
 import numpy as np, pandas as pd, gseapy as gp
 warnings.filterwarnings("ignore")
-ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"
+ROOT=os.environ.get("DEEPSPACE_ROOT") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW=os.path.join(ROOT,"data","raw"); SV=os.path.join(RAW,"stressors_v2")
 OUT=os.path.join(ROOT,"results","tables"); PAN=os.path.join(ROOT,"panels","panel_library.csv")
 

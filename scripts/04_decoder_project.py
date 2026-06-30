@@ -13,7 +13,7 @@ import os, re, warnings
 import numpy as np, pandas as pd, gseapy as gp
 warnings.filterwarnings("ignore")
 
-ROOT = r"C:\Users\drric\Downloads\nmf_seed_decoder"
+ROOT = os.environ.get("DEEPSPACE_ROOT") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OSD  = os.path.join(ROOT, "data", "raw", "osd")
 PAN  = os.path.join(ROOT, "panels", "panel_library.csv")
 OUT  = os.path.join(ROOT, "results", "tables")

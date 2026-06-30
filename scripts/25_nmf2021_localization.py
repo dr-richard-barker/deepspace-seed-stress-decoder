@@ -15,7 +15,7 @@ import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 plt.rcParams.update({"font.family":"sans-serif","font.sans-serif":["Arial","Helvetica","DejaVu Sans"],"savefig.dpi":300,"svg.fonttype":"none","pdf.fonttype":42})
 warnings.filterwarnings("ignore")
 rng=np.random.default_rng(42)
-ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"
+ROOT=os.environ.get("DEEPSPACE_ROOT") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW=os.path.join(ROOT,"data","raw"); NMF=os.path.join(RAW,"nmf_maffei")
 T=os.path.join(ROOT,"results","tables"); F=os.path.join(ROOT,"results","figures"); PAN=os.path.join(ROOT,"panels")
 AGI=re.compile(r'^AT[1-5MC]G\d{5}$')

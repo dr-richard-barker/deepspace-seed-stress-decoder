@@ -7,7 +7,7 @@ the 122 seed panels via GSEA-prerank, then merged with the existing micro-gravit
 import os, re, warnings
 import numpy as np, pandas as pd, gseapy as gp
 warnings.filterwarnings("ignore")
-ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"; OSD=os.path.join(ROOT,"data","raw","osd")
+ROOT=os.environ.get("DEEPSPACE_ROOT") or os.path.dirname(os.path.dirname(os.path.abspath(__file__))); OSD=os.path.join(ROOT,"data","raw","osd")
 PAN=os.path.join(ROOT,"panels","panel_library.csv"); OUT=os.path.join(ROOT,"results","tables")
 C="Log2fc_"
 # contrast -> (file, column, sign, OSD, agent, dose, time, class)

@@ -1,6 +1,6 @@
 # A cell-type-resolved atlas of deep-space stress susceptibility in the dry and germinating Arabidopsis seed
 
-**Richard Barker**¹ ²
+**Richard Barker**¹ ² (ORCID: 0000-0000-0000-0000)
 
 ¹ Purdue University, West Lafayette, IN, USA
 ² The Collaborative Science Environment, PBC (public benefit corporation)
@@ -19,8 +19,8 @@ environment of spaceflight hardware — impinges on the dormant and germinating 
 uncharacterized, because spaceflight experiments measure later developmental stages rather than seeds.
 We address this gap with two reusable tools and a single-cell reference. The **DeepSpace
 Stress-Recognition System (DSRS)** recognizes which space stressor a transcriptomic signature resembles,
-and the **Germinating-Seed AutoDecoder (GSAD)** projects bulk transcriptomes onto a 122-panel
-single-cell seed reference (developmental and germination atlases) to predict cell-type-level effects.
+and the **Germinating-Seed AutoDecoder (GSAD)** projects bulk transcriptomes onto a 123-panel
+seed reference (developmental and germination atlases) to predict cell-type-level effects.
 Validating the framework, the decoder independently recovers textbook embryo→seedling lineages
 (protoderm→epidermis; hypophysis→radicle apical meristem; vascular primordium→provasculature). Applying
 it to a 27-contrast model spanning ten stressor families (gravity including hypergravity, tropism,
@@ -33,6 +33,8 @@ secondary hotspots. Early germination (12 h) is the most vulnerable developmenta
 all predictions as testable hypotheses with falsification experiments and release the tools, panels, and
 atlas as a FAIR resource. The root tip emerges as a priority target for protecting seed performance in
 deep space.
+
+**Keywords:** space biology; plant transcriptomics; seed germination; microgravity; single-cell atlas; abiotic stress
 
 ---
 
@@ -70,7 +72,7 @@ susceptibility atlas with an explicit, falsifiable headline.
 We distilled the analysis into two reusable, FAIR tools (Fig. 1). **DSRS** takes any plant transcriptomic
 perturbation signature (ranked log2 fold-changes, AGI/TAIR identifiers) and recognizes which space
 stressor it most resembles, by comparing its *seed-program fingerprint* — its enrichment across the seed
-reference panels — to a curated reference library spanning five stressor families. **GSAD** takes a bulk
+reference panels — to a curated reference library spanning the ten stressor families analysed here (Results). **GSAD** takes a bulk
 transcriptome and models its predicted effect on the dry/germinating seed, returning a per cell-type,
 tissue, and stage susceptibility profile. Both share one projection engine (rank-based gene-set
 enrichment onto the seed panels). As an internal check, DSRS correctly recognizes a held-in submergence
@@ -78,7 +80,7 @@ signature as belonging to the low-oxygen family.
 
 ### A validated single-cell seed reference (Fig. 3)
 
-We built a 122-panel reference of seed cell-type and state marker sets from the developmental seed atlas
+We built a 123-panel reference (122 single-cell panels plus a bulk dry-seed anchor) of seed cell-type and state marker sets from the developmental seed atlas
 (snRNA-seq, 3/5/7 days after pollination) and the germination atlas (scRNA-seq, 12/24/48 h post-imbibition),
 spanning embryo, endosperm, seed-coat, and germinating-embryo cell types as well as the dry→germinating
 state axis. Panels reproduced canonical markers (oleosins and cruciferin for embryo; *BANYULS* for the
@@ -185,8 +187,17 @@ stressors (e.g., desiccation, ethylene/CO₂, partial gravity) as reference pane
 
 **Seed single-cell reference.** Developmental seed atlas (snRNA-seq, 3/5/7 DAP) and germination atlas
 (scRNA-seq, 12/24/48 h). Cell-type/state marker panels (top 50 genes/group, ≥20 cells, Wilcoxon) were
-compiled into a 122-panel library (exported as GMT). Germination clusters were annotated from the source
-publication and confirmed against canonical markers.
+compiled into a 123-panel library (122 single-cell panels + 1 bulk dry-seed anchor; exported as GMT).
+Germination clusters were annotated from the source publication and confirmed against canonical markers.
+
+**Stressor classification.** The 27 contrasts carry 13 fine-grained stressor classes
+(`microgravity`, `hypergravity`, `radiation_GCR`, `radiation_acute`, `radiation_lowdose`, `low_oxygen`,
+`tropism_gravi`, `tropism_photo`, `desiccation`, `osmotic`, `ethylene`, `temperature`, `uv`) that are
+aggregated for convergence into **ten families**: gravity (microgravity + hypergravity), radiation
+(GCR + acute + low-dose), tropism (gravitropism + phototropism), and the seven 1:1 families low-oxygen,
+desiccation, osmotic, ethylene, temperature, UV, and magnetic/null-magnetic-field. Family-level voting
+(one vote per family) prevents data-rich families from dominating. NMF is the tenth family but, lacking a
+genome-wide signature, is handled by expression-localization rather than GSEA (below).
 
 **Stressor signatures.** Genome-wide differential expression was obtained from NASA OSDR (microgravity:
 OSD-120, OSD-678; radiation: OSD-658, OSD-498, OSD-502, OSD-508, OSD-510, OSD-782) and GEO (low-oxygen:
@@ -225,13 +236,15 @@ were requested from the authors; the curated panel is included.
 
 ## Code availability
 
-Tools and pipeline are released under the MIT license with a Zenodo DOI [to be minted on deposit]: the
-`deepspace` package (DSRS + GSAD + CLI), the panel library (GMT), numbered reproduction scripts, and a
-`REPRODUCE.md` guide. Figures F1–F6 are regenerated by `scripts/20_manuscript_figures.py`.
+Tools and pipeline are released under the MIT license at
+**https://github.com/dr-richard-barker/deepspace-seed-decoder** and archived on Zenodo
+[DOI to be minted on deposit]: the `deepspace` package (DSRS + GSAD + CLI), the panel library (GMT),
+numbered reproduction scripts, and a `REPRODUCE.md` guide. Figures F1–F6 are regenerated by
+`scripts/20_manuscript_figures.py`.
 
 ## Selected references
 
-1. Martin, Cogdill, Pusey, … Gehring. *Transcriptional atlas of early Arabidopsis seed development.* npj? — *Nat. Plants* (2026). doi:10.1038/s41477-026-02295-8 (GSE295007).
+1. Martin, Cogdill, Pusey, … Gehring. *Transcriptional atlas of early Arabidopsis seed development.* *Nat. Plants* (2026). doi:10.1038/s41477-026-02295-8 (GSE295007).
 2. Liew, …, Lewsey. *Establishment of single-cell transcriptional states during seed germination.* *Nat. Plants* (2024). doi:10.1038/s41477-024-01771-3 (E-MTAB-12532 / GSE182331).
 3. Parmagnani, Mannino, Maffei. *Transcriptomics and metabolomics of ROS modulation in near-null magnetic field Arabidopsis.* *Biomolecules* (2022). doi:10.3390/biom12121824.
 4. Agliassa, Maffei. *Differential root and shoot magnetoresponses in Arabidopsis.* *Sci. Rep.* (2021). doi:10.1038/s41598-021-88695-6.
@@ -242,8 +255,11 @@ Tools and pipeline are released under the MIT license with a Zenodo DOI [to be m
 
 ## Author contributions / Competing interests / Acknowledgements
 
-[To complete.] The authors declare no competing interests. We thank the data-generating consortia (Gehring
-and Lewsey labs; NASA GeneLab/OSDR; the Maffei group) whose public/shared data enabled this work.
+**Author contributions.** R.B. conceived and designed the study, assembled and analysed all datasets,
+developed the DSRS and GSAD tools, generated the figures, and wrote the manuscript.
+**Competing interests.** The author declares no competing interests.
+**Acknowledgements.** We thank the data-generating consortia (Gehring and Lewsey labs; NASA
+GeneLab/OSDR; the Maffei group) whose public/shared data enabled this work.
 
 ---
 

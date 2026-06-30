@@ -13,7 +13,7 @@ import os, numpy as np, pandas as pd
 from scipy.stats import hypergeom
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 
-ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"
+ROOT=os.environ.get("DEEPSPACE_ROOT") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW=os.path.join(ROOT,"data","raw"); NMF=os.path.join(RAW,"nmf_maffei")
 PAN=os.path.join(ROOT,"panels"); T=os.path.join(ROOT,"results","tables"); F=os.path.join(ROOT,"results","figures")
 rng=np.random.default_rng(42)

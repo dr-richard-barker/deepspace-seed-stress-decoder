@@ -12,7 +12,7 @@ import os, re, gzip, warnings
 from io import StringIO
 import numpy as np, pandas as pd, gseapy as gp
 warnings.filterwarnings("ignore")
-ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"
+ROOT=os.environ.get("DEEPSPACE_ROOT") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SV=os.path.join(ROOT,"data","raw","stressors_v2"); OUT=os.path.join(ROOT,"results","tables")
 pl=pd.read_csv(os.path.join(ROOT,"panels","panel_library.csv")); pl["panel"]=pl.panel_source+"::"+pl.panel_group.astype(str)
 gene_sets={p:g.gene.dropna().unique().tolist() for p,g in pl.groupby("panel")}

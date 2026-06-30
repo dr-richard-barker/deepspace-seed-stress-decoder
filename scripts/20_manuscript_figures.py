@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 import matplotlib.colors as mcolors
 
-ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"
+ROOT=os.environ.get("DEEPSPACE_ROOT") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 T=os.path.join(ROOT,"results","tables"); FIG=os.path.join(ROOT,"results","figures")
 OUT=os.path.join(ROOT,"report","figures_npj"); os.makedirs(OUT,exist_ok=True)
 plt.rcParams.update({"font.size":9,"font.family":"sans-serif","font.sans-serif":["Arial","Helvetica","DejaVu Sans"],

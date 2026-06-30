@@ -5,7 +5,7 @@ import numpy as np, pandas as pd
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-ROOT = r"C:\Users\drric\Downloads\nmf_seed_decoder"
+ROOT = os.environ.get("DEEPSPACE_ROOT") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 T = os.path.join(ROOT, "results", "tables"); F = os.path.join(ROOT, "results", "figures")
 os.makedirs(F, exist_ok=True)
 nes = pd.read_csv(os.path.join(T, "decoder_nes_matrix.csv"), index_col=0)

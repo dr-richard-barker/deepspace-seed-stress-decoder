@@ -9,7 +9,7 @@ Project onto 122 seed panels; merge into decoder_nes_matrix_v4.
 import os, re, warnings
 import numpy as np, pandas as pd, gseapy as gp
 warnings.filterwarnings("ignore")
-ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"
+ROOT=os.environ.get("DEEPSPACE_ROOT") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW=os.path.join(ROOT,"data","raw"); SV=os.path.join(RAW,"stressors_v2"); OSDp=os.path.join(RAW,"osd")
 OUT=os.path.join(ROOT,"results","tables")
 pl=pd.read_csv(os.path.join(ROOT,"panels","panel_library.csv")); pl["panel"]=pl.panel_source+"::"+pl.panel_group.astype(str)

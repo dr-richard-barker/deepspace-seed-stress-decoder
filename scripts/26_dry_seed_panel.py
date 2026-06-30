@@ -7,7 +7,7 @@ desiccation): genes up in mature dry seed (21 DAF) vs hydrated immature (15 DAF)
 ecotypes (Col-0, Ws, Ler). Append as germ_state_time::dry_seed so the state axis spans dry -> 12/24/48 hsl.
 """
 import os, numpy as np, pandas as pd
-ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"
+ROOT=os.environ.get("DEEPSPACE_ROOT") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SV=os.path.join(ROOT,"data","raw","stressors_v2"); PAN=os.path.join(ROOT,"panels")
 cpm=pd.read_csv(os.path.join(SV,"GSE76015_desic_cpm.csv.gz"),index_col=0)
 cpm=cpm[cpm.index.astype(str).str.startswith("AT")]

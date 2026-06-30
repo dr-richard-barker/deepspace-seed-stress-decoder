@@ -2,7 +2,7 @@
 """Render the npj Microgravity manuscript markdown to PDF with F1-F6 embedded."""
 import os, markdown
 from xhtml2pdf import pisa
-ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"
+ROOT=os.environ.get("DEEPSPACE_ROOT") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MD=os.path.join(ROOT,"report","manuscript_npj_microgravity.md")
 OUT=os.path.join(ROOT,"report","manuscript_npj_microgravity.pdf")
 NPJ=os.path.join(ROOT,"report","figures_npj")

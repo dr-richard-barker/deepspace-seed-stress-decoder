@@ -11,7 +11,7 @@ import os, numpy as np, pandas as pd
 from scipy.io import mmread  # noqa
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 plt.rcParams.update({"font.family":"sans-serif","font.sans-serif":["Arial","Helvetica","DejaVu Sans"],"savefig.dpi":300,"svg.fonttype":"none","pdf.fonttype":42,"axes.linewidth":0.6})
-ROOT=r"C:\Users\drric\Downloads\nmf_seed_decoder"; T=os.path.join(ROOT,"results","tables"); F=os.path.join(ROOT,"results","figures"); RAW=os.path.join(ROOT,"data","raw")
+ROOT=os.environ.get("DEEPSPACE_ROOT") or os.path.dirname(os.path.dirname(os.path.abspath(__file__))); T=os.path.join(ROOT,"results","tables"); F=os.path.join(ROOT,"results","figures"); RAW=os.path.join(ROOT,"data","raw")
 rng=np.random.default_rng(42)
 NES=pd.read_csv(os.path.join(T,"decoder_nes_matrix_v7.csv"),index_col=0)
 FDR=pd.read_csv(os.path.join(T,"decoder_fdr_matrix_v7.csv"),index_col=0)
