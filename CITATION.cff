@@ -6,6 +6,7 @@ authors:
   - family-names: Barker
     given-names: Richard
     affiliation: "Purdue University; The Collaborative Science Environment, PBC"
+    orcid: "https://orcid.org/0000-0000-0000-0000"  # placeholder — replace with real ORCID
 abstract: >-
   Two FAIR tools for plant space biology: DSRS (DeepSpace Stress-Recognition System) recognizes which
   space stressor a transcriptomic signature resembles, and GSAD (Germinating-Seed AutoDecoder) models a
@@ -20,3 +21,5 @@ keywords:
   - npj Microgravity
 license: MIT
 version: 0.1.0
+repository-code: "https://github.com/dr-richard-barker/deepspace-seed-decoder"
+doi: "10.5281/zenodo.0000000"  # placeholder — replace with Zenodo DOI on deposit
