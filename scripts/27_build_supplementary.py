@@ -12,7 +12,11 @@ plates=[("decoder_combined_perturbation_heatmap.png","Fig S1. Combined 27-contra
         ("bridge_embedding_v3.png","Fig S2b. Shared-latent bridge embedding (PCA)."),
         ("deepspace_atlas_tissue_stage.png","Fig S3. Atlas at tissue + germination-stage level (incl. dry-seed anchor)."),
         ("nmf_localization_heatmap.png","Fig S4. NMF-responsive gene localization (2022 oxidative panel)."),
-        ("nmf_localization_2021v2022.png","Fig S5. NMF localization: 2022 oxidative panel vs 2021 Sci Rep NNMF DEGs.")]
+        ("nmf_localization_2021v2022.png","Fig S5. NMF localization: 2022 oxidative panel vs 2021 Sci Rep NNMF DEGs."),
+        ("nmf_radicle_risk_heatmap.png","Fig S6a. NMF-up radicle-risk genes (n=32): specificity across germinating-seed cell types."),
+        ("nmf_radicle_risk_heatmap_down.png","Fig S6b. NMF-down radicle set (n=2): specificity across germinating-seed cell types."),
+        ("nmf_root_efp_up.png","Fig S7. ePlant-style root pictograms per NMF-up threat locus (germinating-seed radicle compartments)."),
+        ("nmf_root_efp_collective.png","Fig S8. Collective NMF localization: up vs down vs NET; meristem/QC = synergy hotspot.")]
 figs="<h1>Supplementary Figures</h1>"
 for fn,cap in plates:
     p=os.path.join(FIG,fn)
