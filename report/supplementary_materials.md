@@ -49,7 +49,13 @@ per-compartment expression (log-CPM) painted onto a longitudinal root schematic.
 set-mean specificity per compartment; a NET (up−down) contrast identifies zones of synergy (both sets
 concentrated) vs antagonism (opposite bias).
 
-**Software / reproducibility.** `deepspace` Python package (DSRS + GSAD + CLI); numbered scripts 01–29;
+**Mature-root eFP cross-check (script 30).** The radicle-risk loci were also projected onto the canonical
+Brady/Benfey mature-root spatiotemporal map (GEO GSE8934; ATH1 probes collapsed to AGI via GPL198) along
+its longitudinal developmental axis and 8 sorted cell populations. This independent, mature-tissue dataset
+shows the loci are elongation/maturation-biased in the mature root, i.e. the radicle-tip enrichment is
+specific to the germinating seed.
+
+**Software / reproducibility.** `deepspace` Python package (DSRS + GSAD + CLI); numbered scripts 01–30;
 deterministic seeds; `REPRODUCE.md`. MIT license.
 
 ---
@@ -71,6 +77,9 @@ deterministic seeds; `REPRODUCE.md`. MIT license.
   apical meristem, with TAIR IDs + symbols, NMF direction, and per-compartment root expression):
   `results/tables/nmf_radicle_risk_genes.csv` (up, n=32), `nmf_radicle_risk_genes_down.csv` (down, n=2),
   `nmf_root_zone_expression.csv` (root-compartment log-CPM).
+- **Table S8 — NMF loci in the mature-root eFP map** (Brady et al. 2007, GEO GSE8934): longitudinal
+  developmental-zone and sorted-cell-type expression: `results/tables/nmf_root_efp_longitudinal.csv`,
+  `nmf_root_efp_celltype.csv`.
 
 ---
 
@@ -83,6 +92,7 @@ deterministic seeds; `REPRODUCE.md`. MIT license.
 | NMF radicle signal is oxidative-panel-specific | L×A | 2021 DEG panel does not reproduce it (r=0.35) | full genome-wide NNMF arrays (pending) |
 | NMF-up radicle set = ROS-producing peroxidase/oxidase battery; NMF-down = ROS scavengers (SOD1, MSRB7) | L×A→H | NMF gene directions × radicle-apical-meristem specificity (Table S7) | genome-wide NNMF germination + redox reporters at the radicle tip |
 | Meristem/QC is a redox synergy hotspot (up + down sets both concentrate); surrounding tissues down-biased | A→H | collective root-compartment localization (Fig S8) | spatial ROS imaging under NNMF germination |
+| NMF-loci tip-bias is germination-specific: in the MATURE root they shift to the elongation/maturation zone (tip/meristem z −0.24 vs maturation +0.35) | A | independent Brady mature-root map (Fig S9, GSE8934) | stage-matched NNMF profiling of germinating vs mature root |
 | Embryo lineage recovered (hypophysis→radicle meristem etc.) | A | positive control, transcriptome-only | lineage tracing / marker persistence |
 | Dry-seed program induced by desiccation, suppressed by ethylene | D×A | decoder NES on dry_seed panel | ABA/ethylene dose; dormancy markers |
 
@@ -105,5 +115,11 @@ All atlas/decoder outputs are **predicted concordance (signature transfer), not 
 - **Fig S8** — Collective NMF localization in the root: NMF-up vs NMF-down set specificity per compartment,
   with a NET (up−down) panel identifying the meristem/QC as a synergy hotspot.
 
-*Root-map provenance: the "root" in Figs S7–S8 is the germinating-seed single-cell radicle (GSE182331) mapped
-to anatomical compartments — the seed's own root, not the mature-root eFP.*
+- **Fig S9** — NMF loci in the **mature** Arabidopsis root (canonical Brady eFP map, GEO GSE8934):
+  per-locus longitudinal pictograms (columella→meristem→elongation→maturation), collective up/down
+  developmental-zone profiles, and sorted-cell-type heatmap. Shows the radicle-tip bias is
+  **germination-specific** — mature-root expression shifts to the elongation/maturation zone.
+
+*Root-map provenance: Figs S7–S8 use the germinating-seed single-cell radicle (GSE182331) mapped to
+anatomical compartments (the seed's own root); Fig S9 uses the canonical mature-root eFP microarray map
+(Brady et al. 2007, GSE8934). The two are complementary, not identical, tissues.*

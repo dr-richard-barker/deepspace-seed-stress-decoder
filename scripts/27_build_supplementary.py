@@ -16,7 +16,10 @@ plates=[("decoder_combined_perturbation_heatmap.png","Fig S1. Combined 27-contra
         ("nmf_radicle_risk_heatmap.png","Fig S6a. NMF-up radicle-risk genes (n=32): specificity across germinating-seed cell types."),
         ("nmf_radicle_risk_heatmap_down.png","Fig S6b. NMF-down radicle set (n=2): specificity across germinating-seed cell types."),
         ("nmf_root_efp_up.png","Fig S7. ePlant-style root pictograms per NMF-up threat locus (germinating-seed radicle compartments)."),
-        ("nmf_root_efp_collective.png","Fig S8. Collective NMF localization: up vs down vs NET; meristem/QC = synergy hotspot.")]
+        ("nmf_root_efp_collective.png","Fig S8. Collective NMF localization: up vs down vs NET; meristem/QC = synergy hotspot."),
+        ("nmf_mature_root_efp_up.png","Fig S9a. NMF-up loci in the mature-root eFP map (Brady GSE8934): per-locus longitudinal pictograms."),
+        ("nmf_mature_root_efp_collective.png","Fig S9b. Mature-root collective profile: tip-bias is germination-specific (mature root = maturation-biased)."),
+        ("nmf_mature_root_celltype_heatmap.png","Fig S9c. NMF loci across sorted mature-root cell types (Brady GSE8934).")]
 figs="<h1>Supplementary Figures</h1>"
 for fn,cap in plates:
     p=os.path.join(FIG,fn)

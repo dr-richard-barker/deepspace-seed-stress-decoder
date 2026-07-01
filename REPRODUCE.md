@@ -17,6 +17,7 @@ End-to-end reproduction. All inputs are public; accessions + provenance are in
 | Low-oxygen | GEO **GSE315308** (hypoxia/anoxia), **GSE182724** (submergence) | stressor contrasts |
 | Gravitropism / phototropism | GEO **GSE199142** / **GSE3847** (ATH1, GPL198) | stressor contrasts |
 | NMF (null magnetic field) | Maffei 2021/2022 (panel only; full arrays on author request) | localization |
+| Mature-root eFP map | GEO **GSE8934** (Brady et al. 2007, ATH1/GPL198) | NMF-loci mature-root cross-check (script 30) |
 
 ## 3. Pipeline (numbered scripts, run in order from repo root)
 ```
@@ -30,6 +31,8 @@ End-to-end reproduction. All inputs are public; accessions + provenance are in
 07/12/13/14_bridge*.py                       # shared-latent bridge + embryo-lineage validation
 18_deepspace_atlas.py 19_atlas_tissue_stage.py   # susceptibility atlas (cell-type / tissue / stage)
 11_combined_heatmap.py 20_manuscript_figures.py  # combined figure + npj F1-F6
+28_nmf_radicle_risk_genes.py 29_nmf_root_efp.py   # NMF radicle-risk gene table/heatmap + seed-radicle eFP pictograms
+30_nmf_mature_root_efp.py                    # mature-root eFP cross-check (Brady GSE8934)
 09_build_report_pdf.py 21_build_manuscript_pdf.py 22_build_docx.py 27_build_supplementary.py  # report + manuscript + supplementary
 ```
 Outputs: `panels/`, `results/tables/`, `results/figures/`, `report/`.
