@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeepSpace Seed-Stress Decoder — DSRS + GSAD &amp; the seed-susceptibility atlas</title>
+<meta name="description" content="Two FAIR tools (DSRS + GSAD) and a single-cell seed-susceptibility atlas for plant space biology. Which seed cell types and developmental stages are most susceptible to deep-space stressors?">
+<meta property="og:title" content="DeepSpace Plant-Stress → Germinating-Seed Decoder">
+<meta property="og:description" content="A cell-type-resolved atlas of deep-space stress susceptibility in the dry and germinating Arabidopsis seed. The root tip is the multi-stressor convergence apex.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --bg:#070b18; --bg2:#0c1226; --panel:#111a33; --panel2:#0e1730;
+    --ink:#eef2fb; --muted:#a7b2cf; --faint:#7b88ab;
+    --line:#22304f; --line2:#2c3d63;
+    --accent:#6ea8ff; --accent2:#38d1c4; --gold:#ffce6b; --rose:#ff8fa3;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  h1,h2,h3{line-height:1.2; margin:0 0 .4em}
+  h2{font-size:1.7rem; letter-spacing:-.01em; margin-top:.2em}
+  h3{font-size:1.15rem}
+  section{padding:64px 0; border-top:1px solid var(--line)}
+  .eyebrow{text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; color:var(--accent2); font-weight:700; margin-bottom:14px}
+
+  /* ---- hero ---- */
+  header.hero{
+    position:relative; overflow:hidden;
+    background:
+      radial-gradient(1100px 520px at 78% -12%, rgba(110,168,255,.20), transparent 60%),
+      radial-gradient(760px 460px at 8% 8%, rgba(56,209,196,.14), transparent 55%),
+      linear-gradient(180deg,#050813,#070b18);
+    border-bottom:1px solid var(--line);
+  }
+  .stars{position:absolute; inset:0; pointer-events:none; opacity:.9}
+  .hero-inner{position:relative; padding:78px 0 66px}
+  .badges{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px}
+  .badge{
+    font-size:.74rem; letter-spacing:.03em; padding:5px 11px; border-radius:999px;
+    border:1px solid var(--line2); background:rgba(255,255,255,.03); color:var(--muted);
+  }
+  .badge.live{color:#7ff0c6; border-color:#1f6b57; background:rgba(56,209,196,.08)}
+  h1.title{
+    font-size:clamp(2rem,5.2vw,3.35rem); letter-spacing:-.02em; margin:0 0 .3em;
+    background:linear-gradient(120deg,#ffffff 30%,#bcd3ff 70%,#8fe6dc);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .tag{font-size:clamp(1.05rem,2.3vw,1.3rem); color:var(--muted); font-style:italic; max-width:44ch}
+  .lede{margin-top:22px; max-width:60ch; color:var(--ink); font-size:1.05rem}
+  .cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:30px}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:11px 18px; border-radius:11px;
+    font-weight:600; font-size:.95rem; border:1px solid var(--line2);
+  }
+  .btn.primary{background:linear-gradient(120deg,#3b6fe0,#2ea6b8); border-color:transparent; color:#fff}
+  .btn.primary:hover{text-decoration:none; filter:brightness(1.07)}
+  .btn.ghost{background:rgba(255,255,255,.02); color:var(--ink)}
+  .btn.ghost:hover{text-decoration:none; border-color:var(--accent)}
+
+  /* ---- stat band ---- */
+  .stats{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:44px}
+  .stat{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:18px 16px}
+  .stat b{display:block; font-size:1.7rem; letter-spacing:-.02em; color:#fff}
+  .stat span{font-size:.82rem; color:var(--faint)}
+
+  /* ---- two tools ---- */
+  .tools{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+  .tool{
+    background:linear-gradient(180deg,var(--panel),var(--panel2));
+    border:1px solid var(--line); border-radius:18px; padding:26px 24px; position:relative;
+  }
+  .tool .k{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--faint)}
+  .tool h3{margin-top:6px; font-size:1.35rem}
+  .tool .abbr{color:var(--accent2); font-weight:700}
+  .tool p{color:var(--muted); margin:.5em 0 0}
+  .tool .q{margin-top:14px; font-style:italic; color:var(--gold); font-size:.95rem}
+
+  code,kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  pre{
+    background:#060a15; border:1px solid var(--line); border-radius:14px;
+    padding:18px 18px; overflow-x:auto; font-size:.86rem; line-height:1.6; color:#d7e2ff;
+  }
+  pre .c{color:#6a7aa0}
+  pre .g{color:#7ff0c6}
+
+  /* ---- figures ---- */
+  .figure{
+    background:var(--panel); border:1px solid var(--line); border-radius:16px;
+    overflow:hidden; margin:26px 0;
+  }
+  .figure .img{background:#fff; padding:14px; text-align:center}
+  .figure img{max-width:100%; height:auto; display:block; margin:0 auto}
+  .figure figcaption{padding:16px 20px; color:var(--muted); font-size:.92rem}
+  .figure figcaption b{color:var(--ink)}
+
+  ul.clean{list-style:none; padding:0; margin:0}
+  ul.clean li{padding:9px 0 9px 26px; position:relative; color:var(--muted); border-top:1px solid var(--line)}
+  ul.clean li:first-child{border-top:0}
+  ul.clean li::before{content:"→"; position:absolute; left:0; color:var(--accent2)}
+  ul.clean li b{color:var(--ink)}
+
+  .cols2{display:grid; grid-template-columns:1fr 1fr; gap:22px}
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px}
+  .card h3{margin-top:0}
+
+  table{border-collapse:collapse; width:100%; font-size:.9rem}
+  .tscroll{overflow-x:auto}
+  th,td{text-align:left; padding:9px 12px; border-bottom:1px solid var(--line)}
+  th{color:var(--faint); font-weight:600; text-transform:uppercase; letter-spacing:.04em; font-size:.74rem}
+  td{color:var(--muted)} td b{color:var(--ink)}
+
+  .note{
+    background:rgba(255,206,107,.06); border:1px solid #4a3f22; border-left:3px solid var(--gold);
+    border-radius:10px; padding:14px 16px; color:#e9d9b3; font-size:.9rem;
+  }
+  .steps{counter-reset:s; padding:0; list-style:none; margin:0}
+  .steps li{counter-increment:s; position:relative; padding:14px 0 14px 46px; border-top:1px solid var(--line); color:var(--muted)}
+  .steps li:first-child{border-top:0}
+  .steps li::before{
+    content:counter(s); position:absolute; left:0; top:12px; width:28px; height:28px; border-radius:8px;
+    display:grid; place-items:center; background:var(--panel); border:1px solid var(--line2); color:var(--accent); font-weight:700; font-size:.85rem;
+  }
+  .steps li b{color:var(--ink)}
+
+  footer{border-top:1px solid var(--line); padding:40px 0 60px; color:var(--faint); font-size:.88rem}
+  footer a{color:var(--muted)}
+  .disc{margin-top:10px; font-style:italic}
+
+  @media (max-width:760px){
+    .tools,.cols2{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr 1fr}
+    section{padding:48px 0}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="stars" aria-hidden="true" width="100%" height="100%" preserveAspectRatio="none">
+    <g fill="#ffffff">
+      <circle cx="6%" cy="18%" r="1" opacity=".7"/><circle cx="14%" cy="62%" r="1.3" opacity=".5"/>
+      <circle cx="23%" cy="30%" r="1" opacity=".8"/><circle cx="33%" cy="78%" r="1" opacity=".4"/>
+      <circle cx="44%" cy="12%" r="1.4" opacity=".6"/><circle cx="52%" cy="52%" r="1" opacity=".5"/>
+      <circle cx="61%" cy="24%" r="1" opacity=".7"/><circle cx="69%" cy="70%" r="1.2" opacity=".5"/>
+      <circle cx="78%" cy="34%" r="1" opacity=".8"/><circle cx="86%" cy="60%" r="1" opacity=".45"/>
+      <circle cx="92%" cy="20%" r="1.3" opacity=".6"/><circle cx="40%" cy="88%" r="1" opacity=".4"/>
+      <circle cx="18%" cy="88%" r="1" opacity=".5"/><circle cx="72%" cy="90%" r="1" opacity=".45"/>
+    </g>
+  </svg>
+  <div class="wrap hero-inner">
+    <div class="badges">
+      <span class="badge">Plant space biology</span>
+      <span class="badge">Single-cell Arabidopsis</span>
+      <span class="badge">FAIR · MIT-licensed</span>
+      <span class="badge live">v0.1.0 — complete</span>
+    </div>
+    <h1 class="title">DeepSpace Plant-Stress → Germinating-Seed Decoder</h1>
+    <p class="tag">Which seed cell types and developmental stages are susceptible to deep-space stressors?</p>
+    <p class="lede">
+      Two reusable tools and a single-cell <b>seed-susceptibility atlas</b> for plant space biology, built on
+      <em>Arabidopsis</em>. Give the decoder a bulk transcriptomic signature; it recognises which space stressor
+      the signature resembles and predicts its effect on the dry and germinating seed, cell type by cell type.
+      Companion to a manuscript targeted at <em>npj Microgravity</em>.
+    </p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder">View on GitHub ↗</a>
+      <a class="btn ghost" href="#tools">The two tools</a>
+      <a class="btn ghost" href="#atlas">Headline result</a>
+      <a class="btn ghost" href="#reproduce">Reproduce</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>27</b><span>stress contrasts</span></div>
+      <div class="stat"><b>10</b><span>stressor families</span></div>
+      <div class="stat"><b>123</b><span>seed cell-type / state panels</span></div>
+      <div class="stat"><b>9 / 10</b><span>families hit the root cap</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <div class="wrap">
+    <div class="eyebrow">The question</div>
+    <h2>Seeds are the practical propagule for off-world agriculture — but the seed is the least-studied stage</h2>
+    <p style="color:var(--muted); max-width:66ch">
+      Deep-space environments combine microgravity, chronic ionizing radiation, a near-absent or altered magnetic
+      field, and the confined, potentially hypoxic gas environment of flight hardware — and the loss of a stable
+      gravity vector removes the gravitropic set-point that organises seedling establishment. Each stressor has
+      documented effects on adult plant transcriptomes, but the consequences for the <b>dry/dormant and germinating
+      seed</b> — the stage that determines whether a crop establishes at all — are poorly resolved, because
+      spaceflight experiments sample seedlings and organs rather than seeds. This project bridges that gap by
+      projecting stressor signatures onto a single-cell seed reference.
+    </p>
+    <figure class="figure">
+      <div class="img"><img src="assets/figures/F1_concept_workflow.png" alt="Workflow diagram: a query transcriptomic signature (log2FC, AGI identifiers) feeds two tools — DSRS, which recognises which space stressor the signature resembles, and GSAD, which decodes its effect against the seed cell-type panels — both feeding the DeepSpace seed-susceptibility atlas, whose headline is that the radicle/root tip is a multi-stressor hotspot."></div>
+      <figcaption><b>Figure 1 — Concept workflow.</b> A single query signature drives both tools; their outputs assemble into the cell-type × stressor susceptibility atlas and its convergence metric.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="wrap">
+    <div class="eyebrow">The software</div>
+    <h2>Two reusable, FAIR tools sharing one projection engine</h2>
+    <p style="color:var(--muted); max-width:64ch">
+      Both tools rank a query signature by log<sub>2</sub> fold-change and project it onto the seed panels by
+      pre-ranked gene-set enrichment. They differ only in what they ask of the result.
+    </p>
+    <div class="tools">
+      <div class="tool">
+        <div class="k">Tool 1</div>
+        <h3><span class="abbr">DSRS</span> — DeepSpace Stress-Recognition System</h3>
+        <p>Given a transcriptomic signature, recognise <b>which space stressor</b> it most resembles across the
+          reference families — gravity, radiation, low-oxygen, tropism, desiccation, osmotic, ethylene,
+          temperature and UV.</p>
+        <div class="q">“Which space stressor is this?”</div>
+      </div>
+      <div class="tool">
+        <div class="k">Tool 2</div>
+        <h3><span class="abbr">GSAD</span> — Germinating-Seed AutoDecoder</h3>
+        <p>Given a bulk transcriptome, predict its <b>effect on the dry / germinating seed</b> — a per cell-type,
+          per-tissue, per-stage susceptibility profile against the 123-panel reference.</p>
+        <div class="q">“What does it do to the seed?”</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:34px">Run it</h3>
+    <p style="color:var(--muted)">Input is a two-column CSV: gene (AGI/TAIR, e.g. <code>AT1G01010</code>) and log<sub>2</sub>FC.</p>
+    <pre><span class="c"># install</span>
+cd tools &amp;&amp; pip install -e .
+
+<span class="c"># which space stressor does my signature resemble?</span>
+deepspace <span class="g">dsrs</span> my_signature.csv --out matches.csv
+
+<span class="c"># predicted effect on the dry / germinating seed</span>
+deepspace <span class="g">gsad</span> my_signature.csv --out seed_susceptibility.csv</pre>
+    <pre><span class="c"># or from Python</span>
+import deepspace
+top, fam = deepspace.dsrs.recognize("my_signature.csv")   <span class="c"># which stressor?</span>
+seed     = deepspace.gsad.decode("my_signature.csv")       <span class="c"># effect on the seed</span>
+seed["celltype"].head()                                    <span class="c"># ranked cell-type susceptibility</span></pre>
+    <p style="color:var(--faint); font-size:.88rem">
+      Outputs are <em>predicted concordance</em> (signature transfer across tissue and stage), not proven
+      causation — every claim carries an evidence tier and a falsification test.
+    </p>
+  </div>
+</section>
+
+<!-- REFERENCE / VALIDATION -->
+<section id="reference">
+  <div class="wrap">
+    <div class="eyebrow">The reference &amp; its validation</div>
+    <h2>A single-cell seed reference that recovers textbook lineages</h2>
+    <p style="color:var(--muted); max-width:66ch">
+      The reference is a 123-panel library — 122 single-cell marker panels from the developmental seed atlas
+      (snRNA-seq, 3/5/7 days after pollination) and the germination atlas (scRNA-seq, 12/24/48 h post-imbibition),
+      plus a bulk dry-seed anchor. Panels reproduce canonical markers (oleosins and cruciferin for embryo,
+      <em>BANYULS</em> for the inner-integument endothelium).
+    </p>
+    <p style="color:var(--muted); max-width:66ch">
+      As a stringent positive control, the decoder was restricted to embryo cells and asked which germinating-seed
+      cell type each developing-embryo state maps onto. It independently recovers established developmental
+      lineages from transcriptomes alone:
+    </p>
+    <ul class="clean">
+      <li><b>protoderm → epidermis</b></li>
+      <li><b>hypophysis → radicle apical meristem</b> — placing the embryonic hypophysis as the developmental origin of the radicle growth-point</li>
+      <li><b>vascular primordium → provasculature</b></li>
+      <li><b>inner cotyledon → cotyledon mesophyll</b>, and <b>cortical initials → hypocotyl cortex</b></li>
+    </ul>
+    <figure class="figure">
+      <div class="img"><img src="assets/figures/F3_seed_reference_embryo_lineage.png" alt="Seed reference and embryo-lineage validation heatmaps, showing that developing-embryo states map onto the expected germinating-seed cell types."></div>
+      <figcaption><b>Figure 3 — Validated seed reference.</b> Recovering ground-truth embryo→seedling lineages confirms the projection machinery reflects real cell-type biology rather than artefact.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- STRESS LIBRARY -->
+<section id="library">
+  <div class="wrap">
+    <div class="eyebrow">The stress model</div>
+    <h2>A 27-contrast, ten-family deep-space stress library</h2>
+    <p style="color:var(--muted); max-width:66ch">
+      Genome-wide signatures span ten stressor families, assembled from public NASA OSDR and GEO/AtGenExpress
+      datasets. A recurrent theme: stressed adult/vegetative tissue transcriptionally resembles the
+      <b>early-germination (12 h) state</b>, suggesting a shared stress-engaged program at the onset of germination.
+    </p>
+    <div class="tscroll">
+      <table>
+        <thead><tr><th>Family</th><th>Represented by</th></tr></thead>
+        <tbody>
+          <tr><td><b>Gravity</b></td><td>spaceflight microgravity (root &amp; leaf) + 2 g hypergravity — the µg↔1 g↔hypergravity axis</td></tr>
+          <tr><td><b>Radiation</b></td><td>GCR-relevant low-dose, acute γ</td></tr>
+          <tr><td><b>Tropism</b></td><td>gravitropism, phototropism</td></tr>
+          <tr><td><b>Low-oxygen</b></td><td>hypoxia, anoxia, submergence</td></tr>
+          <tr><td><b>Desiccation</b></td><td>seed maturation drying</td></tr>
+          <tr><td><b>Osmotic</b></td><td>mannitol</td></tr>
+          <tr><td><b>Ethylene</b></td><td>ACC</td></tr>
+          <tr><td><b>Temperature</b></td><td>warm / thermomorphogenesis</td></tr>
+          <tr><td><b>UV</b></td><td>UV-B</td></tr>
+          <tr><td><b>Magnetic / null field</b></td><td>curated NMF panel, handled by expression-localization (not GSEA)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figure class="figure">
+      <div class="img"><img src="assets/figures/F2_stress_library.png" alt="DSRS stress-recognition library: enrichment fingerprints of the stressor contrasts across the seed panels."></div>
+      <figcaption><b>Figure 2 — DSRS stress library.</b> Each contrast's seed-program fingerprint across the reference panels; DSRS matches a query to this library.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ATLAS / HEADLINE -->
+<section id="atlas">
+  <div class="wrap">
+    <div class="eyebrow">Headline result</div>
+    <h2>The root tip is the multi-stressor convergence apex</h2>
+    <p style="color:var(--muted); max-width:66ch">
+      Scoring each germinating-seed cell type by how many of the ten stressor <em>families</em> significantly
+      target it — a family-level metric so no single data-rich family dominates — gives an unambiguous result.
+    </p>
+    <div class="cols2" style="margin:8px 0 4px">
+      <div class="card">
+        <h3 style="color:var(--gold)">Columella / root cap — 9 of 10 families</h3>
+        <p style="color:var(--muted)">Targeted by more stressor families than any other biologically-defined
+          germinating-seed cell type.</p>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--accent2)">Radicle apical meristem</h3>
+        <p style="color:var(--muted)">The specific null-magnetic-field target (localization z = +7.96); radicle
+          epidermis completes a broadly susceptible root pole. Hypocotyl cortex and cotyledon mesophyll are
+          secondary hotspots (6–7/10).</p>
+      </div>
+    </div>
+    <figure class="figure">
+      <div class="img"><img src="assets/figures/F5_deepspace_atlas.png" alt="DeepSpace seed-susceptibility atlas heatmap: germinating-seed cell types (rows) against ten stressor families (columns), colored by signed strength with significance stars, plus a convergence bar chart on the right. Columella/root cap scores 9 of 10 families; radicle apical meristem shows an intense magnetic/NMF signal."></div>
+      <figcaption><b>Figure 5 — The DeepSpace seed-susceptibility atlas.</b> Rows are germinating-seed cell types,
+        columns the ten stressor families; colour is signed strength (NES / NMF z) and <b>*</b> marks significance.
+        The right-hand bars count how many families reach each cell type — the convergence metric. Early
+        germination (12 h) is the most multi-stressor-vulnerable developmental window.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- CONVERGENCE MODEL -->
+<section id="model">
+  <div class="wrap">
+    <div class="eyebrow">The model</div>
+    <h2>Four independent lines converge on the radicle growth-point</h2>
+    <ul class="clean">
+      <li><b>Null magnetic field</b> — NMF-responsive genes localise to the radicle apical meristem (z = +7.96)</li>
+      <li><b>Microgravity</b> — modulates the radicle-meristem program in a light-gated manner</li>
+      <li><b>Gravitropism</b> — itself a root-tip phenomenon, engages the same program</li>
+      <li><b>Development</b> — the structure is founded by the embryonic hypophysis, which the lineage analysis maps directly onto the radicle apical meristem</li>
+    </ul>
+    <figure class="figure">
+      <div class="img"><img src="assets/figures/F6_convergence_model.png" alt="Convergence model diagram: null magnetic field, microgravity, radiation/GCR, gravitropism, and the developmental origin (embryonic hypophysis) all point at the radicle apical meristem / root growth-point. Two falsification tests H1 and H2 are shown below."></div>
+      <figcaption><b>Figure 6 — Convergent model &amp; falsification tests.</b> The radicle apical meristem is proposed
+        as a priority cellular target for deep-space seed performance, with two high-confidence, falsifiable
+        predictions — <b>H1:</b> near-null magnetic field induces radicle-meristem markers and alters radicle
+        emergence, abolished in <em>cry1 cry2</em>; <b>H2:</b> microgravity suppresses radicle proliferative
+        programs in a light-gated manner.</figcaption>
+    </figure>
+    <div class="note">
+      All predictions are framed as <b>concordance, not causation</b>. GSAD performs signature transfer across
+      tissue and developmental stage, so each claim carries an evidence tier (direct data / atlas projection /
+      literature / hypothesis) and an explicit experiment that would refute it.
+    </div>
+  </div>
+</section>
+
+<!-- REPRODUCE -->
+<section id="reproduce">
+  <div class="wrap">
+    <div class="eyebrow">Open &amp; reproducible</div>
+    <h2>Every input is public; the pipeline is numbered end-to-end</h2>
+    <ol class="steps">
+      <li><b>Environment.</b> Python ≥3.10 (<code>pip install -r requirements.txt</code>); R ≥4.4 + SeuratObject to open and export the developmental atlas; <code>cd tools &amp;&amp; pip install -e .</code> for the <code>deepspace</code> CLI.</li>
+      <li><b>Data.</b> Download from accessions listed in <code>data/data_inventory.csv</code> — developmental seed atlas <b>GSE295007</b>, germination atlas <b>GSE182331</b> / E-MTAB-12532, microgravity &amp; radiation from NASA OSDR (<b>OSD-120/678/658/…</b>), plus low-oxygen, tropism, hypergravity, desiccation, ethylene, temperature, osmotic and UV series.</li>
+      <li><b>Pipeline.</b> Run the numbered scripts <code>01–30</code> in order — build panels → project each stressor family → NMF localization → bridge/lineage validation → atlas → figures → manuscript.</li>
+      <li><b>Use the tools</b> on your own signature with <code>deepspace dsrs</code> / <code>deepspace gsad</code>.</li>
+    </ol>
+    <p style="color:var(--faint); font-size:.88rem; margin-top:16px">
+      Determinism: GSEA-prerank uses a fixed seed (42) and 200 permutations. Gene IDs are harmonised to AGI/TAIR.
+      Large raw/derived data are gitignored — regenerate from accessions. Full guide in
+      <a href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/REPRODUCE.md">REPRODUCE.md</a>;
+      the complete living dev log is in
+      <a href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/PLANNING.md">PLANNING.md</a>.
+    </p>
+  </div>
+</section>
+
+<!-- EXPLORE -->
+<section id="explore">
+  <div class="wrap">
+    <div class="eyebrow">Explore the repository</div>
+    <h2>Manuscript, tools, panels and results</h2>
+    <div class="cols2">
+      <div class="card">
+        <h3>Read</h3>
+        <ul class="clean">
+          <li><a href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/report/manuscript_npj_microgravity.md">Manuscript</a> — the full <em>npj Microgravity</em> draft (.md / .pdf / .docx)</li>
+          <li><a href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/report/supplementary_materials.md">Supplementary materials</a></li>
+          <li><a href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/tree/main/results">Result notes</a> — per-analysis write-ups &amp; tables</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Run &amp; build on</h3>
+        <ul class="clean">
+          <li><a href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/tree/main/tools">tools/deepspace</a> — the DSRS + GSAD package &amp; CLI</li>
+          <li><a href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/tree/main/panels">panels/</a> — seed cell-type / state marker panels (CSV + GMT)</li>
+          <li><a href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/tree/main/scripts">scripts/</a> — the numbered, reproducible pipeline</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CITE -->
+<section id="cite">
+  <div class="wrap">
+    <div class="eyebrow">Citation &amp; license</div>
+    <h2>Cite this work</h2>
+    <p style="color:var(--muted)">
+      Released under the MIT license; a Zenodo DOI will be minted on deposit. See
+      <a href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/CITATION.cff">CITATION.cff</a>.
+    </p>
+    <pre>Barker, R. <span class="g">DeepSpace Plant-Stress → Germinating-Seed Decoder (DSRS + GSAD)</span>
+and seed-susceptibility atlas. v0.1.0. MIT license.
+https://github.com/dr-richard-barker/deepspace-seed-stress-decoder</pre>
+    <p style="color:var(--faint); font-size:.9rem">
+      Author: <b>Richard Barker</b> — Purdue University; The Collaborative Science Environment, PBC.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>DeepSpace Plant-Stress → Germinating-Seed Decoder</b> · v0.1.0 · MIT license</div>
+    <div style="margin-top:6px">
+      <a href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder">GitHub repository</a> ·
+      <a href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/report/manuscript_npj_microgravity.md">Manuscript</a> ·
+      <a href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/REPRODUCE.md">Reproduce</a>
+    </div>
+    <p class="disc">
+      All decoder outputs are predicted concordance from cross-stage signature transfer, not proven causation;
+      claims carry evidence tiers and falsification tests. Manuscript draft targeted at <em>npj Microgravity</em>;
+      figure captions here summarise the manuscript. Genome-wide null-magnetic-field arrays remain pending from
+      the source authors and are represented by a curated localization-tier panel.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

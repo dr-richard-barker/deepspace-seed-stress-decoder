@@ -5,6 +5,8 @@
 Two reusable, FAIR tools + a single-cell **seed-susceptibility atlas** for plant space biology, built on
 Arabidopsis. Companion to a manuscript targeted at *npj Microgravity*.
 
+🌐 **Project site:** https://dr-richard-barker.github.io/deepspace-seed-stress-decoder/ — visual walkthrough of the two tools, the stress library, and the headline atlas result.
+
 > **Status:** v0.1.0 — analysis, tools, atlas, figures and manuscript complete. The only pending input is
 > genome-wide null-magnetic-field array data (author request out). Full dev history: [`PLANNING.md`](PLANNING.md).
 
