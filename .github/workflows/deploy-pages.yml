@@ -1,6 +1,6 @@
 name: Deploy GitHub Pages
 
-# Publishes the static showcase site in docs/ to GitHub Pages.
+# Builds the docs/ Jekyll site (jekyll-theme-slate) and publishes it to GitHub Pages.
 # One-time setup: repo Settings → Pages → Build and deployment → Source: "GitHub Actions".
 
 on:
@@ -36,10 +36,16 @@ jobs:
         with:
           enablement: true
 
-      - name: Upload docs/ as Pages artifact
+      - name: Build with Jekyll (jekyll-theme-slate)
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./docs
+          destination: ./_site
+
+      - name: Upload built site as Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs
+          path: ./_site
 
       - name: Deploy to GitHub Pages
         id: deployment

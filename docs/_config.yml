@@ -1,0 +1,7 @@
+theme: jekyll-theme-slate
+title: DeepSpace Seed-Stress Decoder
+description: >-
+  Two FAIR tools (DSRS + GSAD) and a single-cell seed-susceptibility atlas for plant space biology —
+  which seed cell types and developmental stages are susceptible to deep-space stressors?
+baseurl: /deepspace-seed-stress-decoder
+show_downloads: false
