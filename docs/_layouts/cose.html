@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title | default: site.title }}</title>
+<meta name="description" content="{{ page.description | default: site.description | strip_newlines }}">
+<link rel="stylesheet" href="{{ '/assets/cose-theme-full.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/cose-markdown.css' | relative_url }}">
+</head>
+<body data-site-id="deepspace-seed-stress-decoder" data-brand-logo="{{ '/assets/cose-logo.png' | relative_url }}">
+<header>
+  <div class="wrap">
+    <p class="eyebrow">{{ site.title }}</p>
+    <h1>{{ page.title | default: site.title }}</h1>
+    <p class="lede">{{ site.description | strip_newlines }}</p>
+    <div class="btns">
+      <a class="btn primary" href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder">Code &amp; data (GitHub)</a>
+      <a class="btn" href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/REPRODUCE.md">Reproduce</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap markdown-body">
+    {{ content }}
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>{{ site.title }} · <a href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder">github.com/dr-richard-barker/deepspace-seed-stress-decoder</a><br>
+    Richard Barker — Purdue University · The Collaborative Science Environment, PBC.</p>
+  </div>
+</footer>
+
+<script src="{{ '/assets/sites.js' | relative_url }}"></script>
+<script src="{{ '/assets/theme.js' | relative_url }}"></script>
+</body>
+</html>
