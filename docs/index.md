@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cose
 title: DeepSpace Seed-Stress Decoder
 ---
 
