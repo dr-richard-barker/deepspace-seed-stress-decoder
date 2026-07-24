@@ -218,6 +218,7 @@ Released under the MIT license; a Zenodo DOI will be minted on deposit. Machine-
 
 Software / dataset (replace the Zenodo DOI once minted on deposit):
 
+{% raw %}
 ```bibtex
 @software{barker_deepspace_2026,
   author    = {Barker, Richard},
@@ -231,9 +232,11 @@ Software / dataset (replace the Zenodo DOI once minted on deposit):
   url       = {https://github.com/dr-richard-barker/deepspace-seed-stress-decoder}
 }
 ```
+{% endraw %}
 
 Companion manuscript (draft, targeted at _npj Microgravity_):
 
+{% raw %}
 ```bibtex
 @article{barker_seed_susceptibility_2026,
   author  = {Barker, Richard},
@@ -244,6 +247,7 @@ Companion manuscript (draft, targeted at _npj Microgravity_):
   note    = {Manuscript in preparation}
 }
 ```
+{% endraw %}
 
 Author: **Richard Barker** — Purdue University; The Collaborative Science Environment, PBC.
 
