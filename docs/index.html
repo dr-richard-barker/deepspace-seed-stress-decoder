@@ -402,6 +402,42 @@ seed["celltype"].head()                                    <span class="c"># ran
   </div>
 </section>
 
+<!-- DATA / ACCESSIONS -->
+<section id="data">
+  <div class="wrap">
+    <div class="eyebrow">Data &amp; accessions</div>
+    <h2>Every input is public and traceable</h2>
+    <p style="color:var(--muted); max-width:66ch">
+      Full provenance is in <a href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/data/data_inventory.csv">data/data_inventory.csv</a>.
+      The one exception is the genome-wide null-magnetic-field arrays, which are not publicly deposited — that
+      arm relies on a curated localization-tier gene panel while a request to the source authors is outstanding.
+    </p>
+    <div class="tscroll">
+      <table>
+        <thead><tr><th>Role</th><th>Dataset</th><th>Accession</th><th>Repository / platform</th></tr></thead>
+        <tbody>
+          <tr><td><b>Seed reference</b></td><td>Developmental seed atlas (3/5/7 DAP)</td><td><b>GSE295007</b></td><td>GEO · snRNA-seq</td></tr>
+          <tr><td><b>Seed reference</b></td><td>Germination atlas (12/24/48 h)</td><td><b>GSE182331</b> · E-MTAB-12532</td><td>GEO / ArrayExpress · scRNA-seq</td></tr>
+          <tr><td>Gravity — microgravity</td><td>Spaceflight root; leaf</td><td><b>OSD-120</b>; <b>OSD-678</b></td><td>NASA OSDR · RNA-seq</td></tr>
+          <tr><td>Gravity — hypergravity</td><td>2 g vs 1 g callus</td><td><b>GSE29787</b></td><td>GEO · Agilent GPL9020</td></tr>
+          <tr><td>Radiation — GCR</td><td>Whole seedling 40/80 cGy</td><td><b>OSD-658</b></td><td>NASA OSDR · RNA-seq</td></tr>
+          <tr><td>Radiation — acute γ</td><td>100 Gy Co-60 time-course</td><td><b>OSD-498/502/508/510</b></td><td>NASA OSDR · RNA-seq</td></tr>
+          <tr><td>Radiation — low-dose</td><td>Cs-137, 10 &amp; 100 cGy</td><td><b>OSD-782</b></td><td>NASA OSDR · RNA-seq</td></tr>
+          <tr><td>Low-oxygen</td><td>Hypoxia/anoxia; submergence</td><td><b>GSE315308</b>; <b>GSE182724</b></td><td>GEO · RNA-seq</td></tr>
+          <tr><td>Tropism — gravitropism</td><td>Root gravistimulation time-course</td><td><b>GSE199142</b></td><td>GEO · RNA-seq</td></tr>
+          <tr><td>Tropism — phototropism</td><td>Auxin/tropic-growth gradient</td><td><b>GSE3847</b></td><td>GEO · ATH1 GPL198</td></tr>
+          <tr><td>Desiccation</td><td>Seed maturation drying (21 vs 15 DAF)</td><td><b>GSE76015</b></td><td>GEO</td></tr>
+          <tr><td>Ethylene</td><td>ACC 4 h vs 0 h</td><td><b>GSE193833</b></td><td>GEO</td></tr>
+          <tr><td>Temperature</td><td>27 vs 21 °C (thermomorphogenesis)</td><td><b>GSE303133</b></td><td>GEO</td></tr>
+          <tr><td>Osmotic; UV-B</td><td>Mannitol; UV-B vs control</td><td><b>GSE5622</b>; <b>GSE5626</b> vs <b>GSE5620</b></td><td>AtGenExpress · ATH1 GPL198</td></tr>
+          <tr><td>Magnetic / null field</td><td>NNMF arrays (Parmagnani/Maffei 2022; Agliassa/Maffei 2021)</td><td><em>not deposited — curated panel</em></td><td>Journal supplement · localization-tier</td></tr>
+          <tr><td>Cross-check</td><td>Mature-root eFP map (Brady et al. 2007)</td><td><b>GSE8934</b></td><td>GEO · ATH1 GPL198</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
 <!-- EXPLORE -->
 <section id="explore">
   <div class="wrap">
@@ -440,8 +476,33 @@ seed["celltype"].head()                                    <span class="c"># ran
     <pre>Barker, R. <span class="g">DeepSpace Plant-Stress → Germinating-Seed Decoder (DSRS + GSAD)</span>
 and seed-susceptibility atlas. v0.1.0. MIT license.
 https://github.com/dr-richard-barker/deepspace-seed-stress-decoder</pre>
-    <p style="color:var(--faint); font-size:.9rem">
+
+    <h3 style="margin-top:26px">BibTeX</h3>
+    <p style="color:var(--muted)">Software / dataset (replace the Zenodo DOI once minted on deposit):</p>
+    <pre>@software{barker_deepspace_2026,
+  author    = {Barker, Richard},
+  title     = {{DeepSpace Plant-Stress to Germinating-Seed Decoder
+               (DSRS + GSAD) and seed-susceptibility atlas}},
+  year      = {2026},
+  version   = {0.1.0},
+  license   = {MIT},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.0000000},
+  url       = {https://github.com/dr-richard-barker/deepspace-seed-stress-decoder}
+}</pre>
+    <p style="color:var(--muted); margin-top:18px">Companion manuscript (draft, targeted at <em>npj Microgravity</em>):</p>
+    <pre>@article{barker_seed_susceptibility_2026,
+  author  = {Barker, Richard},
+  title   = {{A cell-type-resolved atlas of deep-space stress susceptibility
+             in the dry and germinating Arabidopsis seed}},
+  year    = {2026},
+  journal = {npj Microgravity},
+  note    = {Manuscript in preparation}
+}</pre>
+    <p style="color:var(--faint); font-size:.9rem; margin-top:14px">
       Author: <b>Richard Barker</b> — Purdue University; The Collaborative Science Environment, PBC.
+      Machine-readable metadata in
+      <a href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/CITATION.cff">CITATION.cff</a>.
     </p>
   </div>
 </section>
