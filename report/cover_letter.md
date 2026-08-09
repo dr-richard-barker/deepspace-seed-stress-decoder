@@ -3,7 +3,7 @@
 **To:** The Editors, *npj Microgravity*
 **Re:** Submission of an Article for consideration
 **Title:** *A cell-type-resolved atlas of deep-space stress susceptibility in the dry and germinating Arabidopsis seed*
-**Corresponding author:** Richard Barker (Purdue University; The Collaborative Science Environment, PBC) — admin@cosecloud.com
+**Corresponding author:** Richard Barker (Purdue University; The Collaborative Science Environment, PBC) — dr.richard.barker@gmail.com
 
 ---
 

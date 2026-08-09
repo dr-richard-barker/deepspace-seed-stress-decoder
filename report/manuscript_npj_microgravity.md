@@ -5,7 +5,7 @@
 ¹ Purdue University, West Lafayette, IN, USA
 ² The Collaborative Science Environment, PBC (public benefit corporation)
 
-\*Correspondence: Richard Barker — admin@cosecloud.com
+\*Correspondence: Richard Barker — dr.richard.barker@gmail.com
 
 **Target journal:** *npj Microgravity* (Article). **Status:** draft v1 (2026-06-27).
 
