@@ -8,18 +8,21 @@ authors:
     affiliation: "Purdue University; The Collaborative Science Environment, PBC"
     orcid: "https://orcid.org/0000-0000-0000-0000"  # placeholder — replace with real ORCID
 abstract: >-
-  Two FAIR tools for plant space biology: DSRS (DeepSpace Stress-Recognition System) recognizes which
-  space stressor a transcriptomic signature resembles, and GSAD (Germinating-Seed AutoDecoder) models a
-  bulk transcriptome's predicted effect on dry/germinating-seed cell types. Includes the DeepSpace
-  seed-susceptibility atlas across microgravity, low-oxygen, radiation, tropism, and magnetic-field stressors.
+  FAIR computational tools and single-cell seed atlas for plant space biology: DSRS recognizes
+  which space stressor a transcriptomic signature resembles across 49 contrasts and 15 families,
+  and GSAD models a bulk transcriptome's predicted effect on dry and germinating seed cell types.
+  Integrates decoupled exploration atmosphere (TabPFN v2), redox latent shifts (CVAE), and the
+  MASTA empirical multi-stressor compendium.
 keywords:
   - plant space biology
   - microgravity
   - germination
   - single-cell atlas
   - Arabidopsis thaliana
+  - exploration atmosphere
+  - redox
   - npj Microgravity
 license: MIT
-version: 0.1.0
-repository-code: "https://github.com/dr-richard-barker/deepspace-seed-decoder"
+version: 0.2.0
+repository-code: "https://github.com/dr-richard-barker/deepspace-seed-stress-decoder"
 doi: "10.5281/zenodo.0000000"  # placeholder — replace with Zenodo DOI on deposit

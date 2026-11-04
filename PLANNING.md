@@ -4,13 +4,12 @@
 thoughts, decisions, status, and continuity across sessions. Update it at the end of every working
 session (see Changelog).
 
-> **STATUS — v0.1.0 COMPLETE & PUSHED (2026-06-27).** All phases 0–5 done (see §8 audit for the
-> authoritative per-phase status). Delivered: two FAIR tools (**DSRS** + **GSAD**), a **27-contrast /
-> 10-family** DeepSpace stress model, the **seed-susceptibility atlas** (cell-type/tissue/stage), npj
-> figures **F1–F6** (Arial/300 dpi), and the **npj Microgravity manuscript** (.md/.pdf/.docx). Repo live
-> (private): **github.com/dr-richard-barker/deepspace-seed-decoder**.
-> **Only external items remain:** genome-wide NMF (Maffei author reply) and the Zenodo DOI + public flip
-> at submission. §1 below = original goal (now the methodological core of Tool 2); §1A = the vision it grew into.
+> **STATUS — v0.2.0 COMPLETE (2026-11-03).** Phase 6: Stimuli Decoders Integration complete.
+> Expanded reference model to **49 contrasts across 15 stressor families** (`decoder_nes_matrix_v8.csv`),
+> incorporating decoupled Exploration Atmosphere (TabPFN v2), Redox Decoder (CVAE ROS latent shift & spaceflight validation),
+> and the Max Planck MASTA database (cold, wounding, hormones, nutrients, ROS). Delivered updated DeepSpace Seed
+> Susceptibility Atlas v8, refreshed DSRS/GSAD tool suite with on-demand MASTA projection, and cross-decoder synthesis documentation (`docs/stimuli_decoders_synthesis.md`).
+> §1 below = original goal; §1A = the vision it grew into.
 
 ---
 
@@ -499,6 +498,13 @@ arrays "supp tables + on request"). **Delivered via expression-localization, TWO
   model, limitations, and 6 falsification hypotheses (H1/H2 High confidence). Renderer
   `scripts/09_build_report_pdf.py`. Project Phases 0–4 now complete end-to-end (NMF arm pending
   genome-wide data).
+- **2026-11-03 (k)** — **Phase 6: Stimuli Decoders Integration Complete**.
+  - Integrated three external lab resources: NASA Exploration Atmosphere (`arabidopsis_exploration_atmosphere`, TabPFN v2 decoupled hypobaria/hypoxia), Arabidopsis Redox Decoder (`Redox_decoder`, CVAE spaceflight ROS latent shift), and Max Planck MASTA (`MASTA`, 592 microarray contrasts).
+  - Wrote ingestion pipelines: `scripts/31_ingest_exploration_atmosphere.py`, `scripts/32_ingest_redox_decoder.py`, `scripts/33_ingest_masta.py`.
+  - Built master reference model v8: `scripts/34_build_v8_master_model.py` generating `results/tables/decoder_nes_matrix_v8.csv` and `decoder_fdr_matrix_v8.csv` (49 contrasts, 123 panels, 15 stressor families).
+  - Refreshed DeepSpace Seed Atlas v8 (`scripts/35_update_atlas_v8.py`): radicle columella/root cap converges on 14/15 families; radicle apical meristem converges on 10/15 families. Generated `results/figures/deepspace_seed_atlas_v8.{png,svg}` and `results/figures/deepspace_atlas_tissue_stage_v8.{png,svg}`.
+  - Software & CLI upgrade: updated `tools/deepspace/config.py` to v8, created `tools/deepspace/masta.py`, added `masta-project` and `masta-list` commands to CLI, added example query files in `tools/examples/`.
+  - Published Stimuli Decoders Synthesis: `docs/stimuli_decoders_synthesis.md`.
 - **2026-06-26 (j)** — (c) **NMF wired in** via expression-localization (`scripts/08_nmf_localization.py`):
   NMF-up genes localize to radicle apical meristem (z +7.96). Also a deeper NNMF dataset sweep (user
   prompt): confirmed BOTH Maffei arrays (2022 NNMF time-course PMC9775259 + 2021 dose-response PMC8080623,

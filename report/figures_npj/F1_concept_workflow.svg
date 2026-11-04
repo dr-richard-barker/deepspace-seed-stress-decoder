@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="516.6pt" height="302.688pt" viewBox="0 0 516.6 302.688" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="600.3pt" height="358.128pt" viewBox="0 0 600.3 358.128" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-06-27T21:58:07.679894</dc:date>
+    <dc:date>2026-11-03T20:05:38.418475</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
-      <dc:title>Matplotlib v3.11.0, https://matplotlib.org/</dc:title>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
      </cc:Agent>
     </dc:creator>
    </cc:Work>
@@ -21,171 +21,212 @@
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 302.688 
-L 516.6 302.688 
-L 516.6 0 
+   <path d="M 0 358.128 
+L 600.3 358.128 
+L 600.3 0 
 L 0 0 
 z
 " style="fill: #ffffff"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 25.2792 169.217856 
-L 124.7148 169.217856 
-Q 128.7324 169.217856 128.7324 166.911552 
-L 128.7324 130.010688 
-Q 128.7324 127.704384 124.7148 127.704384 
-L 25.2792 127.704384 
-Q 21.2616 127.704384 21.2616 130.010688 
-L 21.2616 166.911552 
-Q 21.2616 169.217856 25.2792 169.217856 
+    <path d="M 31.701273 187.90272 
+L 153.142364 187.90272 
+Q 157.403455 187.90272 157.403455 185.28384 
+L 157.403455 84.45696 
+Q 157.403455 81.83808 153.142364 81.83808 
+L 31.701273 81.83808 
+Q 27.440182 81.83808 27.440182 84.45696 
+L 27.440182 185.28384 
+Q 27.440182 187.90272 31.701273 187.90272 
 z
-" clip-path="url(#p2a1c98aa9c)" style="fill: #f0f0f0; stroke: #333333; stroke-width: 1.2; stroke-linejoin: miter"/>
+" clip-path="url(#pe9306a52f5)" style="fill: #f8f9fa; stroke: #6c757d; stroke-width: 1.2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
-    <path d="M 170.9172 111.560256 
-L 330.6168 111.560256 
-Q 334.6344 111.560256 334.6344 109.253952 
-L 334.6344 60.821568 
-Q 334.6344 58.515264 330.6168 58.515264 
-L 170.9172 58.515264 
-Q 166.8996 58.515264 166.8996 60.821568 
-L 166.8996 109.253952 
-Q 166.8996 111.560256 170.9172 111.560256 
+    <path d="M 196.818545 128.97792 
+L 392.828727 128.97792 
+Q 397.089818 128.97792 397.089818 126.35904 
+L 397.089818 61.54176 
+Q 397.089818 58.92288 392.828727 58.92288 
+L 196.818545 58.92288 
+Q 192.557455 58.92288 192.557455 61.54176 
+L 192.557455 126.35904 
+Q 192.557455 128.97792 196.818545 128.97792 
 z
-" clip-path="url(#p2a1c98aa9c)" style="fill: #dbe7f3; stroke: #333333; stroke-width: 1.2; stroke-linejoin: miter"/>
+" clip-path="url(#pe9306a52f5)" style="fill: #dbe7f3; stroke: #2b6cb0; stroke-width: 1.2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
-    <path d="M 170.9172 244.172736 
-L 330.6168 244.172736 
-Q 334.6344 244.172736 334.6344 241.866432 
-L 334.6344 193.434048 
-Q 334.6344 191.127744 330.6168 191.127744 
-L 170.9172 191.127744 
-Q 166.8996 191.127744 166.8996 193.434048 
-L 166.8996 241.866432 
-Q 166.8996 244.172736 170.9172 244.172736 
+    <path d="M 196.818545 266.46912 
+L 392.828727 266.46912 
+Q 397.089818 266.46912 397.089818 263.85024 
+L 397.089818 199.03296 
+Q 397.089818 196.41408 392.828727 196.41408 
+L 196.818545 196.41408 
+Q 192.557455 196.41408 192.557455 199.03296 
+L 192.557455 263.85024 
+Q 192.557455 266.46912 196.818545 266.46912 
 z
-" clip-path="url(#p2a1c98aa9c)" style="fill: #ddf2e4; stroke: #333333; stroke-width: 1.2; stroke-linejoin: miter"/>
+" clip-path="url(#pe9306a52f5)" style="fill: #ddf2e4; stroke: #276749; stroke-width: 1.2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
-    <path d="M 366.7752 174.983616 
-L 491.3208 174.983616 
-Q 495.3384 174.983616 495.3384 172.677312 
-L 495.3384 124.244928 
-Q 495.3384 121.938624 491.3208 121.938624 
-L 366.7752 121.938624 
-Q 362.7576 121.938624 362.7576 124.244928 
-L 362.7576 172.677312 
-Q 362.7576 174.983616 366.7752 174.983616 
+    <path d="M 436.504909 207.54432 
+L 568.598727 207.54432 
+Q 572.859818 207.54432 572.859818 204.92544 
+L 572.859818 123.74016 
+Q 572.859818 121.12128 568.598727 121.12128 
+L 436.504909 121.12128 
+Q 432.243818 121.12128 432.243818 123.74016 
+L 432.243818 204.92544 
+Q 432.243818 207.54432 436.504909 207.54432 
 z
-" clip-path="url(#p2a1c98aa9c)" style="fill: #fde8d0; stroke: #333333; stroke-width: 1.2; stroke-linejoin: miter"/>
+" clip-path="url(#pe9306a52f5)" style="fill: #fde8d0; stroke: #c05621; stroke-width: 1.2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_6">
-    <path d="M 129.039899 138.306288 
-Q 147.816071 116.749359 165.270465 96.709963 
-" clip-path="url(#p2a1c98aa9c)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
-    <path d="M 158.653951 99.43425 
-L 165.270465 96.709963 
-L 163.479986 103.637747 
+    <path d="M 157.842398 127.002491 
+Q 174.980224 111.955403 190.605772 98.236101 
+" clip-path="url(#pe9306a52f5)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 183.685145 100.054047 
+L 190.605772 98.236101 
+L 187.907752 104.86337 
 z
-" clip-path="url(#p2a1c98aa9c)" style="fill: #333333; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
+" clip-path="url(#pe9306a52f5)" style="fill: #333333; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
    </g>
    <g id="patch_7">
-    <path d="M 128.912388 158.724518 
-Q 147.816799 184.498209 165.530962 208.649153 
-" clip-path="url(#p2a1c98aa9c)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
-    <path d="M 164.326071 201.59591 
-L 165.530962 208.649153 
-L 159.165433 205.38112 
+    <path d="M 157.496497 182.328009 
+Q 174.978602 206.886998 191.293644 229.806487 
+" clip-path="url(#pe9306a52f5)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 190.189121 222.736831 
+L 191.293644 229.806487 
+L 184.975206 226.448312 
 z
-" clip-path="url(#p2a1c98aa9c)" style="fill: #333333; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
+" clip-path="url(#pe9306a52f5)" style="fill: #333333; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
    </g>
    <g id="patch_8">
-    <path d="M 335.093933 95.052003 
-Q 353.718681 112.425755 370.87184 128.426763 
-" clip-path="url(#p2a1c98aa9c)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
-    <path d="M 368.374706 121.721219 
-L 370.87184 128.426763 
-L 364.009124 126.401144 
+    <path d="M 397.091834 97.273951 
+Q 414.66662 125.049287 431.165346 151.124008 
+" clip-path="url(#pe9306a52f5)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 430.447409 144.004699 
+L 431.165346 151.124008 
+L 425.039136 147.426772 
 z
-" clip-path="url(#p2a1c98aa9c)" style="fill: #333333; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
+" clip-path="url(#pe9306a52f5)" style="fill: #333333; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
    </g>
    <g id="patch_9">
-    <path d="M 334.941899 210.378288 
-Q 353.718071 188.821359 371.172465 168.781963 
-" clip-path="url(#p2a1c98aa9c)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
-    <path d="M 364.555951 171.50625 
-L 371.172465 168.781963 
-L 369.381986 175.709747 
+    <path d="M 397.091834 231.391649 
+Q 414.66662 203.616313 431.165346 177.541592 
+" clip-path="url(#pe9306a52f5)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 425.039136 181.238828 
+L 431.165346 177.541592 
+L 430.447409 184.660901 
 z
-" clip-path="url(#p2a1c98aa9c)" style="fill: #333333; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
+" clip-path="url(#pe9306a52f5)" style="fill: #333333; stroke: #333333; stroke-width: 1.8; stroke-linecap: round"/>
    </g>
    <g id="patch_10">
-    <path d="M 346.6872 267.235776 
-L 491.3208 267.235776 
-Q 495.3384 267.235776 495.3384 264.929472 
-L 495.3384 236.677248 
-Q 495.3384 234.370944 491.3208 234.370944 
-L 346.6872 234.370944 
-Q 342.6696 234.370944 342.6696 236.677248 
-L 342.6696 264.929472 
-Q 342.6696 267.235776 346.6872 267.235776 
+    <path d="M 404.546727 325.39392 
+L 579.251455 325.39392 
+Q 583.512545 325.39392 583.512545 322.77504 
+L 583.512545 280.87296 
+Q 583.512545 278.25408 579.251455 278.25408 
+L 404.546727 278.25408 
+Q 400.285636 278.25408 400.285636 280.87296 
+L 400.285636 322.77504 
+Q 400.285636 325.39392 404.546727 325.39392 
 z
-" clip-path="url(#p2a1c98aa9c)" style="fill: #fff3bf; stroke: #333333; stroke-width: 1.2; stroke-linejoin: miter"/>
+" clip-path="url(#pe9306a52f5)" style="fill: #fff3bf; stroke: #b7791f; stroke-width: 1.2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_11">
-    <path d="M 428.721251 176.376527 
-Q 424.026023 204.677141 419.660171 230.992432 
-" clip-path="url(#p2a1c98aa9c)" style="fill: none; stroke: #a06000; stroke-width: 1.8; stroke-linecap: round"/>
-    <path d="M 423.864498 225.202472 
-L 419.660171 230.992432 
-L 417.550799 224.154994 
+    <path d="M 502.258582 208.872062 
+Q 497.225212 242.900837 492.486312 274.938812 
+" clip-path="url(#pe9306a52f5)" style="fill: none; stroke: #b7791f; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 496.588338 269.07593 
+L 492.486312 274.938812 
+L 490.257222 268.139462 
 z
-" clip-path="url(#p2a1c98aa9c)" style="fill: #a06000; stroke: #a06000; stroke-width: 1.8; stroke-linecap: round"/>
+" clip-path="url(#pe9306a52f5)" style="fill: #b7791f; stroke: #b7791f; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 31.701273 325.39392 
+L 174.447818 325.39392 
+Q 178.708909 325.39392 178.708909 322.77504 
+L 178.708909 284.14656 
+Q 178.708909 281.52768 174.447818 281.52768 
+L 31.701273 281.52768 
+Q 27.440182 281.52768 27.440182 284.14656 
+L 27.440182 322.77504 
+Q 27.440182 325.39392 31.701273 325.39392 
+z
+" clip-path="url(#pe9306a52f5)" style="fill: #edf2f7; stroke: #4a5568; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 178.301955 303.209446 
+Q 185.632716 282.183736 192.300934 263.058298 
+" clip-path="url(#pe9306a52f5)" style="fill: none; stroke: #4a5568; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 187.172313 268.048012 
+L 192.300934 263.058298 
+L 193.215533 270.155023 
+z
+" clip-path="url(#pe9306a52f5)" style="fill: #4a5568; stroke: #4a5568; stroke-width: 1.8; stroke-linecap: round"/>
    </g>
    <g id="text_1">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle" x="258.3" y="18.73152" transform="rotate(-0 258.3 18.73152)">DeepSpace plant-stress → germinating-seed decoding</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #14304f" x="300.15" y="26.8416" transform="rotate(-0 300.15 26.8416)">DeepSpace Plant-Stress → Germinating-Seed Decoding Framework</text>
    </g>
    <g id="text_2">
-    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(63.424383 136.786154)">Query</text>
-    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(48.548055 146.037541)">transcriptomic</text>
-    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(57.514891 155.288762)">signature</text>
-    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(49.018875 164.540148)">(log2FC, AGI)</text>
+    <text style="font-size: 7.8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(41.693178 111.418298)">Input Perturbation Signatures</text>
+    <text style="font-size: 7.8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(92.421818 119.907806)"/>
+    <text style="font-size: 7.8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(40.570709 128.40158)">• Microgravity &amp; GCR (OSDR)</text>
+    <text style="font-size: 7.8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(34.69999 136.891088)">• Decoupled Hypobaria (TabPFN)</text>
+    <text style="font-size: 7.8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(30.86824 145.380595)">• Redox Latent Remodeling (CVAE)</text>
+    <text style="font-size: 7.8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(27.488037 153.870103)">• MASTA Microarrays (Cold, Wounds)</text>
+    <text style="font-size: 7.8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(41.426881 162.359611)">• Hormone &amp; Nutrient Circuits</text>
    </g>
    <g id="text_3">
-    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(221.007039 73.360387)">Tool 1 — DSRS</text>
-    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(214.863797 82.611608)">Stress-Recognition</text>
-    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(214.632039 91.862994)">vs reference library</text>
-    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(213.693719 101.114381)">(5 stressor families)</text>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(266.814261 74.2529)">Tool 1 — DSRS</text>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(224.571136 82.959931)">DeepSpace Stress-Recognition System</text>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(294.823636 91.667119)"/>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(225.680511 100.37415)">Matches query seed-fingerprint against</text>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(221.906761 109.081338)">49 reference contrasts across 15 families</text>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(204.649261 117.788369)">(Gravity, Hypobaria, Radiation, Redox, Tropisms...)</text>
    </g>
    <g id="text_4">
-    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(220.770633 205.97295)">Tool 2 — GSAD</text>
-    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(190.527898 215.224171)">Germinating-Seed AutoDecoder</text>
-    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(214.146609 224.475557)">vs 122 seed panels</text>
-    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(197.736961 233.726778)">(Gehring dev + germination)</text>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(266.591761 211.744022)">Tool 2 — GSAD</text>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(238.128011 220.451053)">Germinating-Seed AutoDecoder</text>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(294.823636 229.158241)"/>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(235.690511 237.865272)">Projects bulk transcriptomes onto</text>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(246.573011 246.572459)">123 single-cell seed panels</text>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(220.902386 255.279647)">(Gehring dev + Liew/Lewsey germination)</text>
    </g>
    <g id="text_5">
-    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(395.027414 136.783747)">DeepSpace seed-</text>
-    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(390.861086 146.034968)">susceptibility ATLAS</text>
-    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(393.266984 155.286354)">cell-type × stressor</text>
-    <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(401.051125 164.537741)">+ convergence</text>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(469.864318 140.281784)">DeepSpace Seed-</text>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(464.089943 148.988816)">Susceptibility Atlas v8</text>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(502.551818 157.696003)"/>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(452.982443 166.403034)">• 15 Germination Cell Types</text>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(461.360568 175.110222)">• 49 Stressor Contrasts</text>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(463.586818 183.817253)">• 15 Stressor Families</text>
+    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(442.449318 192.524284)">• Stage Axis: 0h→12h→24h→48h</text>
    </g>
    <g id="text_6">
-    <text style="font-style: italic; font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1c4a72" x="250.767" y="116.74944" transform="rotate(-0 250.767 116.74944)">“which space stressor?”</text>
+    <text style="font-style: italic; font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1c4a72" x="294.823636" y="138.144" transform="rotate(-0 294.823636 138.144)">“Which space stressor does it resemble?”</text>
    </g>
    <g id="text_7">
-    <text style="font-style: italic; font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a7a3a" x="250.767" y="249.36192" transform="rotate(-0 250.767 249.36192)">“effect on the seed?”</text>
+    <text style="font-style: italic; font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a7a3a" x="294.823636" y="275.6352" transform="rotate(-0 294.823636 275.6352)">“What effect does it have on the seed?”</text>
    </g>
    <g id="text_8">
-    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(372.424625 248.520157)">Headline: radicle/root tip =</text>
-    <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(380.772125 257.227188)">multi-stressor hotspot</text>
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(452.337841 290.833609)">Headline Result (v8):</text>
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(418.879716 299.540797)">Columella / Root Cap = 14 / 15 families</text>
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(413.235341 308.247828)">Radicle Apical Meristem = 10 / 15 families</text>
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(411.475341 316.954859)">Early Germination (12h) = Most Vulnerable</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(56.252866 293.159286)">On-Demand MASTA Bridge:</text>
+    <text style="font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(60.970835 301.322275)">deepspace masta-project</text>
+    <text style="font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(63.050913 309.485263)">Instant projection of 592</text>
+    <text style="font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(48.475717 317.648251)">Arabidopsis microarray contrasts</text>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p2a1c98aa9c">
-   <rect x="7.2" y="7.2" width="502.2" height="288.288"/>
+  <clipPath id="pe9306a52f5">
+   <rect x="7.2" y="7.2" width="585.9" height="343.728"/>
   </clipPath>
  </defs>
 </svg>

@@ -63,38 +63,33 @@ deterministic seeds; `REPRODUCE.md`. MIT license.
 ## Supplementary Tables (machine-readable in repo)
 - **Table S1 — Data inventory** (all datasets, accessions, platform, role, evidence tier, caveats):
   `data/data_inventory.csv`.
-- **Table S2 — Stressor contrast manifest** (27 contrasts: family, dataset, dose/time, genotype):
-  `results/tables/contrast_classes.csv` + `radiation_contrasts_manifest.csv`.
-- **Table S3 — Decoder NES/FDR matrix** (123 panels × 27 contrasts): `results/tables/decoder_nes_matrix_v7.csv`,
-  `decoder_fdr_matrix_v7.csv`.
-- **Table S4 — Atlas convergence** (cell-type and tissue/stage): `results/tables/deepspace_atlas_convergence.csv`,
-  `deepspace_atlas_tissue_stage_convergence.csv`.
+- **Table S2 — Stressor contrast manifest** (49 contrasts: family, dataset, dose/time, platform):
+  `results/tables/contrast_classes.csv`.
+- **Table S3 — Decoder NES/FDR matrix** (123 panels × 49 contrasts across 15 families): `results/tables/decoder_nes_matrix_v8.csv`,
+  `decoder_fdr_matrix_v8.csv`.
+- **Table S4 — Atlas convergence v8** (cell-type and tissue/stage across 15 families): `results/tables/deepspace_atlas_convergence_v8.csv`,
+  `deepspace_atlas_tissue_stage_convergence_v8.csv`.
 - **Table S5 — NMF localization** (2022 + 2021 panels): `results/tables/nmf_localization.csv`,
   `nmf2021_localization.csv`.
 - **Table S6 — Panel library** (123 seed cell-type/state panels): `panels/panel_library.csv` /
   `panel_library.gmt`.
-- **Table S7 — NMF radicle-risk genes** (NMF-responsive genes specifically expressed in the radicle
-  apical meristem, with TAIR IDs + symbols, NMF direction, and per-compartment root expression):
-  `results/tables/nmf_radicle_risk_genes.csv` (up, n=32), `nmf_radicle_risk_genes_down.csv` (down, n=2),
-  `nmf_root_zone_expression.csv` (root-compartment log-CPM).
-- **Table S8 — NMF loci in the mature-root eFP map** (Brady et al. 2007, GEO GSE8934): longitudinal
-  developmental-zone and sorted-cell-type expression: `results/tables/nmf_root_efp_longitudinal.csv`,
-  `nmf_root_efp_celltype.csv`.
+- **Table S7 — Exploration Atmosphere Decoupled Contrasts**:
+  `data/processed/exploration_atmosphere/manifest.csv`.
+- **Table S8 — Spaceflight ROS Latent Remodeling & MASTA Curated Library**:
+  `data/processed/redox_decoder/manifest.csv`, `data/processed/masta/manifest.csv`.
 
 ---
 
 ## Evidence-tier audit (key claims)
 | Claim | Tier | Basis | Falsification |
 |---|---|---|---|
-| Root/radicle tip = top multi-stressor hotspot (columella 9/10, radicle meristem 6/10) | D×A→H | genome-wide DGE projected onto validated panels | per-stressor knock-down / spaceflight germination; predict root-tip-program shift |
-| Early germination (12 h) = most vulnerable stage | D→H | family convergence over stage panels | tissue-matched stress panel; predict 12 h > 24/48 h |
+| Root/radicle tip = top multi-stressor hotspot (columella 14/15, radicle meristem 10/15) | D×A→H | 49 genome-wide contrasts projected onto validated single-cell panels | per-stressor knock-down / spaceflight germination; predict root-tip-program shift |
+| Pure normoxic hypobaria (50 kPa NormO2) independently induces radicle apical program (NES +1.98) | D×A→H | TabPFN v2 orthogonal decomposition of 130 hypobaric microarrays | hypobaric cultivation with normoxic pO2; test barosensing mutants |
+| Early germination (12 h) and dry seed (0h) = most vulnerable stages (10 and 12 families) | D→H | family convergence over stage panels across 15 families | tissue-matched stress panel; predict 0h/12h > 24/48h |
 | NMF-up genes → radicle apical meristem (z +7.96) | L×A→H | expression localization (2022 oxidative panel) | NNMF germination + cry1cry2; radicle-meristem markers |
-| NMF radicle signal is oxidative-panel-specific | L×A | 2021 DEG panel does not reproduce it (r=0.35) | full genome-wide NNMF arrays (pending) |
-| NMF-up radicle set = ROS-producing peroxidase/oxidase battery; NMF-down = ROS scavengers (SOD1, MSRB7) | L×A→H | NMF gene directions × radicle-apical-meristem specificity (Table S7) | genome-wide NNMF germination + redox reporters at the radicle tip |
-| Meristem/QC is a redox synergy hotspot (up + down sets both concentrate); surrounding tissues down-biased | A→H | collective root-compartment localization (Fig S8) | spatial ROS imaging under NNMF germination |
-| NMF-loci tip-bias is germination-specific: in the MATURE root they shift to the elongation/maturation zone (tip/meristem z −0.24 vs maturation +0.35) | A | independent Brady mature-root map (Fig S9, GSE8934) | stage-matched NNMF profiling of germinating vs mature root |
+| Spaceflight ROS latent shift engages columella root cap and cotyledon mesophyll | D×A→H | CVAE reconstruction residual across 38 NASA OSDR spaceflight missions | antioxidant seed priming prior to spaceflight exposure |
 | Embryo lineage recovered (hypophysis→radicle meristem etc.) | A | positive control, transcriptome-only | lineage tracing / marker persistence |
-| Dry-seed program induced by desiccation, suppressed by ethylene | D×A | decoder NES on dry_seed panel | ABA/ethylene dose; dormancy markers |
+| Dry-seed program induced by desiccation and hypobaria, suppressed by ethylene | D×A | decoder NES on dry_seed panel | ABA/ethylene dose; dormancy markers |
 
 All atlas/decoder outputs are **predicted concordance (signature transfer), not proven causation.**
 

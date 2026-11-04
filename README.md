@@ -7,27 +7,29 @@ Arabidopsis. Companion to a manuscript targeted at *npj Microgravity*.
 
 🌐 **Project site:** https://dr-richard-barker.github.io/deepspace-seed-stress-decoder/ — visual walkthrough of the two tools, the stress library, and the headline atlas result.
 
-> **Status:** v0.1.0 — analysis, tools, atlas, figures and manuscript complete. The only pending input is
-> genome-wide null-magnetic-field array data (author request out). Full dev history: [`PLANNING.md`](PLANNING.md).
+> **Status:** v0.2.0 — analysis, tools, atlas, figures, and manuscript updated. Reference stress library expanded to **49 contrasts / 15 families** integrating decoupled NASA Exploration Atmospheres (TabPFN v2), Redox Decoder (CVAE ROS latent space), and the Max Planck MASTA database. Full dev history: [`PLANNING.md`](PLANNING.md) · Synthesis: [`docs/stimuli_decoders_synthesis.md`](docs/stimuli_decoders_synthesis.md).
 
-## The two tools (`tools/deepspace/`)
-| Tool | What it does |
+## The tools (`tools/deepspace/`)
+| Tool / Command | What it does |
 |---|---|
-| **DSRS** — DeepSpace Stress-Recognition System | Given a transcriptomic signature, recognize **which space stressor** it most resembles across the GSEA reference families (gravity, radiation, low-oxygen, tropism, desiccation, osmotic, ethylene, temperature, UV). *(Null-magnetic-field is a localization-tier family, not part of the DSRS reference — see Methods.)* |
-| **GSAD** — Germinating-Seed AutoDecoder | Given **bulk transcriptomics**, predict its **effect on the dry/germinating seed** — a per cell-type / tissue / stage susceptibility profile. |
+| **DSRS** — `deepspace dsrs` | Given a transcriptomic signature, recognize **which space stressor** it most resembles across the GSEA reference families (gravity, radiation, low-oxygen, hypobaria, redox_ros, cold, wounding, hormones, nutrients, desiccation, osmotic, temperature, UV). |
+| **GSAD** — `deepspace gsad` | Given **bulk transcriptomics**, predict its **effect on the dry/germinating seed** — a per cell-type / tissue / stage susceptibility profile. |
+| **MASTA** — `deepspace masta-project` | Given any contrast from the 592-contrast Max Planck MASTA database (e.g. `S851&cold_wt-wt_3h`), project it on-demand through both DSRS and GSAD. |
 
 ```bash
 cd tools && pip install -e .
-deepspace dsrs  my_signature.csv      # which space stressor?
-deepspace gsad  my_signature.csv      # effect on the seed
+deepspace dsrs  my_signature.csv              # which space stressor?
+deepspace gsad  my_signature.csv              # effect on the seed
+deepspace masta-project "S851&cold_wt-wt_3h"   # on-demand MASTA projection
+deepspace masta-list -c S                     # list available stress contrasts
 ```
 Input = a 2-column CSV (gene AGI/TAIR, log2FC). See `tools/README.md` and `tools/examples/`.
 
 ## Headline result
-Across a **27-contrast / 10-family** deep-space stress model projected onto a 123-panel seed
+Across an expanded **49-contrast / 15-family** deep-space stress model projected onto a 123-panel seed
 reference (122 single-cell panels from the Gehring developmental + Liew/Lewsey germination atlases, plus a
-bulk dry-seed anchor), the **radicle / root apical tip is the
-multi-stressor convergence hotspot**, and **early germination (12 h) is the most vulnerable stage**. The
+bulk dry-seed anchor), the **columella / root cap (14/15 families) and radicle apical meristem (10/15 families)
+remain the definitive multi-stressor convergence hotspot**, and **dry seed / early germination (12 h) is the most vulnerable stage**. The
 pipeline is validated by a positive control: restricted to the embryo lineage it recovers textbook
 developmental relationships (e.g. hypophysis → radicle apical meristem). All outputs are *predicted
 concordance*, not causation, with evidence tiers and falsification tests.
@@ -51,3 +53,8 @@ run scripts `01–27` in order.
 ## Citation & license
 See [`CITATION.cff`](CITATION.cff). MIT licensed ([`LICENSE`](LICENSE)). Zenodo DOI to be minted on release.
 Author: **Richard Barker** (Purdue University; The Collaborative Science Environment, PBC).
+
+
+## Key Results & Figures
+*Figures and results are currently being compiled. Please refer to the repository data folders for early analysis outputs.*
+

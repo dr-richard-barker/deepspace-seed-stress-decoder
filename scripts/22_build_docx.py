@@ -48,12 +48,12 @@ for ln in lines:
 
 # Figures
 doc.add_page_break(); doc.add_heading("Figures",1)
-plates=[("F1_concept_workflow.png","Figure 1. Two-tool framework: signature → DSRS / GSAD → DeepSpace atlas."),
-        ("F2_stress_library.png","Figure 2. DSRS stress reference library — 27 contrasts (10 families) → seed programs."),
-        ("F3_seed_reference_embryo_lineage.png","Figure 3. Seed reference validation — developing-embryo state → germinating cell type recovers textbook lineages."),
-        ("F4_gsad_susceptibility.png","Figure 4. GSAD — stressor → germinating-seed cell-type susceptibility."),
-        ("F5_deepspace_atlas.png","Figure 5. DeepSpace seed-susceptibility atlas — cell-type × stressor family + convergence (radicle-tip hotspot)."),
-        ("F6_convergence_model.png","Figure 6. Radicle growth-point: deep-space multi-stressor convergence model + falsification tests.")]
+plates=[("F1_concept_workflow.png","Figure 1. Two-tool framework and stimuli decoders integration: signature → DSRS / GSAD → DeepSpace atlas."),
+        ("F2_stress_library.png","Figure 2. DSRS stress reference library — 49 contrasts (15 families) → seed programs."),
+        ("F3_seed_reference_embryo_lineage.png","Figure 3. Seed reference validation — developing-embryo state → germinating cell type recovers canonical textbook lineages."),
+        ("F4_gsad_susceptibility.png","Figure 4. GSAD — stressor → germinating-seed cell-type susceptibility profile."),
+        ("F5_deepspace_atlas.png","Figure 5. DeepSpace seed-susceptibility atlas v8 — cell-type × stressor family + multi-stressor convergence (columella 14/15, radicle meristem 10/15)."),
+        ("F6_convergence_model.png","Figure 6. Radicle growth-point: multi-stressor convergence model (hypobaria, ROS, gravity, radiation, NMF) + falsification tests.")]
 for fn,cap in plates:
     p=os.path.join(NPJ,fn)
     if os.path.exists(p):

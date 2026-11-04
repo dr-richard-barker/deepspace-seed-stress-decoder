@@ -1,0 +1,10 @@
+entity,category,n_families,families_hit
+Dry Seed (0h),Stage,12,"gravity, radiation, low_oxygen, hypobaria, redox_ros, desiccation, osmotic, temperature, cold, wounding, hormone_signaling, uv"
+Early Germination (12 hsl),Stage,10,"gravity, tropism, radiation, low_oxygen, hypobaria, redox_ros, desiccation, cold, wounding, hormone_signaling"
+Mid Germination (24 hsl),Stage,10,"gravity, radiation, low_oxygen, hypobaria, redox_ros, desiccation, wounding, hormone_signaling, nutrient_stress, uv"
+Late Germination (48 hsl),Stage,10,"radiation, low_oxygen, hypobaria, desiccation, osmotic, temperature, cold, wounding, nutrient_stress, uv"
+Embryo,Tissue,7,"radiation, low_oxygen, hypobaria, redox_ros, desiccation, hormone_signaling, uv"
+Endosperm,Tissue,6,"gravity, radiation, hypobaria, desiccation, temperature, uv"
+Seed Coat,Tissue,7,"gravity, tropism, radiation, hypobaria, redox_ros, desiccation, hormone_signaling"
+Funiculus,Tissue,8,"low_oxygen, hypobaria, redox_ros, desiccation, cold, wounding, hormone_signaling, nutrient_stress"
+Ovule,Tissue,12,"gravity, tropism, radiation, low_oxygen, hypobaria, redox_ros, desiccation, osmotic, temperature, wounding, hormone_signaling, nutrient_stress"

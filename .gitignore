@@ -17,6 +17,13 @@ __pycache__/
 .ipynb_checkpoints/
 build/
 dist/
+.venv/
+
+# Nested external repositories
+AstroBotany_calibration_image_sharing_and_analysis/
+Microbiome_of_seedlings_in_space/
+clpds-planetary-visualization/
+lunar-magnetic-biology/
 
 # OS
 Thumbs.db

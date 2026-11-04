@@ -7,7 +7,7 @@ ROOT = Path(os.environ.get("DEEPSPACE_ROOT", Path(__file__).resolve().parents[2]
 PANEL_LIBRARY = ROOT / "panels" / "panel_library.csv"
 PANEL_GMT     = ROOT / "panels" / "panel_library.gmt"
 GERM_ANNOT    = ROOT / "panels" / "germination_cluster_annotations.csv"
-# stress reference library (panels x stressor contrasts) + classes
-REF_NES       = ROOT / "results" / "tables" / "decoder_nes_matrix_v7.csv"
-REF_FDR       = ROOT / "results" / "tables" / "decoder_fdr_matrix_v7.csv"
+# stress reference library (panels x stressor contrasts) + classes (Model v8: 49 contrasts, 16 classes)
+REF_NES       = ROOT / "results" / "tables" / "decoder_nes_matrix_v8.csv"
+REF_FDR       = ROOT / "results" / "tables" / "decoder_fdr_matrix_v8.csv"
 CONTRAST_CLASS= ROOT / "results" / "tables" / "contrast_classes.csv"
