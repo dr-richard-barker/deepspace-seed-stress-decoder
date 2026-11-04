@@ -7,8 +7,10 @@ _Which seed cell types and developmental stages are susceptible to deep-space st
 
 Two reusable, FAIR computational tools (**DSRS** + **GSAD**), an integrated **MASTA** projection engine, and a single-cell **seed-susceptibility atlas** for plant space biology, built on _Arabidopsis thaliana_. Give the decoder a bulk transcriptomic signature; it recognises which space stressor the signature resembles and predicts its effect on the dry and germinating seed, cell type by cell type. Companion to a manuscript targeted at _npj Microgravity_.
 
+[Read Full Manuscript Online]({{ '/manuscript' | relative_url }}){: .btn .btn-primary}
+[Download PDF (300 DPI)](https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/report/manuscript_npj_microgravity.pdf){: .btn}
+[Download Word DOCX](https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/report/manuscript_npj_microgravity.docx){: .btn}
 [View Repository on GitHub](https://github.com/dr-richard-barker/deepspace-seed-stress-decoder){: .btn}
-[Read npj Microgravity Manuscript (PDF)](https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/report/manuscript_npj_microgravity.pdf){: .btn}
 [Stimuli Decoders Synthesis]({{ '/stimuli_decoders_synthesis' | relative_url }}){: .btn}
 
 | 49 contrasts | 15 stressor families | 123 seed panels | 14 / 15 families hit the root cap |
@@ -227,6 +229,18 @@ All input accessions are cataloged in [`data/data_inventory.csv`](https://github
 | **Ethylene** | ACC precursor treatment (4 h) | **GSE193833** | GEO · RNA-seq |
 | **UV** | UV-B exposure vs control | **GSE5626** vs **GSE5620** | AtGenExpress · ATH1 GPL198 |
 | **Magnetic / Null Field** | Curated near-null magnetic field (< 30 nT) panel | Parmagnani/Maffei 2022 | Curated localization tier |
+
+---
+
+## Companion Manuscript
+
+The comprehensive findings, biological mechanisms, and validation analyses are documented in our research article targeted at *npj Microgravity*:
+
+- **Interactive Online Article**: [Read the Full Manuscript Online]({{ '/manuscript' | relative_url }})
+- **Download PDF**: [`report/manuscript_npj_microgravity.pdf`](https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/report/manuscript_npj_microgravity.pdf)
+- **Download Word DOCX**: [`report/manuscript_npj_microgravity.docx`](https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/report/manuscript_npj_microgravity.docx)
+- **Supplementary Materials**: [`report/supplementary_materials.md`](https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/report/supplementary_materials.md)
+- **Submission Cover Letter**: [`report/cover_letter.md`](https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/report/cover_letter.md)
 
 ---
 

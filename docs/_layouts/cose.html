@@ -15,9 +15,10 @@
     <h1>{{ page.title | default: site.title }}</h1>
     <p class="lede">{{ site.description | strip_newlines }}</p>
     <div class="btns">
-      <a class="btn primary" href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder">Code &amp; data (GitHub)</a>
+      <a class="btn primary" href="{{ '/manuscript' | relative_url }}">Read manuscript</a>
+      <a class="btn" href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder">Code &amp; data (GitHub)</a>
+      <a class="btn" href="{{ '/stimuli_decoders_synthesis' | relative_url }}">Stimuli decoders</a>
       <a class="btn" href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/REPRODUCE.md">Reproduce</a>
-      <a class="btn" href="https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/PLANNING.md">Pipeline &amp; dev log</a>
     </div>
   </div>
 </header>
