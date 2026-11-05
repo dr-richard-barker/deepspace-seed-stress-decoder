@@ -1,6 +1,7 @@
 ---
 layout: cose
 title: "A cell-type-resolved atlas of deep-space stress susceptibility in the dry and germinating Arabidopsis seed"
+permalink: /manuscript/
 description: "Full research manuscript targeted at npj Microgravity presenting the DeepSpace Seed-Stress Decoder, stimuli decoders integration, and single-cell seed susceptibility atlas v8."
 ---
 
@@ -16,7 +17,7 @@ description: "Full research manuscript targeted at npj Microgravity presenting t
 
 [Download Manuscript PDF (300 DPI)](https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/report/manuscript_npj_microgravity.pdf){: .btn .btn-primary}
 [Download Word DOCX](https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/report/manuscript_npj_microgravity.docx){: .btn}
-[Overview Showcase]({{ '/' | relative_url }}){: .btn}
+[Back to Overview Portal]({{ '/' | relative_url }}){: .btn}
 [Stimuli Decoders Synthesis]({{ '/stimuli_decoders_synthesis' | relative_url }}){: .btn}
 [GitHub Repository](https://github.com/dr-richard-barker/deepspace-seed-stress-decoder){: .btn}
 
@@ -76,7 +77,7 @@ In this work, we operationalize cross-stage transcriptomic projection through tw
 
 ![Figure 1: Concept workflow]({{ '/assets/figures/F1_concept_workflow.png' | relative_url }})
 
-*Figure 1 — Concept workflow. A single query transcriptomic signature drives the dual-engine architecture: DSRS recognizes the space stressor class across 49 contrasts and 15 families, while GSAD projects the query across 123 single-cell seed panels. [[Vector SVG]({{ '/assets/figures/F1_concept_workflow.svg' | relative_url }})]*
+*Figure 1 — Concept workflow. A single query transcriptomic signature drives the dual-engine architecture: DSRS recognizes the space stressor class across 49 contrasts and 15 families, while GSAD projects the query across 123 single-cell seed panels. [[High-Res Vector SVG]({{ '/assets/figures/F1_concept_workflow.svg' | relative_url }})]*
 
 
 We structured the computational workflow into two FAIR, modular tools deployed in the `deepspace` software suite (**Fig. 1**). 
@@ -91,7 +92,7 @@ To extend the utility of the framework to empirical benchmarks, we incorporated 
 
 ![Figure 3: Seed reference and embryo-lineage validation]({{ '/assets/figures/F3_seed_reference_embryo_lineage.png' | relative_url }})
 
-*Figure 3 — Validated single-cell seed reference. Unbiased embryo lineage tracing independently recovers ground-truth developmental origins (protoderm → epidermis; hypophysis → radicle apical meristem; vascular primordium → provasculature), confirming that cross-stage projection captures authentic biological programs. [[Vector SVG]({{ '/assets/figures/F3_seed_reference_embryo_lineage.svg' | relative_url }})]*
+*Figure 3 — Validated single-cell seed reference. Unbiased embryo lineage tracing independently recovers ground-truth developmental origins (protoderm → epidermis; hypophysis → radicle apical meristem; vascular primordium → provasculature), confirming that cross-stage projection captures authentic biological programs. [[High-Res Vector SVG]({{ '/assets/figures/F3_seed_reference_embryo_lineage.svg' | relative_url }})]*
 
 
 The single-cell seed reference library was assembled across 123 panels: 122 single-cell panels derived from the developmental seed atlas (snRNA-seq at 3, 5, and 7 days after pollination; embryo, endosperm, and seed coat) and the germination atlas (scRNA-seq at 12, 24, and 48 hours post-imbibition; clusters 1–15), augmented with a bulk-derived dry-seed maturation panel. Marker panels faithfully reproduced canonical marker genes: oleosins (*OLE1*, *OLE2*) and cruciferin (*CRA1*) for the embryo, and *BANYULS* (*BAN*, *AT1G61720*) for the inner integument endothelium.
@@ -109,9 +110,31 @@ Crucially, recovering the embryonic **hypophysis** as the developmental origin o
 
 ### Assembly of the 49-contrast, 15-family master stress library (Fig. 2)
 
+| Stressor Family | Contrasts (*N*) | Representative Conditions | Key Sources |
+|---|:---:|---|---|
+| **Gravity** | 5 | Spaceflight microgravity (root & leaf, light & dark) + 2 g hypergravity | NASA OSD-120, OSD-678; GSE29787 |
+| **Radiation** | 9 | GCR-relevant low-dose (40, 80 cGy), acute γ time-course (100 Gy Co-60), low-dose Cs-137 (10, 100 cGy) | NASA OSD-658, OSD-498/502/508/510, OSD-782 |
+| **Exploration Atmosphere** | 6 | Pure hypobaria, pure hypoxia, NASA exploration atmosphere (50 kPa NormO₂, 50 kPa HypoO₂) | TabPFN v2 framework; 130 microarrays |
+| **Redox / ROS** | 2 | Continuous CVAE spaceflight ROS latent shift (log₂ error ratio), H₂O₂ oxidative stress | Redox_decoder (232 studies, 38 missions); MASTA |
+| **Cold** | 2 | Cold shock time-course (4 °C at 3 h and 24 h) | MASTA / AtGenExpress |
+| **Wounding** | 1 | Mechanical leaf/tissue damage (1.5 h) | MASTA / AtGenExpress |
+| **Auxin** | 1 | Indole-3-acetic acid (IAA, 1 µM for 3 h) | MASTA / AtGenExpress |
+| **Gibberellin** | 1 | GA₃ stimulation (1 h) | MASTA / AtGenExpress |
+| **Cytokinin** | 1 | Zeatin stimulation (1 h) | MASTA / AtGenExpress |
+| **Brassinosteroid** | 1 | Brassinolide (BL, 10 nM for 3 h) | MASTA / AtGenExpress |
+| **Nutrient Stress** | 2 | Nitrogen starvation, Phosphorus starvation | MASTA / AtGenExpress |
+| **Tropism** | 4 | Gravitropic reorientation time-course, phototropism auxin gradient | GSE199142, GSE3847 |
+| **Low-Oxygen** | 8 | Hypoxia, anoxia, complete submergence | GSE315308, GSE182724 |
+| **Desiccation** | 2 | Seed maturation drying (21 vs 15 DAF) | GSE76015 |
+| **Osmotic / Salt** | 2 | Mannitol osmotic stress, drought stress | GSE5622, MASTA |
+| **Ethylene** | 1 | ACC precursor (4 h vs 0 h) | GSE193833 |
+| **UV** | 1 | UV-B irradiation vs control | GSE5626 |
+| **Magnetic / Null Field** | 1 | Near-null magnetic field (< 30 nT NMF) curated panel | Parmagnani/Maffei 2022; Agliassa/Maffei 2021 |
+
+
 ![Figure 2: DSRS stress library fingerprints]({{ '/assets/figures/F2_stress_library.png' | relative_url }})
 
-*Figure 2 — DSRS stress-recognition library. Distinct enrichment fingerprints across the 123 seed panels provide the diagnostic basis for identifying space stressor classes and families. [[Vector SVG]({{ '/assets/figures/F2_stress_library.svg' | relative_url }})]*
+*Figure 2 — DSRS stress-recognition library. Distinct enrichment fingerprints across the 123 seed panels provide the diagnostic basis for identifying space stressor classes and families. [[High-Res Vector SVG]({{ '/assets/figures/F2_stress_library.svg' | relative_url }})]*
 
 
 We expanded the reference perturbation library from 27 contrasts (v7) to **49 contrasts across 15 stressor families** (**Fig. 2**, **Table 1**), incorporating three distinct computational advances:
@@ -126,7 +149,7 @@ Projecting all 49 signatures across the 123 seed panels demonstrated clear, fami
 
 ![Figure 4: GSAD susceptibility matrix]({{ '/assets/figures/F4_gsad_susceptibility.png' | relative_url }})
 
-*Figure 4 — GSAD susceptibility matrix across seed cell types. Unbiased single-cell susceptibility profiles across the 15 germinating clusters for 49 deep-space and environmental perturbations. [[Vector SVG]({{ '/assets/figures/F4_gsad_susceptibility.svg' | relative_url }})]*
+*Figure 4 — GSAD susceptibility matrix across seed cell types. Unbiased single-cell susceptibility profiles across the 15 germinating clusters for 49 deep-space and environmental perturbations. [[High-Res Vector SVG]({{ '/assets/figures/F4_gsad_susceptibility.svg' | relative_url }})]*
 
 
 Applying GSAD across the expanded contrast library revealed distinct cellular susceptibility profiles across physical and biochemical stressors (**Fig. 4**). 
@@ -140,9 +163,26 @@ Simultaneously, the CVAE-derived spaceflight ROS remodeling signature (`ros_spac
 
 ### The DeepSpace Seed-Susceptibility Atlas v8: The root tip convergence apex (Fig. 5)
 
+| Single-Cell Cluster / Cell Type | Organ / Tissue Zone | Significant Families (*N* / 15) | Convergence Percentage | Primary Spaceflight Targets |
+|---|---|:---:|:---:|---|
+| **Columella / Root Cap (+QC) (cl4)** | Radicle (Root Pole) | **14 / 15** | **93.3%** | Gravity, radiation, hypobaria, redox, hypoxia, cold, wounding, hormones, nutrients, UV |
+| **Cotyledon Mesophyll (cl13)** | Cotyledon | **13 / 15** | **86.7%** | Radiation, hypobaria, redox ROS, nutrients, cold, wounding, osmotic |
+| **Hypocotyl Cortex (cl5)** | Hypocotyl | **11 / 15** | **73.3%** | Radiation, hypobaria, hypoxia, redox, cold, wounding, hormones |
+| **Hypocotyl Cortex (cl7)** | Hypocotyl | **11 / 15** | **73.3%** | Gravity, radiation, hypobaria, redox, cold, wounding, osmotic |
+| **Radicle Apical Meristem (cl14)** | Radicle (Root Growth Center) | **10 / 15** | **66.7%** | Near-null magnetic field (*z* = +7.96), microgravity, pure hypobaria (NES = +1.98), wounding |
+| **Cotyledon Mesophyll (cl3)** | Cotyledon | **10 / 15** | **66.7%** | Radiation, hypobaria, redox ROS, cold, wounding, desiccation |
+| **Hypocotyl Cortex (cl1)** | Hypocotyl | **10 / 15** | **66.7%** | Gravity, radiation, hypobaria, redox ROS, desiccation, cold, wounding |
+| **Provasculature (cl12)** | Vascular Stele | **9 / 15** | **60.0%** | Radiation, hypobaria, redox ROS, nutrients, wounding, osmotic |
+| **Radicle Epidermis (cl10)** | Radicle (Root Surface) | **8 / 15** | **53.3%** | Gravity, radiation, hypobaria, redox ROS, cold, wounding |
+| **Protophloem (cl15)** | Vascular Stele | **8 / 15** | **53.3%** | Radiation, hypobaria, redox ROS, nutrients, cold, wounding |
+| **Protoxylem (cl9)** | Vascular Stele | **7 / 15** | **46.7%** | Radiation, hypobaria, redox ROS, nutrients, cold |
+| **Cortex / Endodermis (cl2)** | Hypocotyl | **7 / 15** | **46.7%** | Radiation, hypobaria, redox ROS, cold, wounding |
+| **Epidermis (cl6)** | Hypocotyl Surface | **7 / 15** | **46.7%** | Radiation, hypobaria, redox ROS, cold, wounding |
+
+
 ![Figure 5: DeepSpace Seed-Susceptibility Atlas v8]({{ '/assets/figures/F5_deepspace_atlas.png' | relative_url }})
 
-*Figure 5 — The DeepSpace Seed-Susceptibility Atlas v8. Rows display 15 germinating-seed cell types; columns display 15 stressor families. Asterisks denote statistical significance (|NES| ≥ 1.5, FDR < 0.25; NMF |z| ≥ 2.0). The right-hand convergence bar chart establishes the columella/root cap (14/15) and radicle apical meristem (10/15) as the multi-stressor convergence apex. [[Vector SVG]({{ '/assets/figures/F5_deepspace_atlas.svg' | relative_url }})]*
+*Figure 5 — The DeepSpace Seed-Susceptibility Atlas v8. Rows display 15 germinating-seed cell types; columns display 15 stressor families. Asterisks denote statistical significance (|NES| ≥ 1.5, FDR < 0.25; NMF |z| ≥ 2.0). The right-hand convergence bar chart establishes the columella/root cap (14/15) and radicle apical meristem (10/15) as the multi-stressor convergence apex. [[High-Res Vector SVG]({{ '/assets/figures/F5_deepspace_atlas.svg' | relative_url }})]*
 
 
 To synthesize findings across the multi-factorial stress landscape, we computed a family-level convergence score for each germinating-seed cell type: the number of independent stressor families significantly targeting that cell type (|NES| ≥ 1.5, FDR < 0.25; NMF localization |z| ≥ 2.0) (**Fig. 5**).
@@ -163,7 +203,7 @@ At the developing tissue level (Gehring level-1), Embryo (7 families), Endosperm
 
 ![Figure 6: Convergence model and falsification tests]({{ '/assets/figures/F6_convergence_model.png' | relative_url }})
 
-*Figure 6 — Mechanistic convergence model & falsification hypotheses. Seven physical and chemical vectors converge upon the radicle growth point. Hypotheses H1–H4 formulate explicit, falsifiable experimental tests for near-null magnetic fields, normoxic hypobaria, and oxidative cascades. [[Vector SVG]({{ '/assets/figures/F6_convergence_model.svg' | relative_url }})]*
+*Figure 6 — Mechanistic convergence model & falsification hypotheses. Seven physical and chemical vectors converge upon the radicle growth point. Hypotheses H1–H4 formulate explicit, falsifiable experimental tests for near-null magnetic fields, normoxic hypobaria, and oxidative cascades. [[High-Res Vector SVG]({{ '/assets/figures/F6_convergence_model.svg' | relative_url }})]*
 
 
 Synthesizing these findings, we construct a unified mechanistic model centered on the **radicle growth point** (**Fig. 6**). Seven independent biophysical and chemical vectors converge directly upon the radicle apical meristem and columella:
