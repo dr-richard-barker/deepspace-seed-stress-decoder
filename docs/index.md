@@ -8,10 +8,12 @@ _Which seed cell types and developmental stages are susceptible to deep-space st
 
 Welcome to the **DeepSpace Seed-Stress Decoder** portal. Here you can explore the complete research manuscript targeted at *npj Microgravity*, interrogate the **49-contrast, 15-family** space stress library, and access the **DSRS** and **GSAD** computational tools.
 
-[Read Full Manuscript Below](#manuscript-full-text){: .btn .btn-primary}
-[Download PDF (300 DPI)](https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/report/manuscript_npj_microgravity.pdf){: .btn}
-[Download Word DOCX](https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/report/manuscript_npj_microgravity.docx){: .btn}
+[Read Interactive PDF Below](#pdf-viewer){: .btn .btn-primary}
+[Read Full Web Article](#manuscript-full-text){: .btn}
+[Download PDF (300 DPI)]({{ '/assets/manuscript_npj_microgravity.pdf' | relative_url }}){: .btn}
+[Download Word DOCX]({{ '/assets/manuscript_npj_microgravity.docx' | relative_url }}){: .btn}
 [Stimuli Decoders Synthesis]({{ '/stimuli_decoders_synthesis' | relative_url }}){: .btn}
+[Dedicated Article Route]({{ '/manuscript/' | relative_url }}){: .btn}
 [GitHub Code & Data](https://github.com/dr-richard-barker/deepspace-seed-stress-decoder){: .btn}
 
 | 49 contrasts | 15 stressor families | 123 seed panels | 14 / 15 families hit the root cap | Target: npj Microgravity |
@@ -68,6 +70,39 @@ masta_seed = deepspace.gsad.decode(masta_sig)
 
 ---
 
+## npj Microgravity Interactive Article Viewer
+
+Read the camera-ready, publication-formatted manuscript with all 6 figures and tables integrated in-line below, or proceed to the full-text responsive web version.
+
+
+<div id="pdf-viewer" class="pdf-viewer-card" style="margin: 2rem 0; border: 1px solid var(--line, #22304f); border-radius: 8px; overflow: hidden; background: #0c1226;">
+  <div class="pdf-toolbar" style="padding: 12px 18px; background: #111a33; border-bottom: 1px solid var(--line, #22304f); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 1.1rem;">📄</span>
+      <strong style="color: #eef2fb; font-size: 0.95rem;">npj Microgravity Interactive Article Viewer</strong>
+      <span style="font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; background: #1c4a72; color: #6ea8ff; font-weight: 600;">300 DPI Publication PDF</span>
+    </div>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+      <a href="{{ '/assets/manuscript_npj_microgravity.pdf' | relative_url }}" target="_blank" class="btn btn-sm" style="font-size: 0.8rem; padding: 5px 12px;">Open Fullscreen ↗</a>
+      <a href="{{ '/assets/manuscript_npj_microgravity.pdf' | relative_url }}" download class="btn btn-sm primary" style="font-size: 0.8rem; padding: 5px 12px;">Download PDF ↓</a>
+      <a href="{{ '/assets/manuscript_npj_microgravity.docx' | relative_url }}" download class="btn btn-sm" style="font-size: 0.8rem; padding: 5px 12px;">Download Word (.docx) ↓</a>
+    </div>
+  </div>
+  <div class="pdf-frame-wrapper" style="position: relative; width: 100%; height: 860px; min-height: 500px; background: #1a2236;">
+    <object data="{{ '/assets/manuscript_npj_microgravity.pdf' | relative_url }}" type="application/pdf" width="100%" height="100%">
+      <iframe src="{{ '/assets/manuscript_npj_microgravity.pdf' | relative_url }}" width="100%" height="100%" style="border: none;">
+        <div style="padding: 30px; text-align: center; color: #a7b2cf;">
+          <p style="font-size: 1.1rem; margin-bottom: 15px;">Your browser does not support embedded PDF viewing.</p>
+          <a href="{{ '/assets/manuscript_npj_microgravity.pdf' | relative_url }}" class="btn primary">Download the Publication PDF (3.0 MB)</a>
+        </div>
+      </iframe>
+    </object>
+  </div>
+</div>
+
+
+---
+
 <div id="manuscript-full-text"></div>
 
 # A cell-type-resolved atlas of deep-space stress susceptibility in the dry and germinating Arabidopsis seed
@@ -80,8 +115,8 @@ masta_seed = deepspace.gsad.decode(masta_sig)
 **Correspondence:** Richard Barker — `dr.richard.barker@gmail.com`  
 **Target Journal:** *npj Microgravity* (Article) · **Version:** v2.0 (Phase 6 Multi-Stimuli Release, November 2026)
 
-[Download Manuscript PDF (300 DPI)](https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/report/manuscript_npj_microgravity.pdf){: .btn .btn-primary}
-[Download Word DOCX](https://github.com/dr-richard-barker/deepspace-seed-stress-decoder/blob/main/report/manuscript_npj_microgravity.docx){: .btn}
+[Download Manuscript PDF (300 DPI)]({{ '/assets/manuscript_npj_microgravity.pdf' | relative_url }}){: .btn .btn-primary}
+[Download Word DOCX]({{ '/assets/manuscript_npj_microgravity.docx' | relative_url }}){: .btn}
 [Stimuli Decoders Synthesis]({{ '/stimuli_decoders_synthesis' | relative_url }}){: .btn}
 [Dedicated Article View]({{ '/manuscript/' | relative_url }}){: .btn}
 
