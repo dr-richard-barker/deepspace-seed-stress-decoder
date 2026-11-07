@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """
-Build the npj Microgravity publication PDF in authentic Nature Portfolio style.
+Build the manuscript-in-preparation PDF, formatted for npj Microgravity submission.
+It must never stamp journal branding, acceptance dates, volume numbers or a DOI that
+has not been issued (see ABAI lesson L003).
 Includes:
-- Official npj | microgravity header banner with OPEN ACCESS and ARTICLE badges
-- Nature article metadata block (Authors, Affiliations, Correspondence, Received/Accepted dates)
+- 'Manuscript in preparation' status banner (no journal branding)
+- Author metadata block (Authors, Affiliations, Correspondence, status)
 - Styled Abstract callout block
 - In-line figure integration (Figs. 1-6) with bold Nature captions (Fig. 1 | Title. Caption...)
 - Clean three-line Nature publication tables
-- Running headers and footers with article citation, DOI, and page numbers
+- Running headers and footers with draft status and page numbers
 - Clean typography and complete entity safety for chemical/math symbols
 """
 
@@ -350,19 +352,9 @@ def parse_markdown_to_npj_html(md_text: str) -> str:
             # Add Page 1 Nature Header Banner + Metadata + Abstract
             p1_html = f"""
 <div class="first-page-container">
-  <table style="width: 100%; border: none; margin-bottom: 10px; border-collapse: collapse;">
-    <tr>
-      <td style="border: none; text-align: left; vertical-align: middle; width: 55%; padding: 0;">
-        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 24pt; font-weight: 900; color: #0f172a; letter-spacing: -1px;">npj</span>
-        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 24pt; font-weight: 300; color: #c84b31; margin-left: 2px;">microgravity</span>
-      </td>
-      <td style="border: none; text-align: right; vertical-align: middle; width: 45%; padding: 0;">
-        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 8pt; font-weight: bold; color: #0f172a; background: #e2e8f0; padding: 2px 5px; margin-right: 4px;">ARTICLE</span>
-        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 8pt; font-weight: bold; color: #c84b31; border: 1px solid #c84b31; padding: 1px 4px; margin-right: 4px;">OPEN</span><br/>
-        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 7.5pt; color: #64748b;">www.nature.com/npjmgrav</span>
-      </td>
-    </tr>
-  </table>
+  <div style="font-family: Arial, Helvetica, sans-serif; font-size: 9pt; font-weight: bold; color: #c84b31; margin-bottom: 6px;">
+    MANUSCRIPT IN PREPARATION &mdash; formatted for submission to npj Microgravity (not peer reviewed, not accepted, no DOI)
+  </div>
   <div style="border-bottom: 2px solid #c84b31; margin-bottom: 12px;"></div>
 
   <div style="font-family: Arial, Helvetica, sans-serif; font-size: 15.5pt; font-weight: bold; line-height: 1.25; color: #0f172a; margin-bottom: 10px;">
@@ -380,7 +372,7 @@ def parse_markdown_to_npj_html(md_text: str) -> str:
   </div>
 
   <div style="font-family: Arial, Helvetica, sans-serif; font-size: 7.2pt; color: #64748b; margin-bottom: 14px; border-top: 0.5px solid #cbd5e1; border-bottom: 0.5px solid #cbd5e1; padding: 3px 0;">
-    Received: 14 August 2026 / Accepted: 28 October 2026 / Published online: 05 November 2026 / DOI: https://doi.org/10.1038/s41526-026-00042-8
+    Status: manuscript in preparation. Preprint DOI: none yet. Software/data DOI: Zenodo deposit pending.
   </div>
 
   <div style="background: #f8fafc; border-left: 3.5px solid #c84b31; padding: 9px 12px; margin-bottom: 14px;">
@@ -482,8 +474,8 @@ def main():
 <div id="headerContent" style="font-family: Arial, Helvetica, sans-serif; font-size: 7.2pt; color: #64748b;">
   <table style="width: 100%; border: none; border-collapse: collapse;">
     <tr>
-      <td style="border: none; text-align: left; padding: 0;">npj Microgravity (2026) 12:42</td>
-      <td style="border: none; text-align: right; padding: 0;">https://doi.org/10.1038/s41526-026-00042-8</td>
+      <td style="border: none; text-align: left; padding: 0;">Barker &mdash; manuscript in preparation (2026)</td>
+      <td style="border: none; text-align: right; padding: 0;">github.com/dr-richard-barker/deepspace-seed-stress-decoder</td>
     </tr>
   </table>
   <div style="border-bottom: 0.5px solid #cbd5e1; margin-top: 3px;"></div>
@@ -493,7 +485,7 @@ def main():
   <div style="border-top: 0.5px solid #cbd5e1; margin-bottom: 3px;"></div>
   <table style="width: 100%; border: none; border-collapse: collapse;">
     <tr>
-      <td style="border: none; text-align: left; padding: 0;">npj Microgravity | Published in partnership with NASA and the Microgravity Research Community</td>
+      <td style="border: none; text-align: left; padding: 0;">Draft &mdash; not peer reviewed</td>
       <td style="border: none; text-align: right; padding: 0;">Page <pdf:pagenumber> of <pdf:pagecount></td>
     </tr>
   </table>

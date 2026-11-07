@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build a publication-grade npj Microgravity submission Word document (.docx) with
+Build the manuscript-in-preparation Word document (.docx) with
 figures F1-F6 and summary tables embedded in-line, formatted to Nature Portfolio guidelines.
 """
 
@@ -239,12 +239,10 @@ def main():
     
     # 4. Article Header Block
     p_brand = doc.add_paragraph()
-    r1 = p_brand.add_run("npj ")
-    r1.bold = True; r1.font.name = "Arial"; r1.font.size = Pt(16); r1.font.color.rgb = RGBColor(15, 23, 42)
-    r2 = p_brand.add_run("microgravity")
-    r2.font.name = "Arial"; r2.font.size = Pt(16); r2.font.color.rgb = RGBColor(200, 75, 49)
-    r3 = p_brand.add_run("  |  ARTICLE  |  OPEN ACCESS")
-    r3.font.name = "Arial"; r3.font.size = Pt(9.5); r3.font.color.rgb = RGBColor(100, 116, 139)
+    # Status line only: never stamp journal branding, acceptance dates, volume or an
+    # unissued DOI on an unpublished manuscript (ABAI lesson L003).
+    r1 = p_brand.add_run("MANUSCRIPT IN PREPARATION — formatted for submission to npj Microgravity (not peer reviewed, no DOI)")
+    r1.bold = True; r1.font.name = "Arial"; r1.font.size = Pt(9.5); r1.font.color.rgb = RGBColor(200, 75, 49)
     p_brand.paragraph_format.space_after = Pt(8)
     
     # Title
@@ -266,7 +264,7 @@ def main():
     
     # Tracking Dates
     p_track = doc.add_paragraph()
-    r_tr = p_track.add_run("Received: 14 August 2026 / Accepted: 28 October 2026 / Published online: 05 November 2026\nDOI: https://doi.org/10.1038/s41526-026-00042-8")
+    r_tr = p_track.add_run("Status: manuscript in preparation. Preprint DOI: none yet. Software/data DOI: Zenodo deposit pending.")
     r_tr.font.name = "Arial"; r_tr.font.size = Pt(8.0); r_tr.font.color.rgb = RGBColor(100, 116, 139)
     p_track.paragraph_format.space_after = Pt(14)
     

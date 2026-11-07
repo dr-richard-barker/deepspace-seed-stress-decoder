@@ -321,9 +321,9 @@ The `deepspace` Python package (v0.2.0), reproduction scripts (01–35), and CLI
 
 ## References
 
-1. Martin, M., Cogdill, R., Pusey, M. et al. A transcriptional atlas of early *Arabidopsis* seed development. *Nat. Plants* (2026). doi:10.1038/s41477-026-02295-8.
-2. Liew, K., Lewsey, J. et al. Establishment of single-cell transcriptional states during seed germination. *Nat. Plants* 10, 1145–1158 (2024). doi:10.1038/s41477-024-01771-3.
-3. Hollmann, N. et al. Accurate predictions on small data with a tabular foundation model (TabPFN v2). *Nature* 637, 319–326 (2025). doi:10.1038/s41586-024-08328-6.
+1. Martin, C. A., Cogdill, K. R., Pusey, A. L. & Gehring, M. A transcriptional atlas of early *Arabidopsis* seed development suggests mechanisms for inter-tissue coordination. *Nat. Plants* 12, 1133–1149 (2026). doi:10.1038/s41477-026-02295-8.
+2. Liew, L. C. et al. Establishment of single-cell transcriptional states during seed germination. *Nat. Plants* 10, 1418–1434 (2024). doi:10.1038/s41477-024-01771-3.
+3. Hollmann, N. et al. Accurate predictions on small data with a tabular foundation model. *Nature* 637, 319–326 (2025). doi:10.1038/s41586-024-08328-6.
 4. Parmagnani, A. S., Mannino, G. & Maffei, M. E. Transcriptomics and metabolomics of reactive oxygen species in near-null magnetic field *Arabidopsis*. *Biomolecules* 12, 1824 (2022).
 5. Agliassa, C. & Maffei, M. E. Differential root and shoot magnetoresponses in *Arabidopsis thaliana*. *Sci. Rep.* 11, 8869 (2021).
 6. Reina-Pinto, J. J. et al. Probing differentially expressed genes against a microarray database (MASTA). *Plant J.* 59, 685–696 (2009).
